@@ -1,0 +1,1 @@
+ ./scripts/opendial -Dmodules=opendial.plugins.NuanceSpeech -Did=NMDPTRIAL_crocrocm_gmail_com20161023143137 -Dkey=b5fe5975a263ba861d31b3daa903bfcb844a80ffc8aed37806a76d70355f4bea5da55fff081985254a3900f33cbfbec0093ebfd2ec934af33ab7636f17af5974 -Dlang=eng-USA

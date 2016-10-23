@@ -1,0 +1,31 @@
+ 
+<domain>
+	<!-- Natural language understanding models, constituted of two models: one model to recognise
+	the user dialogue act. from the utterance, and one model to update the slots in accordance with 
+	this dialogue act.
+
+	The user dialogue act associated with each utterance is represented here as a list of 
+	basic acts (such as "Confirm" or "Inform(...)").  This representation allows us to 
+	capture the fact that an utterance such as "Yes, 3 tickets" contains both a confirmation
+	and a new information about the number of tickets. 
+	-->
+
+	<model trigger="u_u">
+		<!-- This model takes the raw user utterance as input, and outputs the corresponding 
+	  dialogue acts from the user. This model uses simple shallow patterns to extract 
+	  domain-specific information (such as airports or dates) from the utterance. -->
+		<!-- Extracts booking information related to the departure or destination  -->
+		<rule>
+			<case>
+				<condition>
+					<if var="State" value="California" />
+					<if var="u_u" relation="contains" value="{State}" />
+				</condition>
+				<effect>
+					<set var="a_u" value="Confirm(State,{State})" exclusive="false"/>
+				</effect>
+			</case>
+		</rule>
+	</model>
+	
+</domain>

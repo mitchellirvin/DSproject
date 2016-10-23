@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<domain>
+ 
+	<!-- 
+	Implementation of Guessing Game
+	 -->
+	 
+	<initialstate>
+
+		<!-- Starting prompt -->
+		<variable id="u_m">
+			<value>Hello, would you like to play a guessing game?</value>
+		</variable>
+		
+		<!-- We start the dialogue by asking for the destination -->
+		<variable id="current_step">
+			<value>State</value>
+		</variable>
+
+	</initialstate>
+
+	<!-- Natural language understanding models -->
+	<import href="guessing_nlu.xml"/>
+
+	<!--  Dialogue management models (action selection and transition) -->
+	<import href="guessing_dm.xml"/>
+
+	<!-- Natural language generation models -->
+	<import href="guessing_nlg.xml"/>
+
+
+	<!-- External module showing how to interface the dialogue system with an external 
+	database (used here to find the ticket prices and "book" the tickets) -->
+	<settings>
+		<modules>opendial.modules.examples.FlightBookingExample</modules>
+	</settings>
+</domain>
