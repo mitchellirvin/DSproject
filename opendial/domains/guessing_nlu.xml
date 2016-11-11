@@ -56,6 +56,17 @@
 				</effect>
 			</case>
 		</rule>
+		
+		<!-- Catch-all rule that simply keeps the slots to their current value
+		in the absence of any other new information. -->
+		<rule priority="2">
+			<case>
+				<effect>
+					<set var="State" value="{State}" />
+				</effect>
+			</case>
+		</rule>
+		
 	</model>
 	
 	

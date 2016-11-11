@@ -1,0 +1,103 @@
+<domain>
+
+<initialstate>
+<variable id="u_m">
+	<value prob="1">Lets play a game. This state has 55 electoral college votes.</value>
+</variable>
+
+</initialstate>
+
+<model trigger="u_u">
+<rule>
+	<case>
+		<condition>
+			<if var="X" relation="in" value="[Florida,California,Georgia]"/>
+			<if var="u_u" relation="contains" value="{X}"/>
+		</condition>
+		<effect prob="1">
+			<set var="a_u" value="Guess({X})"/>
+		</effect>
+	</case>
+	<case>
+		<condition>
+			<if var="u_u" relation="contains" value="(yes|yeah|exactly)"/>
+			<if var="a_m" relation="=" value="Verify({X})"/>
+		</condition>
+		<effect prob="1">
+			<set var="a_u" value="Confirm({X})"/>
+		</effect>
+	</case>
+</rule>
+
+</model>
+
+<model trigger="a_u">
+	
+	<rule>
+		<case>
+			<condition operator="or">
+				<if var="a_u" relation="=" value="Guess({X})"/>
+				<if var="a_u" relation="=" value="Confirm({X})"/>
+			</condition>
+			<effect util="1">
+				<set var="a_m" value="CheckGuess({X})"/>
+			</effect>
+			<effect util="0.5">
+				<set var="a_m" value="Verify({X})"/>
+			</effect>
+		</case>
+		<case>
+			<effect util="-2">
+				<set var="a_m" value="CheckGuess({X})"/>
+			</effect>
+		</case>
+	</rule>
+
+</model>
+
+<model trigger="a_m">
+	
+	<rule>
+		<case>
+			<condition>
+				<if var="a_m" relation="=" value="CheckGuess({X})"/>
+				<if var="X" relation="=" value="California"/>
+			</condition>
+			<effect util="1">
+				<set var="u_m" value="{X} is correct!"/>
+			</effect>
+		</case>
+		<case>
+			<condition>
+				<if var="a_m" relation="=" value="CheckGuess({X})"/>
+			</condition>
+			<effect util="1">
+				<set var="u_m" value="{X} is incorrect!"/>
+			</effect>
+		</case>
+		<case>
+			<condition>
+				<if var="a_m" relation="=" value="Verify({X})"/>
+			</condition>
+			<effect util="1">
+				<set var="u_m" value="Do you want to go to the {X} floor?"/>
+			</effect>
+		</case>
+	</rule> 
+	
+	<rule>
+		<case>
+			<condition>
+				<if var="a_m" relation="=" value="Verify({X})"/>
+				<if var="a_u" relation="=" value="Guess({X})"/>
+			</condition>
+			<effect prob="0.9">
+				<set var="a_u^p" value="Confirm({X})"/>
+			</effect>
+		</case>
+	</rule>
+
+
+
+</model>
+</domain>
