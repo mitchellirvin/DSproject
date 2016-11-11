@@ -10,20 +10,32 @@
 		<!-- This model specifies the utilities of various system actions, such 
 			as clarification requests (repetitions and confirmations) and 
 			grounding actions. -->
-
-		<!-- If the current step is to ask for the destination, specifies the utilities 
-			of a confirmation request or a grounding action using the current value of 
-			the "State" slot -->
+		<!-- When the current step is Prompt, set machine act to GiveClue -->
 		<rule>
 			<case>
 				<condition>
-					<if var="current_step" value="State" />
+					<if var="current_step" value="Prompt" />
 				</condition>
 				<effect util="5">
-					<set var="a_m" value="Ground(State,{State})" />
+					<set var="a_m" value="GiveClue" />
 				</effect>
 				<effect util="0.5">
+					<set var="a_m" value="AskRepeat" />
+				</effect>
+			</case>
+		</rule>
+		
+		<!-- When the current step is CheckGuess, set machine act to Confirm -->
+		<rule>
+			<case>
+				<condition>
+					<if var="current_step" value="CheckGuess" />
+				</condition>
+				<effect util="5">
 					<set var="a_m" value="Confirm(State,{State})" />
+				</effect>
+				<effect util="0.5">
+					<set var="a_m" value="AskRepeat" />
 				</effect>
 			</case>
 		</rule>
@@ -46,7 +58,7 @@
 		<rule>
 			<case>
 				<effect util="-4.5">
-					<set var="a_m" value="Ground(*)" />
+					<set var="a_m" value="GiveClue" />
 				</effect>
 				<effect util="-0.3">
 					<set var="a_m" value="Confirm(*)" />
@@ -74,14 +86,21 @@
 			system action affects the current dialogue state, in particular the current 
 			step in the dialogue. -->
 
-		<!-- Moves to the next step if a particular slot has been confirmed -->
 		<rule>
 			<case>
 				<condition>
-					<if var="a_m" value="Ground(State,*)" />
+					<if var="a_m" value="GiveClue" />
 				</condition>
 				<effect prob="1">
-					<set var="current_step" value="Close" />
+					<set var="current_step" value="Prompt" />
+				</effect>
+			</case>
+			<case>
+				<condition>
+					<if var="a_m" value="Confirm(State,*)" />
+				</condition>
+				<effect prob="1">
+					<set var="current_step" value="Guess" />
 				</effect>
 			</case>
 		</rule>
@@ -91,11 +110,21 @@
 		<!-- Specifies the prior distributions for the destinations, departures and
 		responses to yes/no questions -->
 	
-		<!-- Prior probabilities for the destinations and departures -->
 		<rule>
 			<case>
 				<condition>
-					<if var="current_step" value="State" />
+					<if var="current_step" value="Prompt" />
+				</condition>
+				<effect prob="0.25">
+					<set var="State^p" value="California" />
+				</effect>
+				<effect prob="0.75">
+					<set var="State^p" value="Florida" />
+				</effect>
+			</case>
+			<case>
+				<condition>
+					<if var="current_step" value="Guess" />
 				</condition>
 				<effect prob="0.25">
 					<set var="State^p" value="California" />

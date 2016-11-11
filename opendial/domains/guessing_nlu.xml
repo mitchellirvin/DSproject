@@ -14,18 +14,49 @@
 		<!-- This model takes the raw user utterance as input, and outputs the corresponding 
 	  dialogue acts from the user. This model uses simple shallow patterns to extract 
 	  domain-specific information (such as airports or dates) from the utterance. -->
-		<!-- Extracts booking information related to the departure or destination  -->
 		<rule>
 			<case>
 				<condition>
-					<if var="State" value="California" />
+					<if var="State" relation="in" value="[California,Florida,Georgia]" />
 					<if var="u_u" relation="contains" value="{State}" />
 				</condition>
 				<effect>
-					<set var="a_u" value="Confirm(State,{State})" exclusive="false"/>
+					<set var="a_u" value="Guess" exclusive="false" />
+				</effect>
+			</case>
+		</rule>
+		<rule priority="2">
+			<case>
+				<effect>
+					<set var="a_u" value="AskClue" />
 				</effect>
 			</case>
 		</rule>
 	</model>
+	
+	<!-- model to take dialogue act from user and fill corresponding slot  -->
+	<model trigger="a_u">
+		<rule>
+			<case>
+				<condition>
+					<if var="current_step" value="Prompt" />
+					<if var="a_u" relation="contains" value="Guess" />
+				</condition>
+				<effect>
+					<set var="current_step" value="CheckGuess" />
+					<set var="State" value="{State}"/>
+				</effect>
+			</case>
+			<case>
+				<condition>
+					<if var="a_u" relation="contains" value="AskClue" />
+				</condition>
+				<effect>
+					<set var="{current_step}" value="{Prompt}" />
+				</effect>
+			</case>
+		</rule>
+	</model>
+	
 	
 </domain>

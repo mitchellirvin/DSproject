@@ -9,12 +9,12 @@
 
 		<!-- Starting prompt -->
 		<variable id="u_m">
-			<value>Hello, would you like to play a guessing game?</value>
+			<value>Hello, let's play a game.</value>
 		</variable>
 		
-		<!-- We start the dialogue by asking for the destination -->
+		<!-- We start the dialogue by asking to -->
 		<variable id="current_step">
-			<value>State</value>
+			<value>Prompt</value>
 		</variable>
 
 	</initialstate>
