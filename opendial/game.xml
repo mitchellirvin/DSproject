@@ -6,6 +6,10 @@
 	    <value prob="1">Would you like to play a guessing game? I'll give you a fun fact about
 	    one of the states in the USA and you can guess which state it is!</value>
     </variable>
+    
+    <variable id="state">
+	    <value prob="1">0</value>
+    </variable>
 
     <variable id="current_step">
 		<value>begin</value>
@@ -21,5 +25,8 @@
 
 	<!-- A_M triggered model -->
 	<import href="a_m.xml"/>
+	
+	<!-- A_M triggered model -->
+	<import href="current_state.xml"/>
 	
 </domain>

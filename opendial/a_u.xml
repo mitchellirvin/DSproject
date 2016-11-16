@@ -4,7 +4,7 @@
     <!-- based on the a_u and current step --> 
     <model trigger="a_u">
         
-        <!-- rule for current step == begin -->
+        <!-- rule for current step begin -->
     	<rule>
     		<case>
     		    <!-- if the user act was to agree to begin the game -->
@@ -19,7 +19,7 @@
     		</case>
     	</rule>
     
-        <!-- rule for current step == first hint -->
+        <!-- rule for current step first hint -->
     	<rule>
     		<case>
     		    <!-- if the user guessed something -->
@@ -34,7 +34,7 @@
     		</case>
     	</rule>
     
-        <!-- rule for current step == second hint -->
+        <!-- rule for current step second hint -->
     	<rule>
     		<case>
     		    <!-- if they asked for a hint -->
