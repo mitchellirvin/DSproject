@@ -1,0 +1,520 @@
+2016-10-23 16:00:10,232 [AWT-EventQueue-0] INFO  marytts.main Mary starting up...
+2016-10-23 16:00:10,248 [AWT-EventQueue-0] INFO  marytts.main Specification version 5.2-beta2
+2016-10-23 16:00:10,248 [AWT-EventQueue-0] INFO  marytts.main Implementation version unknown
+2016-10-23 16:00:10,248 [AWT-EventQueue-0] INFO  marytts.main Running on a Java 1.8.0_101 implementation by Oracle Corporation, on a Windows 7 platform (amd64, 6.1)
+2016-10-23 16:00:10,295 [AWT-EventQueue-0] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.modules.Synthesis'
+2016-10-23 16:00:10,295 [AWT-EventQueue-0] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.modules.TextToMaryXML'
+2016-10-23 16:00:10,295 [AWT-EventQueue-0] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.modules.SableParser'
+2016-10-23 16:00:10,295 [AWT-EventQueue-0] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.modules.SSMLParser'
+2016-10-23 16:00:10,295 [AWT-EventQueue-0] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.modules.APMLParser'
+2016-10-23 16:00:10,295 [AWT-EventQueue-0] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.modules.EmotionmlParser'
+2016-10-23 16:00:10,295 [AWT-EventQueue-0] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.modules.JTokeniser'
+2016-10-23 16:00:10,295 [AWT-EventQueue-0] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.modules.DummyTokens2Words'
+2016-10-23 16:00:10,295 [AWT-EventQueue-0] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.modules.ProsodyGeneric'
+2016-10-23 16:00:10,295 [AWT-EventQueue-0] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.modules.PronunciationModel'
+2016-10-23 16:00:10,295 [AWT-EventQueue-0] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.modules.TargetFeatureLister'
+2016-10-23 16:00:10,295 [AWT-EventQueue-0] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.modules.HalfPhoneTargetFeatureLister'
+2016-10-23 16:00:10,295 [AWT-EventQueue-0] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.modules.AcousticModeller'
+2016-10-23 16:00:10,295 [AWT-EventQueue-0] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.modules.RealisedAcoustparamsExtractor'
+2016-10-23 16:00:10,295 [AWT-EventQueue-0] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.modules.RealisedDurationsExtractor'
+2016-10-23 16:00:10,295 [AWT-EventQueue-0] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.modules.HTSEngine'
+2016-10-23 16:00:10,295 [AWT-EventQueue-0] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.modules.PraatTextGridGenerator'
+2016-10-23 16:00:10,310 [AWT-EventQueue-0] INFO  marytts.UnitSelectionSynthesizer started.
+2016-10-23 16:00:10,310 [AWT-EventQueue-0] INFO  marytts.TargetFeatureLister Module started (ACOUSTPARAMS->TARGETFEATURES, locale null).
+2016-10-23 16:00:10,310 [AWT-EventQueue-0] INFO  marytts.HTSEngine Module started (TARGETFEATURES->AUDIO, locale null).
+2016-10-23 16:00:10,310 [AWT-EventQueue-0] INFO  marytts.HMMSynthesizer started.
+2016-10-23 16:00:10,310 [AWT-EventQueue-0] INFO  marytts.Synthesis Module started (ACOUSTPARAMS->AUDIO, locale null).
+2016-10-23 16:00:10,310 [AWT-EventQueue-0] INFO  marytts.HMMSynthesizer Starting power-on self test.
+2016-10-23 16:00:10,310 [AWT-EventQueue-0] INFO  marytts.TextToMaryXML Module started (TEXT->RAWMARYXML, locale null).
+2016-10-23 16:00:10,310 [AWT-EventQueue-0] INFO  marytts.TextToMaryXML Starting power-on self test.
+2016-10-23 16:00:10,326 [AWT-EventQueue-0] WARN  marytts.TextToMaryXML Locale is null, overriding with en_US
+2016-10-23 16:00:10,326 [AWT-EventQueue-0] WARN  marytts.TextToMaryXML Locale is null, overriding with en_US
+2016-10-23 16:00:10,326 [AWT-EventQueue-0] INFO  marytts.TextToMaryXML Power-on self test complete.
+2016-10-23 16:00:10,466 [AWT-EventQueue-0] INFO  marytts.SableParser Module started (SABLE->RAWMARYXML, locale null).
+2016-10-23 16:00:10,466 [AWT-EventQueue-0] INFO  marytts.SableParser Starting power-on self test.
+2016-10-23 16:00:10,466 [AWT-EventQueue-0] INFO  marytts.SableParser Power-on self test complete.
+2016-10-23 16:00:10,498 [AWT-EventQueue-0] INFO  marytts.SSMLParser Module started (SSML->RAWMARYXML, locale null).
+2016-10-23 16:00:10,498 [AWT-EventQueue-0] INFO  marytts.SSMLParser Starting power-on self test.
+2016-10-23 16:00:10,498 [AWT-EventQueue-0] INFO  marytts.SSMLParser Power-on self test complete.
+2016-10-23 16:00:10,529 [AWT-EventQueue-0] INFO  marytts.APMLParser Module started (APML->RAWMARYXML, locale null).
+2016-10-23 16:00:10,529 [AWT-EventQueue-0] INFO  marytts.APMLParser Starting power-on self test.
+2016-10-23 16:00:10,529 [AWT-EventQueue-0] INFO  marytts.APMLParser Power-on self test complete.
+2016-10-23 16:00:10,544 [AWT-EventQueue-0] INFO  marytts.EmotionmlParser Module started (EMOTIONML->RAWMARYXML, locale null).
+2016-10-23 16:00:10,544 [AWT-EventQueue-0] INFO  marytts.EmotionmlParser Starting power-on self test.
+2016-10-23 16:00:10,544 [AWT-EventQueue-0] INFO  marytts.EmotionmlParser Power-on self test complete.
+2016-10-23 16:00:10,544 [AWT-EventQueue-0] INFO  marytts.JTokeniser Module started (RAWMARYXML->TOKENS, locale null).
+2016-10-23 16:00:10,576 [AWT-EventQueue-0] INFO  marytts.JTokeniser Starting power-on self test.
+2016-10-23 16:00:10,576 [AWT-EventQueue-0] INFO  marytts.JTokeniser Power-on self test complete.
+2016-10-23 16:00:10,576 [AWT-EventQueue-0] INFO  marytts.DummyTokens2Words Module started (TOKENS->WORDS, locale null).
+2016-10-23 16:00:10,576 [AWT-EventQueue-0] INFO  marytts.DummyTokens2Words Starting power-on self test.
+2016-10-23 16:00:10,576 [AWT-EventQueue-0] INFO  marytts.DummyTokens2Words Power-on self test complete.
+2016-10-23 16:00:10,591 [AWT-EventQueue-0] INFO  marytts.Prosody Module started (PHONEMES->INTONATION, locale null).
+2016-10-23 16:00:10,591 [AWT-EventQueue-0] INFO  marytts.Prosody Starting power-on self test.
+2016-10-23 16:00:10,591 [AWT-EventQueue-0] INFO  marytts.Prosody Power-on self test complete.
+2016-10-23 16:00:10,591 [AWT-EventQueue-0] INFO  marytts.PronunciationModel Module started (INTONATION->ALLOPHONES, locale null).
+2016-10-23 16:00:10,591 [AWT-EventQueue-0] INFO  marytts.PronunciationModel Starting power-on self test.
+2016-10-23 16:00:10,591 [AWT-EventQueue-0] INFO  marytts.PronunciationModel Power-on self test complete.
+2016-10-23 16:00:10,591 [AWT-EventQueue-0] INFO  marytts.TargetFeatureLister Starting power-on self test.
+2016-10-23 16:00:10,591 [AWT-EventQueue-0] INFO  marytts.TargetFeatureLister Power-on self test complete.
+2016-10-23 16:00:10,591 [AWT-EventQueue-0] INFO  marytts.TargetFeatureLister Module started (ACOUSTPARAMS->HALFPHONE_TARGETFEATURES, locale null).
+2016-10-23 16:00:10,591 [AWT-EventQueue-0] INFO  marytts.TargetFeatureLister Starting power-on self test.
+2016-10-23 16:00:10,591 [AWT-EventQueue-0] INFO  marytts.TargetFeatureLister Power-on self test complete.
+2016-10-23 16:00:10,591 [AWT-EventQueue-0] INFO  marytts.AcousticModeller Module started (ALLOPHONES->ACOUSTPARAMS, locale null).
+2016-10-23 16:00:10,591 [AWT-EventQueue-0] INFO  marytts.AcousticModeller Starting power-on self test.
+2016-10-23 16:00:10,591 [AWT-EventQueue-0] INFO  marytts.AcousticModeller Power-on self test complete.
+2016-10-23 16:00:10,591 [AWT-EventQueue-0] INFO  marytts.Realised acoustparams extractor Module started (AUDIO->REALISED_ACOUSTPARAMS, locale null).
+2016-10-23 16:00:10,591 [AWT-EventQueue-0] INFO  marytts.Realised acoustparams extractor Starting power-on self test.
+2016-10-23 16:00:10,607 [AWT-EventQueue-0] INFO  marytts.Realised acoustparams extractor Power-on self test complete.
+2016-10-23 16:00:10,607 [AWT-EventQueue-0] INFO  marytts.Realised durations extractor Module started (AUDIO->REALISED_DURATIONS, locale null).
+2016-10-23 16:00:10,607 [AWT-EventQueue-0] INFO  marytts.Realised durations extractor Starting power-on self test.
+2016-10-23 16:00:10,607 [AWT-EventQueue-0] INFO  marytts.Realised durations extractor Power-on self test complete.
+2016-10-23 16:00:10,607 [AWT-EventQueue-0] INFO  marytts.Praat TextGrid generator Module started (AUDIO->PRAAT_TEXTGRID, locale null).
+2016-10-23 16:00:10,607 [AWT-EventQueue-0] INFO  marytts.Praat TextGrid generator Starting power-on self test.
+2016-10-23 16:00:10,607 [AWT-EventQueue-0] INFO  marytts.Praat TextGrid generator Power-on self test complete.
+2016-10-23 16:00:10,607 [AWT-EventQueue-0] INFO  marytts.main Startup complete.
+2016-10-23 16:01:33,714 [Thread-16] INFO  marytts.main Shutting down modules...
+2016-10-23 16:01:33,717 [Thread-16] INFO  marytts.Synthesis Module shut down.
+2016-10-23 16:01:33,718 [Thread-16] INFO  marytts.TextToMaryXML Module shut down.
+2016-10-23 16:01:33,718 [Thread-16] INFO  marytts.SableParser Module shut down.
+2016-10-23 16:01:33,719 [Thread-16] INFO  marytts.SSMLParser Module shut down.
+2016-10-23 16:01:33,721 [Thread-16] INFO  marytts.APMLParser Module shut down.
+2016-10-23 16:01:33,722 [Thread-16] INFO  marytts.EmotionmlParser Module shut down.
+2016-10-23 16:01:33,722 [Thread-16] INFO  marytts.JTokeniser Module shut down.
+2016-10-23 16:01:33,723 [Thread-16] INFO  marytts.DummyTokens2Words Module shut down.
+2016-10-23 16:01:33,724 [Thread-16] INFO  marytts.Prosody Module shut down.
+2016-10-23 16:01:33,725 [Thread-16] INFO  marytts.PronunciationModel Module shut down.
+2016-10-23 16:01:33,725 [Thread-16] INFO  marytts.TargetFeatureLister Module shut down.
+2016-10-23 16:01:33,726 [Thread-16] INFO  marytts.TargetFeatureLister Module shut down.
+2016-10-23 16:01:33,726 [Thread-16] INFO  marytts.AcousticModeller Module shut down.
+2016-10-23 16:01:33,727 [Thread-16] INFO  marytts.Realised acoustparams extractor Module shut down.
+2016-10-23 16:01:33,728 [Thread-16] INFO  marytts.Realised durations extractor Module shut down.
+2016-10-23 16:01:33,730 [Thread-16] INFO  marytts.HTSEngine Module shut down.
+2016-10-23 16:01:33,731 [Thread-16] INFO  marytts.Praat TextGrid generator Module shut down.
+2016-10-23 16:01:33,744 [Thread-16] INFO  marytts.main Shutdown complete.
+2016-10-23 16:04:05,595 [AWT-EventQueue-0] INFO  marytts.main Mary starting up...
+2016-10-23 16:04:05,595 [AWT-EventQueue-0] INFO  marytts.main Specification version 5.2-beta2
+2016-10-23 16:04:05,595 [AWT-EventQueue-0] INFO  marytts.main Implementation version unknown
+2016-10-23 16:04:05,595 [AWT-EventQueue-0] INFO  marytts.main Running on a Java 1.8.0_101 implementation by Oracle Corporation, on a Windows 7 platform (amd64, 6.1)
+2016-10-23 16:04:05,657 [AWT-EventQueue-0] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.modules.Synthesis'
+2016-10-23 16:04:05,657 [AWT-EventQueue-0] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.modules.TextToMaryXML'
+2016-10-23 16:04:05,657 [AWT-EventQueue-0] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.modules.SableParser'
+2016-10-23 16:04:05,657 [AWT-EventQueue-0] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.modules.SSMLParser'
+2016-10-23 16:04:05,657 [AWT-EventQueue-0] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.modules.APMLParser'
+2016-10-23 16:04:05,657 [AWT-EventQueue-0] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.modules.EmotionmlParser'
+2016-10-23 16:04:05,657 [AWT-EventQueue-0] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.modules.JTokeniser'
+2016-10-23 16:04:05,673 [AWT-EventQueue-0] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.modules.DummyTokens2Words'
+2016-10-23 16:04:05,673 [AWT-EventQueue-0] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.modules.ProsodyGeneric'
+2016-10-23 16:04:05,673 [AWT-EventQueue-0] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.modules.PronunciationModel'
+2016-10-23 16:04:05,673 [AWT-EventQueue-0] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.modules.TargetFeatureLister'
+2016-10-23 16:04:05,673 [AWT-EventQueue-0] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.modules.HalfPhoneTargetFeatureLister'
+2016-10-23 16:04:05,673 [AWT-EventQueue-0] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.modules.AcousticModeller'
+2016-10-23 16:04:05,673 [AWT-EventQueue-0] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.modules.RealisedAcoustparamsExtractor'
+2016-10-23 16:04:05,673 [AWT-EventQueue-0] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.modules.RealisedDurationsExtractor'
+2016-10-23 16:04:05,673 [AWT-EventQueue-0] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.modules.HTSEngine'
+2016-10-23 16:04:05,673 [AWT-EventQueue-0] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.modules.PraatTextGridGenerator'
+2016-10-23 16:04:05,673 [AWT-EventQueue-0] INFO  marytts.UnitSelectionSynthesizer started.
+2016-10-23 16:04:05,673 [AWT-EventQueue-0] INFO  marytts.TargetFeatureLister Module started (ACOUSTPARAMS->TARGETFEATURES, locale null).
+2016-10-23 16:04:05,673 [AWT-EventQueue-0] INFO  marytts.HTSEngine Module started (TARGETFEATURES->AUDIO, locale null).
+2016-10-23 16:04:05,673 [AWT-EventQueue-0] INFO  marytts.HMMSynthesizer started.
+2016-10-23 16:04:05,673 [AWT-EventQueue-0] INFO  marytts.Synthesis Module started (ACOUSTPARAMS->AUDIO, locale null).
+2016-10-23 16:04:05,689 [AWT-EventQueue-0] INFO  marytts.HMMSynthesizer Starting power-on self test.
+2016-10-23 16:04:05,689 [AWT-EventQueue-0] INFO  marytts.TextToMaryXML Module started (TEXT->RAWMARYXML, locale null).
+2016-10-23 16:04:05,689 [AWT-EventQueue-0] INFO  marytts.TextToMaryXML Starting power-on self test.
+2016-10-23 16:04:05,689 [AWT-EventQueue-0] WARN  marytts.TextToMaryXML Locale is null, overriding with en_US
+2016-10-23 16:04:05,689 [AWT-EventQueue-0] WARN  marytts.TextToMaryXML Locale is null, overriding with en_US
+2016-10-23 16:04:05,689 [AWT-EventQueue-0] INFO  marytts.TextToMaryXML Power-on self test complete.
+2016-10-23 16:04:05,829 [AWT-EventQueue-0] INFO  marytts.SableParser Module started (SABLE->RAWMARYXML, locale null).
+2016-10-23 16:04:05,829 [AWT-EventQueue-0] INFO  marytts.SableParser Starting power-on self test.
+2016-10-23 16:04:05,829 [AWT-EventQueue-0] INFO  marytts.SableParser Power-on self test complete.
+2016-10-23 16:04:05,860 [AWT-EventQueue-0] INFO  marytts.SSMLParser Module started (SSML->RAWMARYXML, locale null).
+2016-10-23 16:04:05,860 [AWT-EventQueue-0] INFO  marytts.SSMLParser Starting power-on self test.
+2016-10-23 16:04:05,860 [AWT-EventQueue-0] INFO  marytts.SSMLParser Power-on self test complete.
+2016-10-23 16:04:05,891 [AWT-EventQueue-0] INFO  marytts.APMLParser Module started (APML->RAWMARYXML, locale null).
+2016-10-23 16:04:05,891 [AWT-EventQueue-0] INFO  marytts.APMLParser Starting power-on self test.
+2016-10-23 16:04:05,891 [AWT-EventQueue-0] INFO  marytts.APMLParser Power-on self test complete.
+2016-10-23 16:04:05,923 [AWT-EventQueue-0] INFO  marytts.EmotionmlParser Module started (EMOTIONML->RAWMARYXML, locale null).
+2016-10-23 16:04:05,923 [AWT-EventQueue-0] INFO  marytts.EmotionmlParser Starting power-on self test.
+2016-10-23 16:04:05,923 [AWT-EventQueue-0] INFO  marytts.EmotionmlParser Power-on self test complete.
+2016-10-23 16:04:05,923 [AWT-EventQueue-0] INFO  marytts.JTokeniser Module started (RAWMARYXML->TOKENS, locale null).
+2016-10-23 16:04:05,938 [AWT-EventQueue-0] INFO  marytts.JTokeniser Starting power-on self test.
+2016-10-23 16:04:05,938 [AWT-EventQueue-0] INFO  marytts.JTokeniser Power-on self test complete.
+2016-10-23 16:04:05,938 [AWT-EventQueue-0] INFO  marytts.DummyTokens2Words Module started (TOKENS->WORDS, locale null).
+2016-10-23 16:04:05,938 [AWT-EventQueue-0] INFO  marytts.DummyTokens2Words Starting power-on self test.
+2016-10-23 16:04:05,938 [AWT-EventQueue-0] INFO  marytts.DummyTokens2Words Power-on self test complete.
+2016-10-23 16:04:05,954 [AWT-EventQueue-0] INFO  marytts.Prosody Module started (PHONEMES->INTONATION, locale null).
+2016-10-23 16:04:05,954 [AWT-EventQueue-0] INFO  marytts.Prosody Starting power-on self test.
+2016-10-23 16:04:05,954 [AWT-EventQueue-0] INFO  marytts.Prosody Power-on self test complete.
+2016-10-23 16:04:05,954 [AWT-EventQueue-0] INFO  marytts.PronunciationModel Module started (INTONATION->ALLOPHONES, locale null).
+2016-10-23 16:04:05,954 [AWT-EventQueue-0] INFO  marytts.PronunciationModel Starting power-on self test.
+2016-10-23 16:04:05,954 [AWT-EventQueue-0] INFO  marytts.PronunciationModel Power-on self test complete.
+2016-10-23 16:04:05,954 [AWT-EventQueue-0] INFO  marytts.TargetFeatureLister Starting power-on self test.
+2016-10-23 16:04:05,954 [AWT-EventQueue-0] INFO  marytts.TargetFeatureLister Power-on self test complete.
+2016-10-23 16:04:05,954 [AWT-EventQueue-0] INFO  marytts.TargetFeatureLister Module started (ACOUSTPARAMS->HALFPHONE_TARGETFEATURES, locale null).
+2016-10-23 16:04:05,954 [AWT-EventQueue-0] INFO  marytts.TargetFeatureLister Starting power-on self test.
+2016-10-23 16:04:05,954 [AWT-EventQueue-0] INFO  marytts.TargetFeatureLister Power-on self test complete.
+2016-10-23 16:04:05,954 [AWT-EventQueue-0] INFO  marytts.AcousticModeller Module started (ALLOPHONES->ACOUSTPARAMS, locale null).
+2016-10-23 16:04:05,954 [AWT-EventQueue-0] INFO  marytts.AcousticModeller Starting power-on self test.
+2016-10-23 16:04:05,954 [AWT-EventQueue-0] INFO  marytts.AcousticModeller Power-on self test complete.
+2016-10-23 16:04:05,954 [AWT-EventQueue-0] INFO  marytts.Realised acoustparams extractor Module started (AUDIO->REALISED_ACOUSTPARAMS, locale null).
+2016-10-23 16:04:05,954 [AWT-EventQueue-0] INFO  marytts.Realised acoustparams extractor Starting power-on self test.
+2016-10-23 16:04:05,954 [AWT-EventQueue-0] INFO  marytts.Realised acoustparams extractor Power-on self test complete.
+2016-10-23 16:04:05,954 [AWT-EventQueue-0] INFO  marytts.Realised durations extractor Module started (AUDIO->REALISED_DURATIONS, locale null).
+2016-10-23 16:04:05,954 [AWT-EventQueue-0] INFO  marytts.Realised durations extractor Starting power-on self test.
+2016-10-23 16:04:05,954 [AWT-EventQueue-0] INFO  marytts.Realised durations extractor Power-on self test complete.
+2016-10-23 16:04:05,954 [AWT-EventQueue-0] INFO  marytts.Praat TextGrid generator Module started (AUDIO->PRAAT_TEXTGRID, locale null).
+2016-10-23 16:04:05,954 [AWT-EventQueue-0] INFO  marytts.Praat TextGrid generator Starting power-on self test.
+2016-10-23 16:04:05,954 [AWT-EventQueue-0] INFO  marytts.Praat TextGrid generator Power-on self test complete.
+2016-10-23 16:04:05,954 [AWT-EventQueue-0] INFO  marytts.main Startup complete.
+2016-10-23 16:21:04,750 [Thread-14] INFO  marytts.main Shutting down modules...
+2016-10-23 16:21:04,758 [Thread-14] INFO  marytts.Synthesis Module shut down.
+2016-10-23 16:21:04,759 [Thread-14] INFO  marytts.TextToMaryXML Module shut down.
+2016-10-23 16:21:04,761 [Thread-14] INFO  marytts.SableParser Module shut down.
+2016-10-23 16:21:04,763 [Thread-14] INFO  marytts.SSMLParser Module shut down.
+2016-10-23 16:21:04,764 [Thread-14] INFO  marytts.APMLParser Module shut down.
+2016-10-23 16:21:04,766 [Thread-14] INFO  marytts.EmotionmlParser Module shut down.
+2016-10-23 16:21:04,767 [Thread-14] INFO  marytts.JTokeniser Module shut down.
+2016-10-23 16:21:04,767 [Thread-14] INFO  marytts.DummyTokens2Words Module shut down.
+2016-10-23 16:21:04,767 [Thread-14] INFO  marytts.Prosody Module shut down.
+2016-10-23 16:21:04,767 [Thread-14] INFO  marytts.PronunciationModel Module shut down.
+2016-10-23 16:21:04,767 [Thread-14] INFO  marytts.TargetFeatureLister Module shut down.
+2016-10-23 16:21:04,767 [Thread-14] INFO  marytts.TargetFeatureLister Module shut down.
+2016-10-23 16:21:04,767 [Thread-14] INFO  marytts.AcousticModeller Module shut down.
+2016-10-23 16:21:04,767 [Thread-14] INFO  marytts.Realised acoustparams extractor Module shut down.
+2016-10-23 16:21:04,767 [Thread-14] INFO  marytts.Realised durations extractor Module shut down.
+2016-10-23 16:21:04,768 [Thread-14] INFO  marytts.HTSEngine Module shut down.
+2016-10-23 16:21:04,768 [Thread-14] INFO  marytts.Praat TextGrid generator Module shut down.
+2016-10-23 16:21:04,770 [Thread-14] INFO  marytts.main Shutdown complete.
+2016-10-23 16:21:14,878 [main] INFO  marytts.main Mary starting up...
+2016-10-23 16:21:14,881 [main] INFO  marytts.main Specification version 5.2-beta2
+2016-10-23 16:21:14,881 [main] INFO  marytts.main Implementation version unknown
+2016-10-23 16:21:14,881 [main] INFO  marytts.main Running on a Java 1.8.0_101 implementation by Oracle Corporation, on a Windows 7 platform (amd64, 6.1)
+2016-10-23 16:21:14,910 [main] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.modules.Synthesis'
+2016-10-23 16:21:14,913 [main] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.modules.TextToMaryXML'
+2016-10-23 16:21:14,914 [main] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.modules.SableParser'
+2016-10-23 16:21:14,914 [main] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.modules.SSMLParser'
+2016-10-23 16:21:14,915 [main] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.modules.APMLParser'
+2016-10-23 16:21:14,915 [main] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.modules.EmotionmlParser'
+2016-10-23 16:21:14,916 [main] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.modules.JTokeniser'
+2016-10-23 16:21:14,916 [main] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.modules.DummyTokens2Words'
+2016-10-23 16:21:14,917 [main] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.modules.ProsodyGeneric'
+2016-10-23 16:21:14,919 [main] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.modules.PronunciationModel'
+2016-10-23 16:21:14,920 [main] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.modules.TargetFeatureLister'
+2016-10-23 16:21:14,921 [main] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.modules.HalfPhoneTargetFeatureLister'
+2016-10-23 16:21:14,921 [main] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.modules.AcousticModeller'
+2016-10-23 16:21:14,922 [main] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.modules.RealisedAcoustparamsExtractor'
+2016-10-23 16:21:14,923 [main] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.modules.RealisedDurationsExtractor'
+2016-10-23 16:21:14,923 [main] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.modules.HTSEngine'
+2016-10-23 16:21:14,924 [main] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.modules.PraatTextGridGenerator'
+2016-10-23 16:21:14,931 [main] INFO  marytts.UnitSelectionSynthesizer started.
+2016-10-23 16:21:14,932 [main] INFO  marytts.TargetFeatureLister Module started (ACOUSTPARAMS->TARGETFEATURES, locale null).
+2016-10-23 16:21:14,932 [main] INFO  marytts.HTSEngine Module started (TARGETFEATURES->AUDIO, locale null).
+2016-10-23 16:21:14,932 [main] INFO  marytts.HMMSynthesizer started.
+2016-10-23 16:21:14,932 [main] INFO  marytts.Synthesis Module started (ACOUSTPARAMS->AUDIO, locale null).
+2016-10-23 16:21:14,935 [main] INFO  marytts.HMMSynthesizer Starting power-on self test.
+2016-10-23 16:21:14,936 [main] INFO  marytts.TextToMaryXML Module started (TEXT->RAWMARYXML, locale null).
+2016-10-23 16:21:14,936 [main] INFO  marytts.TextToMaryXML Starting power-on self test.
+2016-10-23 16:21:14,942 [main] WARN  marytts.TextToMaryXML Locale is null, overriding with en_US
+2016-10-23 16:21:14,942 [main] WARN  marytts.TextToMaryXML Locale is null, overriding with en_US
+2016-10-23 16:21:14,943 [main] INFO  marytts.TextToMaryXML Power-on self test complete.
+2016-10-23 16:21:15,120 [main] INFO  marytts.SableParser Module started (SABLE->RAWMARYXML, locale null).
+2016-10-23 16:21:15,120 [main] INFO  marytts.SableParser Starting power-on self test.
+2016-10-23 16:21:15,120 [main] INFO  marytts.SableParser Power-on self test complete.
+2016-10-23 16:21:15,154 [main] INFO  marytts.SSMLParser Module started (SSML->RAWMARYXML, locale null).
+2016-10-23 16:21:15,154 [main] INFO  marytts.SSMLParser Starting power-on self test.
+2016-10-23 16:21:15,155 [main] INFO  marytts.SSMLParser Power-on self test complete.
+2016-10-23 16:21:15,189 [main] INFO  marytts.APMLParser Module started (APML->RAWMARYXML, locale null).
+2016-10-23 16:21:15,189 [main] INFO  marytts.APMLParser Starting power-on self test.
+2016-10-23 16:21:15,189 [main] INFO  marytts.APMLParser Power-on self test complete.
+2016-10-23 16:21:15,216 [main] INFO  marytts.EmotionmlParser Module started (EMOTIONML->RAWMARYXML, locale null).
+2016-10-23 16:21:15,216 [main] INFO  marytts.EmotionmlParser Starting power-on self test.
+2016-10-23 16:21:15,216 [main] INFO  marytts.EmotionmlParser Power-on self test complete.
+2016-10-23 16:21:15,216 [main] INFO  marytts.JTokeniser Module started (RAWMARYXML->TOKENS, locale null).
+2016-10-23 16:21:15,253 [main] INFO  marytts.JTokeniser Starting power-on self test.
+2016-10-23 16:21:15,254 [main] INFO  marytts.JTokeniser Power-on self test complete.
+2016-10-23 16:21:15,254 [main] INFO  marytts.DummyTokens2Words Module started (TOKENS->WORDS, locale null).
+2016-10-23 16:21:15,254 [main] INFO  marytts.DummyTokens2Words Starting power-on self test.
+2016-10-23 16:21:15,254 [main] INFO  marytts.DummyTokens2Words Power-on self test complete.
+2016-10-23 16:21:15,265 [main] INFO  marytts.Prosody Module started (PHONEMES->INTONATION, locale null).
+2016-10-23 16:21:15,266 [main] INFO  marytts.Prosody Starting power-on self test.
+2016-10-23 16:21:15,266 [main] INFO  marytts.Prosody Power-on self test complete.
+2016-10-23 16:21:15,266 [main] INFO  marytts.PronunciationModel Module started (INTONATION->ALLOPHONES, locale null).
+2016-10-23 16:21:15,266 [main] INFO  marytts.PronunciationModel Starting power-on self test.
+2016-10-23 16:21:15,266 [main] INFO  marytts.PronunciationModel Power-on self test complete.
+2016-10-23 16:21:15,266 [main] INFO  marytts.TargetFeatureLister Starting power-on self test.
+2016-10-23 16:21:15,266 [main] INFO  marytts.TargetFeatureLister Power-on self test complete.
+2016-10-23 16:21:15,266 [main] INFO  marytts.TargetFeatureLister Module started (ACOUSTPARAMS->HALFPHONE_TARGETFEATURES, locale null).
+2016-10-23 16:21:15,266 [main] INFO  marytts.TargetFeatureLister Starting power-on self test.
+2016-10-23 16:21:15,267 [main] INFO  marytts.TargetFeatureLister Power-on self test complete.
+2016-10-23 16:21:15,267 [main] INFO  marytts.AcousticModeller Module started (ALLOPHONES->ACOUSTPARAMS, locale null).
+2016-10-23 16:21:15,267 [main] INFO  marytts.AcousticModeller Starting power-on self test.
+2016-10-23 16:21:15,267 [main] INFO  marytts.AcousticModeller Power-on self test complete.
+2016-10-23 16:21:15,267 [main] INFO  marytts.Realised acoustparams extractor Module started (AUDIO->REALISED_ACOUSTPARAMS, locale null).
+2016-10-23 16:21:15,267 [main] INFO  marytts.Realised acoustparams extractor Starting power-on self test.
+2016-10-23 16:21:15,267 [main] INFO  marytts.Realised acoustparams extractor Power-on self test complete.
+2016-10-23 16:21:15,267 [main] INFO  marytts.Realised durations extractor Module started (AUDIO->REALISED_DURATIONS, locale null).
+2016-10-23 16:21:15,267 [main] INFO  marytts.Realised durations extractor Starting power-on self test.
+2016-10-23 16:21:15,268 [main] INFO  marytts.Realised durations extractor Power-on self test complete.
+2016-10-23 16:21:15,268 [main] INFO  marytts.Praat TextGrid generator Module started (AUDIO->PRAAT_TEXTGRID, locale null).
+2016-10-23 16:21:15,268 [main] INFO  marytts.Praat TextGrid generator Starting power-on self test.
+2016-10-23 16:21:15,268 [main] INFO  marytts.Praat TextGrid generator Power-on self test complete.
+2016-10-23 16:21:15,269 [main] INFO  marytts.main Startup complete.
+2016-10-23 16:21:41,041 [Thread-3] INFO  marytts.main Shutting down modules...
+2016-10-23 16:21:41,041 [Thread-3] INFO  marytts.Synthesis Module shut down.
+2016-10-23 16:21:41,041 [Thread-3] INFO  marytts.TextToMaryXML Module shut down.
+2016-10-23 16:21:41,041 [Thread-3] INFO  marytts.SableParser Module shut down.
+2016-10-23 16:21:41,041 [Thread-3] INFO  marytts.SSMLParser Module shut down.
+2016-10-23 16:21:41,041 [Thread-3] INFO  marytts.APMLParser Module shut down.
+2016-10-23 16:21:41,041 [Thread-3] INFO  marytts.EmotionmlParser Module shut down.
+2016-10-23 16:21:41,041 [Thread-3] INFO  marytts.JTokeniser Module shut down.
+2016-10-23 16:21:41,041 [Thread-3] INFO  marytts.DummyTokens2Words Module shut down.
+2016-10-23 16:21:41,041 [Thread-3] INFO  marytts.Prosody Module shut down.
+2016-10-23 16:21:41,041 [Thread-3] INFO  marytts.PronunciationModel Module shut down.
+2016-10-23 16:21:41,041 [Thread-3] INFO  marytts.TargetFeatureLister Module shut down.
+2016-10-23 16:21:41,051 [Thread-3] INFO  marytts.TargetFeatureLister Module shut down.
+2016-10-23 16:21:41,051 [Thread-3] INFO  marytts.AcousticModeller Module shut down.
+2016-10-23 16:21:41,051 [Thread-3] INFO  marytts.Realised acoustparams extractor Module shut down.
+2016-10-23 16:21:41,051 [Thread-3] INFO  marytts.Realised durations extractor Module shut down.
+2016-10-23 16:21:41,051 [Thread-3] INFO  marytts.HTSEngine Module shut down.
+2016-10-23 16:21:41,051 [Thread-3] INFO  marytts.Praat TextGrid generator Module shut down.
+2016-10-23 16:21:41,051 [Thread-3] INFO  marytts.main Shutdown complete.
+2016-10-23 16:22:59,420 [main] INFO  marytts.main Mary starting up...
+2016-10-23 16:22:59,436 [main] INFO  marytts.main Specification version 5.2-beta2
+2016-10-23 16:22:59,436 [main] INFO  marytts.main Implementation version unknown
+2016-10-23 16:22:59,436 [main] INFO  marytts.main Running on a Java 1.8.0_101 implementation by Oracle Corporation, on a Windows 7 platform (amd64, 6.1)
+2016-10-23 16:22:59,451 [main] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.modules.Synthesis'
+2016-10-23 16:22:59,467 [main] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.modules.TextToMaryXML'
+2016-10-23 16:22:59,467 [main] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.modules.SableParser'
+2016-10-23 16:22:59,467 [main] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.modules.SSMLParser'
+2016-10-23 16:22:59,467 [main] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.modules.APMLParser'
+2016-10-23 16:22:59,467 [main] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.modules.EmotionmlParser'
+2016-10-23 16:22:59,467 [main] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.modules.JTokeniser'
+2016-10-23 16:22:59,467 [main] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.modules.DummyTokens2Words'
+2016-10-23 16:22:59,467 [main] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.modules.ProsodyGeneric'
+2016-10-23 16:22:59,467 [main] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.modules.PronunciationModel'
+2016-10-23 16:22:59,467 [main] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.modules.TargetFeatureLister'
+2016-10-23 16:22:59,467 [main] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.modules.HalfPhoneTargetFeatureLister'
+2016-10-23 16:22:59,467 [main] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.modules.AcousticModeller'
+2016-10-23 16:22:59,467 [main] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.modules.RealisedAcoustparamsExtractor'
+2016-10-23 16:22:59,467 [main] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.modules.RealisedDurationsExtractor'
+2016-10-23 16:22:59,467 [main] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.modules.HTSEngine'
+2016-10-23 16:22:59,467 [main] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.modules.PraatTextGridGenerator'
+2016-10-23 16:22:59,482 [main] INFO  marytts.UnitSelectionSynthesizer started.
+2016-10-23 16:22:59,482 [main] INFO  marytts.TargetFeatureLister Module started (ACOUSTPARAMS->TARGETFEATURES, locale null).
+2016-10-23 16:22:59,482 [main] INFO  marytts.HTSEngine Module started (TARGETFEATURES->AUDIO, locale null).
+2016-10-23 16:22:59,482 [main] INFO  marytts.HMMSynthesizer started.
+2016-10-23 16:22:59,482 [main] INFO  marytts.Synthesis Module started (ACOUSTPARAMS->AUDIO, locale null).
+2016-10-23 16:22:59,482 [main] INFO  marytts.HMMSynthesizer Starting power-on self test.
+2016-10-23 16:22:59,482 [main] INFO  marytts.TextToMaryXML Module started (TEXT->RAWMARYXML, locale null).
+2016-10-23 16:22:59,482 [main] INFO  marytts.TextToMaryXML Starting power-on self test.
+2016-10-23 16:22:59,482 [main] WARN  marytts.TextToMaryXML Locale is null, overriding with en_US
+2016-10-23 16:22:59,498 [main] WARN  marytts.TextToMaryXML Locale is null, overriding with en_US
+2016-10-23 16:22:59,498 [main] INFO  marytts.TextToMaryXML Power-on self test complete.
+2016-10-23 16:22:59,654 [main] INFO  marytts.SableParser Module started (SABLE->RAWMARYXML, locale null).
+2016-10-23 16:22:59,654 [main] INFO  marytts.SableParser Starting power-on self test.
+2016-10-23 16:22:59,654 [main] INFO  marytts.SableParser Power-on self test complete.
+2016-10-23 16:22:59,685 [main] INFO  marytts.SSMLParser Module started (SSML->RAWMARYXML, locale null).
+2016-10-23 16:22:59,685 [main] INFO  marytts.SSMLParser Starting power-on self test.
+2016-10-23 16:22:59,685 [main] INFO  marytts.SSMLParser Power-on self test complete.
+2016-10-23 16:22:59,716 [main] INFO  marytts.APMLParser Module started (APML->RAWMARYXML, locale null).
+2016-10-23 16:22:59,716 [main] INFO  marytts.APMLParser Starting power-on self test.
+2016-10-23 16:22:59,716 [main] INFO  marytts.APMLParser Power-on self test complete.
+2016-10-23 16:22:59,748 [main] INFO  marytts.EmotionmlParser Module started (EMOTIONML->RAWMARYXML, locale null).
+2016-10-23 16:22:59,748 [main] INFO  marytts.EmotionmlParser Starting power-on self test.
+2016-10-23 16:22:59,748 [main] INFO  marytts.EmotionmlParser Power-on self test complete.
+2016-10-23 16:22:59,748 [main] INFO  marytts.JTokeniser Module started (RAWMARYXML->TOKENS, locale null).
+2016-10-23 16:22:59,779 [main] INFO  marytts.JTokeniser Starting power-on self test.
+2016-10-23 16:22:59,779 [main] INFO  marytts.JTokeniser Power-on self test complete.
+2016-10-23 16:22:59,779 [main] INFO  marytts.DummyTokens2Words Module started (TOKENS->WORDS, locale null).
+2016-10-23 16:22:59,779 [main] INFO  marytts.DummyTokens2Words Starting power-on self test.
+2016-10-23 16:22:59,779 [main] INFO  marytts.DummyTokens2Words Power-on self test complete.
+2016-10-23 16:22:59,794 [main] INFO  marytts.Prosody Module started (PHONEMES->INTONATION, locale null).
+2016-10-23 16:22:59,794 [main] INFO  marytts.Prosody Starting power-on self test.
+2016-10-23 16:22:59,794 [main] INFO  marytts.Prosody Power-on self test complete.
+2016-10-23 16:22:59,794 [main] INFO  marytts.PronunciationModel Module started (INTONATION->ALLOPHONES, locale null).
+2016-10-23 16:22:59,794 [main] INFO  marytts.PronunciationModel Starting power-on self test.
+2016-10-23 16:22:59,794 [main] INFO  marytts.PronunciationModel Power-on self test complete.
+2016-10-23 16:22:59,794 [main] INFO  marytts.TargetFeatureLister Starting power-on self test.
+2016-10-23 16:22:59,794 [main] INFO  marytts.TargetFeatureLister Power-on self test complete.
+2016-10-23 16:22:59,794 [main] INFO  marytts.TargetFeatureLister Module started (ACOUSTPARAMS->HALFPHONE_TARGETFEATURES, locale null).
+2016-10-23 16:22:59,794 [main] INFO  marytts.TargetFeatureLister Starting power-on self test.
+2016-10-23 16:22:59,794 [main] INFO  marytts.TargetFeatureLister Power-on self test complete.
+2016-10-23 16:22:59,794 [main] INFO  marytts.AcousticModeller Module started (ALLOPHONES->ACOUSTPARAMS, locale null).
+2016-10-23 16:22:59,794 [main] INFO  marytts.AcousticModeller Starting power-on self test.
+2016-10-23 16:22:59,794 [main] INFO  marytts.AcousticModeller Power-on self test complete.
+2016-10-23 16:22:59,794 [main] INFO  marytts.Realised acoustparams extractor Module started (AUDIO->REALISED_ACOUSTPARAMS, locale null).
+2016-10-23 16:22:59,794 [main] INFO  marytts.Realised acoustparams extractor Starting power-on self test.
+2016-10-23 16:22:59,794 [main] INFO  marytts.Realised acoustparams extractor Power-on self test complete.
+2016-10-23 16:22:59,794 [main] INFO  marytts.Realised durations extractor Module started (AUDIO->REALISED_DURATIONS, locale null).
+2016-10-23 16:22:59,794 [main] INFO  marytts.Realised durations extractor Starting power-on self test.
+2016-10-23 16:22:59,794 [main] INFO  marytts.Realised durations extractor Power-on self test complete.
+2016-10-23 16:22:59,794 [main] INFO  marytts.Praat TextGrid generator Module started (AUDIO->PRAAT_TEXTGRID, locale null).
+2016-10-23 16:22:59,794 [main] INFO  marytts.Praat TextGrid generator Starting power-on self test.
+2016-10-23 16:22:59,794 [main] INFO  marytts.Praat TextGrid generator Power-on self test complete.
+2016-10-23 16:22:59,794 [main] INFO  marytts.main Startup complete.
+2016-10-23 16:25:49,434 [main] INFO  marytts.main Mary starting up...
+2016-10-23 16:25:49,434 [main] INFO  marytts.main Specification version 5.2-beta2
+2016-10-23 16:25:49,434 [main] INFO  marytts.main Implementation version unknown
+2016-10-23 16:25:49,434 [main] INFO  marytts.main Running on a Java 1.8.0_101 implementation by Oracle Corporation, on a Windows 7 platform (amd64, 6.1)
+2016-10-23 16:25:49,481 [main] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.modules.Synthesis'
+2016-10-23 16:25:49,481 [main] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.modules.TextToMaryXML'
+2016-10-23 16:25:49,481 [main] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.modules.SableParser'
+2016-10-23 16:25:49,481 [main] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.modules.SSMLParser'
+2016-10-23 16:25:49,481 [main] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.modules.APMLParser'
+2016-10-23 16:25:49,481 [main] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.modules.EmotionmlParser'
+2016-10-23 16:25:49,481 [main] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.modules.JTokeniser'
+2016-10-23 16:25:49,481 [main] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.modules.DummyTokens2Words'
+2016-10-23 16:25:49,481 [main] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.modules.ProsodyGeneric'
+2016-10-23 16:25:49,481 [main] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.modules.PronunciationModel'
+2016-10-23 16:25:49,481 [main] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.modules.TargetFeatureLister'
+2016-10-23 16:25:49,481 [main] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.modules.HalfPhoneTargetFeatureLister'
+2016-10-23 16:25:49,481 [main] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.modules.AcousticModeller'
+2016-10-23 16:25:49,481 [main] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.modules.RealisedAcoustparamsExtractor'
+2016-10-23 16:25:49,481 [main] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.modules.RealisedDurationsExtractor'
+2016-10-23 16:25:49,481 [main] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.modules.HTSEngine'
+2016-10-23 16:25:49,481 [main] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.modules.PraatTextGridGenerator'
+2016-10-23 16:25:49,497 [main] INFO  marytts.UnitSelectionSynthesizer started.
+2016-10-23 16:25:49,497 [main] INFO  marytts.TargetFeatureLister Module started (ACOUSTPARAMS->TARGETFEATURES, locale null).
+2016-10-23 16:25:49,497 [main] INFO  marytts.HTSEngine Module started (TARGETFEATURES->AUDIO, locale null).
+2016-10-23 16:25:49,497 [main] INFO  marytts.HMMSynthesizer started.
+2016-10-23 16:25:49,497 [main] INFO  marytts.Synthesis Module started (ACOUSTPARAMS->AUDIO, locale null).
+2016-10-23 16:25:49,497 [main] INFO  marytts.HMMSynthesizer Starting power-on self test.
+2016-10-23 16:25:49,497 [main] INFO  marytts.TextToMaryXML Module started (TEXT->RAWMARYXML, locale null).
+2016-10-23 16:25:49,497 [main] INFO  marytts.TextToMaryXML Starting power-on self test.
+2016-10-23 16:25:49,497 [main] WARN  marytts.TextToMaryXML Locale is null, overriding with en_US
+2016-10-23 16:25:49,497 [main] WARN  marytts.TextToMaryXML Locale is null, overriding with en_US
+2016-10-23 16:25:49,497 [main] INFO  marytts.TextToMaryXML Power-on self test complete.
+2016-10-23 16:25:49,653 [main] INFO  marytts.SableParser Module started (SABLE->RAWMARYXML, locale null).
+2016-10-23 16:25:49,668 [main] INFO  marytts.SableParser Starting power-on self test.
+2016-10-23 16:25:49,668 [main] INFO  marytts.SableParser Power-on self test complete.
+2016-10-23 16:25:49,700 [main] INFO  marytts.SSMLParser Module started (SSML->RAWMARYXML, locale null).
+2016-10-23 16:25:49,700 [main] INFO  marytts.SSMLParser Starting power-on self test.
+2016-10-23 16:25:49,700 [main] INFO  marytts.SSMLParser Power-on self test complete.
+2016-10-23 16:25:49,731 [main] INFO  marytts.APMLParser Module started (APML->RAWMARYXML, locale null).
+2016-10-23 16:25:49,731 [main] INFO  marytts.APMLParser Starting power-on self test.
+2016-10-23 16:25:49,731 [main] INFO  marytts.APMLParser Power-on self test complete.
+2016-10-23 16:25:49,746 [main] INFO  marytts.EmotionmlParser Module started (EMOTIONML->RAWMARYXML, locale null).
+2016-10-23 16:25:49,746 [main] INFO  marytts.EmotionmlParser Starting power-on self test.
+2016-10-23 16:25:49,746 [main] INFO  marytts.EmotionmlParser Power-on self test complete.
+2016-10-23 16:25:49,746 [main] INFO  marytts.JTokeniser Module started (RAWMARYXML->TOKENS, locale null).
+2016-10-23 16:25:49,778 [main] INFO  marytts.JTokeniser Starting power-on self test.
+2016-10-23 16:25:49,778 [main] INFO  marytts.JTokeniser Power-on self test complete.
+2016-10-23 16:25:49,778 [main] INFO  marytts.DummyTokens2Words Module started (TOKENS->WORDS, locale null).
+2016-10-23 16:25:49,778 [main] INFO  marytts.DummyTokens2Words Starting power-on self test.
+2016-10-23 16:25:49,778 [main] INFO  marytts.DummyTokens2Words Power-on self test complete.
+2016-10-23 16:25:49,793 [main] INFO  marytts.Prosody Module started (PHONEMES->INTONATION, locale null).
+2016-10-23 16:25:49,793 [main] INFO  marytts.Prosody Starting power-on self test.
+2016-10-23 16:25:49,793 [main] INFO  marytts.Prosody Power-on self test complete.
+2016-10-23 16:25:49,793 [main] INFO  marytts.PronunciationModel Module started (INTONATION->ALLOPHONES, locale null).
+2016-10-23 16:25:49,793 [main] INFO  marytts.PronunciationModel Starting power-on self test.
+2016-10-23 16:25:49,793 [main] INFO  marytts.PronunciationModel Power-on self test complete.
+2016-10-23 16:25:49,793 [main] INFO  marytts.TargetFeatureLister Starting power-on self test.
+2016-10-23 16:25:49,793 [main] INFO  marytts.TargetFeatureLister Power-on self test complete.
+2016-10-23 16:25:49,793 [main] INFO  marytts.TargetFeatureLister Module started (ACOUSTPARAMS->HALFPHONE_TARGETFEATURES, locale null).
+2016-10-23 16:25:49,793 [main] INFO  marytts.TargetFeatureLister Starting power-on self test.
+2016-10-23 16:25:49,793 [main] INFO  marytts.TargetFeatureLister Power-on self test complete.
+2016-10-23 16:25:49,793 [main] INFO  marytts.AcousticModeller Module started (ALLOPHONES->ACOUSTPARAMS, locale null).
+2016-10-23 16:25:49,793 [main] INFO  marytts.AcousticModeller Starting power-on self test.
+2016-10-23 16:25:49,793 [main] INFO  marytts.AcousticModeller Power-on self test complete.
+2016-10-23 16:25:49,793 [main] INFO  marytts.Realised acoustparams extractor Module started (AUDIO->REALISED_ACOUSTPARAMS, locale null).
+2016-10-23 16:25:49,793 [main] INFO  marytts.Realised acoustparams extractor Starting power-on self test.
+2016-10-23 16:25:49,793 [main] INFO  marytts.Realised acoustparams extractor Power-on self test complete.
+2016-10-23 16:25:49,793 [main] INFO  marytts.Realised durations extractor Module started (AUDIO->REALISED_DURATIONS, locale null).
+2016-10-23 16:25:49,793 [main] INFO  marytts.Realised durations extractor Starting power-on self test.
+2016-10-23 16:25:49,793 [main] INFO  marytts.Realised durations extractor Power-on self test complete.
+2016-10-23 16:25:49,793 [main] INFO  marytts.Praat TextGrid generator Module started (AUDIO->PRAAT_TEXTGRID, locale null).
+2016-10-23 16:25:49,793 [main] INFO  marytts.Praat TextGrid generator Starting power-on self test.
+2016-10-23 16:25:49,793 [main] INFO  marytts.Praat TextGrid generator Power-on self test complete.
+2016-10-23 16:25:49,793 [main] INFO  marytts.main Startup complete.
+2016-10-23 16:30:04,893 [main] INFO  marytts.main Mary starting up...
+2016-10-23 16:30:04,893 [main] INFO  marytts.main Specification version 5.2-beta2
+2016-10-23 16:30:04,893 [main] INFO  marytts.main Implementation version unknown
+2016-10-23 16:30:04,893 [main] INFO  marytts.main Running on a Java 1.8.0_101 implementation by Oracle Corporation, on a Windows 7 platform (amd64, 6.1)
+2016-10-23 16:30:04,924 [main] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.modules.Synthesis'
+2016-10-23 16:30:04,940 [main] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.modules.TextToMaryXML'
+2016-10-23 16:30:04,940 [main] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.modules.SableParser'
+2016-10-23 16:30:04,940 [main] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.modules.SSMLParser'
+2016-10-23 16:30:04,940 [main] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.modules.APMLParser'
+2016-10-23 16:30:04,940 [main] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.modules.EmotionmlParser'
+2016-10-23 16:30:04,940 [main] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.modules.JTokeniser'
+2016-10-23 16:30:04,940 [main] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.modules.DummyTokens2Words'
+2016-10-23 16:30:04,940 [main] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.modules.ProsodyGeneric'
+2016-10-23 16:30:04,940 [main] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.modules.PronunciationModel'
+2016-10-23 16:30:04,940 [main] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.modules.TargetFeatureLister'
+2016-10-23 16:30:04,940 [main] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.modules.HalfPhoneTargetFeatureLister'
+2016-10-23 16:30:04,940 [main] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.modules.AcousticModeller'
+2016-10-23 16:30:04,940 [main] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.modules.RealisedAcoustparamsExtractor'
+2016-10-23 16:30:04,940 [main] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.modules.RealisedDurationsExtractor'
+2016-10-23 16:30:04,940 [main] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.modules.HTSEngine'
+2016-10-23 16:30:04,940 [main] INFO  marytts.ModuleRegistry Now initiating mary module 'marytts.modules.PraatTextGridGenerator'
+2016-10-23 16:30:04,955 [main] INFO  marytts.UnitSelectionSynthesizer started.
+2016-10-23 16:30:04,955 [main] INFO  marytts.TargetFeatureLister Module started (ACOUSTPARAMS->TARGETFEATURES, locale null).
+2016-10-23 16:30:04,955 [main] INFO  marytts.HTSEngine Module started (TARGETFEATURES->AUDIO, locale null).
+2016-10-23 16:30:04,955 [main] INFO  marytts.HMMSynthesizer started.
+2016-10-23 16:30:04,955 [main] INFO  marytts.Synthesis Module started (ACOUSTPARAMS->AUDIO, locale null).
+2016-10-23 16:30:04,955 [main] INFO  marytts.HMMSynthesizer Starting power-on self test.
+2016-10-23 16:30:04,955 [main] INFO  marytts.TextToMaryXML Module started (TEXT->RAWMARYXML, locale null).
+2016-10-23 16:30:04,955 [main] INFO  marytts.TextToMaryXML Starting power-on self test.
+2016-10-23 16:30:04,955 [main] WARN  marytts.TextToMaryXML Locale is null, overriding with en_US
+2016-10-23 16:30:04,955 [main] WARN  marytts.TextToMaryXML Locale is null, overriding with en_US
+2016-10-23 16:30:04,955 [main] INFO  marytts.TextToMaryXML Power-on self test complete.
+2016-10-23 16:30:05,111 [main] INFO  marytts.SableParser Module started (SABLE->RAWMARYXML, locale null).
+2016-10-23 16:30:05,111 [main] INFO  marytts.SableParser Starting power-on self test.
+2016-10-23 16:30:05,111 [main] INFO  marytts.SableParser Power-on self test complete.
+2016-10-23 16:30:05,158 [main] INFO  marytts.SSMLParser Module started (SSML->RAWMARYXML, locale null).
+2016-10-23 16:30:05,158 [main] INFO  marytts.SSMLParser Starting power-on self test.
+2016-10-23 16:30:05,158 [main] INFO  marytts.SSMLParser Power-on self test complete.
+2016-10-23 16:30:05,189 [main] INFO  marytts.APMLParser Module started (APML->RAWMARYXML, locale null).
+2016-10-23 16:30:05,189 [main] INFO  marytts.APMLParser Starting power-on self test.
+2016-10-23 16:30:05,189 [main] INFO  marytts.APMLParser Power-on self test complete.
+2016-10-23 16:30:05,205 [main] INFO  marytts.EmotionmlParser Module started (EMOTIONML->RAWMARYXML, locale null).
+2016-10-23 16:30:05,205 [main] INFO  marytts.EmotionmlParser Starting power-on self test.
+2016-10-23 16:30:05,205 [main] INFO  marytts.EmotionmlParser Power-on self test complete.
+2016-10-23 16:30:05,205 [main] INFO  marytts.JTokeniser Module started (RAWMARYXML->TOKENS, locale null).
+2016-10-23 16:30:05,252 [main] INFO  marytts.JTokeniser Starting power-on self test.
+2016-10-23 16:30:05,252 [main] INFO  marytts.JTokeniser Power-on self test complete.
+2016-10-23 16:30:05,252 [main] INFO  marytts.DummyTokens2Words Module started (TOKENS->WORDS, locale null).
+2016-10-23 16:30:05,252 [main] INFO  marytts.DummyTokens2Words Starting power-on self test.
+2016-10-23 16:30:05,252 [main] INFO  marytts.DummyTokens2Words Power-on self test complete.
+2016-10-23 16:30:05,252 [main] INFO  marytts.Prosody Module started (PHONEMES->INTONATION, locale null).
+2016-10-23 16:30:05,252 [main] INFO  marytts.Prosody Starting power-on self test.
+2016-10-23 16:30:05,252 [main] INFO  marytts.Prosody Power-on self test complete.
+2016-10-23 16:30:05,252 [main] INFO  marytts.PronunciationModel Module started (INTONATION->ALLOPHONES, locale null).
+2016-10-23 16:30:05,252 [main] INFO  marytts.PronunciationModel Starting power-on self test.
+2016-10-23 16:30:05,252 [main] INFO  marytts.PronunciationModel Power-on self test complete.
+2016-10-23 16:30:05,252 [main] INFO  marytts.TargetFeatureLister Starting power-on self test.
+2016-10-23 16:30:05,252 [main] INFO  marytts.TargetFeatureLister Power-on self test complete.
+2016-10-23 16:30:05,252 [main] INFO  marytts.TargetFeatureLister Module started (ACOUSTPARAMS->HALFPHONE_TARGETFEATURES, locale null).
+2016-10-23 16:30:05,252 [main] INFO  marytts.TargetFeatureLister Starting power-on self test.
+2016-10-23 16:30:05,252 [main] INFO  marytts.TargetFeatureLister Power-on self test complete.
+2016-10-23 16:30:05,252 [main] INFO  marytts.AcousticModeller Module started (ALLOPHONES->ACOUSTPARAMS, locale null).
+2016-10-23 16:30:05,252 [main] INFO  marytts.AcousticModeller Starting power-on self test.
+2016-10-23 16:30:05,252 [main] INFO  marytts.AcousticModeller Power-on self test complete.
+2016-10-23 16:30:05,252 [main] INFO  marytts.Realised acoustparams extractor Module started (AUDIO->REALISED_ACOUSTPARAMS, locale null).
+2016-10-23 16:30:05,252 [main] INFO  marytts.Realised acoustparams extractor Starting power-on self test.
+2016-10-23 16:30:05,252 [main] INFO  marytts.Realised acoustparams extractor Power-on self test complete.
+2016-10-23 16:30:05,252 [main] INFO  marytts.Realised durations extractor Module started (AUDIO->REALISED_DURATIONS, locale null).
+2016-10-23 16:30:05,252 [main] INFO  marytts.Realised durations extractor Starting power-on self test.
+2016-10-23 16:30:05,252 [main] INFO  marytts.Realised durations extractor Power-on self test complete.
+2016-10-23 16:30:05,252 [main] INFO  marytts.Praat TextGrid generator Module started (AUDIO->PRAAT_TEXTGRID, locale null).
+2016-10-23 16:30:05,252 [main] INFO  marytts.Praat TextGrid generator Starting power-on self test.
+2016-10-23 16:30:05,252 [main] INFO  marytts.Praat TextGrid generator Power-on self test complete.
+2016-10-23 16:30:05,252 [main] INFO  marytts.main Startup complete.
+2016-10-23 16:30:17,302 [Thread-3] INFO  marytts.main Shutting down modules...
+2016-10-23 16:30:17,302 [Thread-3] INFO  marytts.Synthesis Module shut down.
+2016-10-23 16:30:17,302 [Thread-3] INFO  marytts.TextToMaryXML Module shut down.
+2016-10-23 16:30:17,302 [Thread-3] INFO  marytts.SableParser Module shut down.
+2016-10-23 16:30:17,302 [Thread-3] INFO  marytts.SSMLParser Module shut down.
+2016-10-23 16:30:17,312 [Thread-3] INFO  marytts.APMLParser Module shut down.
+2016-10-23 16:30:17,312 [Thread-3] INFO  marytts.EmotionmlParser Module shut down.
+2016-10-23 16:30:17,312 [Thread-3] INFO  marytts.JTokeniser Module shut down.
+2016-10-23 16:30:17,312 [Thread-3] INFO  marytts.DummyTokens2Words Module shut down.
+2016-10-23 16:30:17,312 [Thread-3] INFO  marytts.Prosody Module shut down.
+2016-10-23 16:30:17,312 [Thread-3] INFO  marytts.PronunciationModel Module shut down.
+2016-10-23 16:30:17,312 [Thread-3] INFO  marytts.TargetFeatureLister Module shut down.
+2016-10-23 16:30:17,312 [Thread-3] INFO  marytts.TargetFeatureLister Module shut down.
+2016-10-23 16:30:17,312 [Thread-3] INFO  marytts.AcousticModeller Module shut down.
+2016-10-23 16:30:17,312 [Thread-3] INFO  marytts.Realised acoustparams extractor Module shut down.
+2016-10-23 16:30:17,312 [Thread-3] INFO  marytts.Realised durations extractor Module shut down.
+2016-10-23 16:30:17,312 [Thread-3] INFO  marytts.HTSEngine Module shut down.
+2016-10-23 16:30:17,312 [Thread-3] INFO  marytts.Praat TextGrid generator Module shut down.
+2016-10-23 16:30:17,312 [Thread-3] INFO  marytts.main Shutdown complete.

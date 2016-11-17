@@ -1,0 +1,73 @@
+ 
+<domain>
+	<!-- Natural language understanding models, constituted of two models: one model to recognise
+	the user dialogue act. from the utterance, and one model to update the slots in accordance with 
+	this dialogue act.
+
+	The user dialogue act associated with each utterance is represented here as a list of 
+	basic acts (such as "Confirm" or "Inform(...)").  This representation allows us to 
+	capture the fact that an utterance such as "Yes, 3 tickets" contains both a confirmation
+	and a new information about the number of tickets. 
+	-->
+
+	<model trigger="u_u">
+		<!-- This model takes the raw user utterance as input, and outputs the corresponding 
+	  dialogue acts from the user. This model uses simple shallow patterns to extract 
+	  domain-specific information (such as airports or dates) from the utterance. -->
+		<rule>
+			<case>
+				<condition>
+					<if var="State" relation="in" value="[California,Florida,Georgia]" />
+					<if var="u_u" relation="contains" value="{State}" />
+				</condition>
+				<effect>
+					<set var="a_u" value="Guess" exclusive="false" />
+				</effect>
+			</case>
+		</rule>
+		<rule priority="2">
+			<case>
+				<effect>
+					<set var="a_u" value="AskClue" />
+				</effect>
+			</case>
+		</rule>
+	</model>
+	
+	<!-- model to take dialogue act from user and fill corresponding slot  -->
+	<model trigger="a_u">
+		<rule>
+			<case>
+				<condition>
+					<if var="current_step" value="Prompt" />
+					<if var="a_u" relation="contains" value="Guess" />
+				</condition>
+				<effect>
+					<set var="current_step" value="CheckGuess" />
+					<set var="State" value="{State}"/>
+				</effect>
+			</case>
+			<case>
+				<condition>
+					<if var="a_u" relation="contains" value="AskClue" />
+				</condition>
+				<effect>
+					<set var="{current_step}" value="{Prompt}" />
+				</effect>
+			</case>
+		</rule>
+		
+		<!-- Catch-all rule that simply keeps the slots to their current value
+		in the absence of any other new information. -->
+		<rule priority="2">
+			<case>
+				<effect>
+					<set var="State" value="{State}" />
+				</effect>
+			</case>
+		</rule>
+		
+	</model>
+	
+	
+</domain>

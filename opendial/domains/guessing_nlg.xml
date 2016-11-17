@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<domain>
+	<!-- Natural language generation models. The domain can produce new system 
+		utterance either when the current step is changed, or when a new system action 
+		is selected. -->
+
+
+	<model trigger="current_step">
+		<!--Model producing new system utterances when the current step is moved 
+			to a new step. -->
+
+		<rule>
+			<case>
+				<condition>
+					<if var="current_step" value="Prompt" />
+				</condition>
+				<effect util="0.33">
+					<set var="u_m" value="This state has 55 electoral college votes. Please try and guess the state." />
+				</effect>
+				<effect util="0.33">
+					<set var="u_m" value="This state houses Silicon Valley. Please try and guess the state." />
+				</effect>
+				<effect util="0.33">
+					<set var="u_m" value="Google has their head quarters here. Please try and guess the state." />
+				</effect>
+			</case>
+		</rule>
+
+		<rule>
+			<case>
+				<condition>
+					<if var="current_step" value="CheckGuess" />
+					<if var="State" relation="=" value="California"/>
+				</condition>
+				<effect util="1">
+					<set var="u_m" value="Congratulations!" />
+				</effect>
+			</case>
+		</rule>
+		
+		<rule>
+			<case>
+				<condition>
+					<if var="current_step" value="Guess" />
+				</condition>
+				<effect util="1">
+					<set var="u_m" value="I'm sorry, you suck at this game." />
+				</effect>
+			</case>
+		</rule>
+
+		<!-- Closes the interaction -->
+		<rule>
+			<case>
+				<condition>
+					<if var="current_step" value="Close" />
+				</condition>
+				<effect util="1">
+					<set var="u_m" value="Thank you for playing!" />
+				</effect>
+			</case>
+		</rule>
+
+	</model>
+
+
+	<model trigger="a_m">
+		<!-- Model producing new system utterances related to the last system action -->
+
+		<!-- giving clue -->
+		<rule>
+			<case>
+				<condition>
+					<if var="a_m" value="GiveClue" />
+				</condition>
+				<effect util="0.33">
+					<set var="u_m" value="This state has 55 electoral college votes. Please try and guess the state." />
+				</effect>
+				<effect util="0.33">
+					<set var="u_m" value="This state houses Silicon Valley. Please try and guess the state." />
+				</effect>
+				<effect util="0.33">
+					<set var="u_m" value="Google has their head quarters here. Please try and guess the state." />
+				</effect>
+			</case>
+		</rule>
+		
+		<!-- checking their guess -->
+		<rule>
+			<case>
+				<condition>
+					<if var="a_m" value="Confirm(State,{State})" />
+					<if var="State" relation="=" value="California"/>
+				</condition>
+				<effect util="1">
+					<set var="u_m" value="Correct!" />
+					<set var="current_step" value="Close" />
+				</effect>
+			</case>
+			<case>
+				<condition>
+					<if var="a_m" value="Confirm(State,{State})" />
+				</condition>
+				<effect util="1">
+					<set var="u_m" value="Wrong. Wrong. You suck." />
+					<set var="current_step" value="Prompt" />
+				</effect>
+			</case>
+		</rule>
+		
+	</model>
+
+</domain>

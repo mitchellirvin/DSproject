@@ -1,0 +1,54 @@
+<domain>
+<!-- Code what user says-->
+    <!-- model to take the user's act and determine the machine's act accordingly --> 
+    <!-- based on the a_u and current step --> 
+    <model trigger="a_u">
+        
+        <!-- rule for current step begin -->
+    	<rule>
+    		<case>
+    		    <!-- if the user act was to agree to begin the game -->
+    			<condition>
+    				<if var="current_step" relation="=" value="begin"/>
+    				<if var="a_u" relation="=" value="agree({join})"/>
+    			</condition>
+    			<!-- set machine act to confirm that they're agreeing -->
+    			<effect util="1">
+    				<set var="a_m" value="CheckAgree({join})"/>
+    			</effect>
+    		</case>
+    	</rule>
+    
+        <!-- rule for current step first hint -->
+    	<rule>
+    		<case>
+    		    <!-- if the user guessed something -->
+    			<condition>
+    				<if var="current_step" relation="=" value="firsth|secondh|thirdh|finalh"/>
+    				<if var="a_u" relation="=" value="Guess({X})"/>
+    			</condition>
+    			<!-- set the machine act to be check guess and pass the variable that they guessed -->
+    			<effect util="1">
+    				<set var="a_m" value="CheckGuess({X})"/>
+    			</effect>
+    		</case>
+    	</rule>
+    
+    	<!-- rule for if they asked for a hint -->
+    	<rule>
+    		<case>
+    		    <!-- if they asked for a hint -->
+    			<condition>
+    				<if var="current_step" relation="=" value="firsth|secondh|thirdh|finalh"/>
+    				<if var="a_u" relation="=" value="ask({hint})"/>
+    			</condition>
+    			<!-- set machine act to check  -->
+    			<effect util="1">
+    				<set var="a_m" value="CheckAsk({hint})"/>
+    			</effect>
+    		</case>
+    	</rule> 
+    	
+</model> <!-- END MODEL TRIGGERED BY A_U THAT DECIDES A_M -->
+    	
+</domain>

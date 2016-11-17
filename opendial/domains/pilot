@@ -1,0 +1,150 @@
+<domain>
+	<!-- user utterance -->
+ <model trigger="u_u">
+   <rule>
+    <case>
+     <condition operator="or">
+      <if var="u_u" value="turn * left" relation="contains"/>
+      <if var="u_u" value="move * left" relation="contains"/>
+      <if var="u_u" value="go * left" relation="contains"/>
+     </condition>
+     <effect prob="1">
+      <set var="a_u" value="Request(Left)" />
+     </effect>
+    </case>
+    <case>
+     <condition operator="or">
+      <if var="u_u" value="turn * right" relation="contains"/>
+      <if var="u_u" value="move * right" relation="contains"/>
+      <if var="u_u" value="go * right" relation="contains"/>
+     </condition>
+     <effect prob="1">
+      <set var="a_u" value="Request(Right)" />
+    </effect>
+   </case>
+   <case>
+    <condition operator="or">
+      <if var="u_u" value="move * forward" relation="contains"/>
+      <if var="u_u" value="go * forward" relation="contains"/>
+      <if var="u_u" value="go * straight" relation="contains"/>
+    </condition>
+    <effect prob="1">
+      <set var="a_u" value="Request(Forward)" />
+    </effect>
+   </case>
+   <case>
+    <condition operator="or">
+      <if var="u_u" value="move * backward" relation="contains"/>
+      <if var="u_u" value="go * backward" relation="contains"/>
+    </condition>
+    <effect prob="1">
+      <set var="a_u" value="Request(Backward)" />
+    </effect>
+   </case>
+   <case>
+    <effect prob="1">
+      <set var="a_u" value="None" />
+    </effect>
+   </case>
+  </rule>
+ </model>
+ 
+ <!-- act user -->
+ <model trigger="a_u">
+    <rule>
+      <case>
+        <condition>
+          <if var="a_u" value="Request(Left)" />
+        </condition>
+        <effect util="1">
+          <set var="a_m" value="Move(Left)" />
+        </effect>
+      </case>
+      <case>
+        <condition>
+          <if var="a_u" value="Request(Right)" />
+        </condition>
+        <effect util="1">
+          <set var="a_m" value="Move(Right)" />
+        </effect>
+      </case>
+      <case>
+        <condition>
+          <if var="a_u" value="Request(Forward)" />
+        </condition>
+        <effect util="1">
+          <set var="a_m" value="Move(Forward)" />
+        </effect>
+      </case>
+      <case>
+        <condition>
+          <if var="a_u" value="Request(Backward)" />
+        </condition>
+        <effect util="1">
+          <set var="a_m" value="Move(Backward)" />
+        </effect>
+      </case>
+    </rule>
+    <rule>
+      <case>
+        <effect util="-0.5">
+          <set var="a_m" value="Move(*)"/>
+        </effect>
+      </case>
+  	</rule>
+   	<rule>
+      <case>
+        <effect util="0.2">
+          <set var="a_m" value="AskRepeat"/>
+        </effect>
+      </case>
+  	</rule>
+</model>
+
+<!-- act machine -->
+<model trigger="a_m">
+  <rule>
+      <case>
+      <condition>
+        <if var="a_m" value="Move(Left)"/>
+      </condition>
+      <effect util="1">
+        <set var="u_m" value="Ok, turning left!"/>
+      </effect>
+    </case>
+    <case>
+      <condition>
+        <if var="a_m" value="Move(Right)"/>
+      </condition>
+      <effect util="1">
+        <set var="u_m" value="Ok, turning right!"/>
+      </effect>
+    </case>
+    <case>
+      <condition>
+        <if var="a_m" value="Move(Forward)"/>
+      </condition>
+      <effect util="1">
+        <set var="u_m" value="Ok, moving forward!"/>
+      </effect>
+    </case>
+    <case>
+      <condition>
+        <if var="a_m" value="Move(Backward)"/>
+      </condition>
+      <effect util="1">
+        <set var="u_m" value="Ok, moving backward!"/>
+      </effect>
+    </case>
+    <case>
+      <condition>
+        <if var="a_m" value="AskRepeat"/>
+      </condition>
+      <effect util="1">
+        <set var="u_m" value="Sorry, could you repeat?"/>
+      </effect>
+    </case>
+  </rule>
+</model>
+
+</domain>

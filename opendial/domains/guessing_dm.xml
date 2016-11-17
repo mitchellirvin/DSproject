@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<domain>
+	<!-- Dialogue management models, composed of three models: an action selection 
+		model to find the best system action to execute, a transition model that 
+		specifies how the selected action modifies the current dialogue state, and 
+		a prediction model for the prior distributions on the destinations, 
+		departures and next user dialogue act. -->
+
+	<model trigger="State">
+		<!-- This model specifies the utilities of various system actions, such 
+			as clarification requests (repetitions and confirmations) and 
+			grounding actions. -->
+		<!-- When the current step is Prompt, set machine act to GiveClue -->
+		<rule>
+			<case>
+				<condition>
+					<if var="current_step" value="Prompt" />
+				</condition>
+				<effect util="5">
+					<set var="a_m" value="GiveClue" />
+				</effect>
+				<effect util="0.5">
+					<set var="a_m" value="AskRepeat" />
+				</effect>
+			</case>
+		</rule>
+		
+		<!-- When the current step is CheckGuess, set machine act to Confirm -->
+		<rule>
+			<case>
+				<condition>
+					<if var="current_step" value="CheckGuess" />
+				</condition>
+				<effect util="5">
+					<set var="a_m" value="Confirm(State,{State})" />
+				</effect>
+				<effect util="0.5">
+					<set var="a_m" value="AskRepeat" />
+				</effect>
+			</case>
+		</rule>
+
+		<!-- Specifies the utility of a repetition request -->
+		<rule>
+			<case>
+				<condition>
+					<if var="a_u" relation="!=" value="None" />
+				</condition>
+				<effect util="0.1">
+					<set var="a_m" value="AskRepeat" />
+				</effect>
+			</case>
+		</rule>
+
+		<!-- Specifies the "base" utility of all possible actions, in the absence 
+			of any other information (allows to set an implicit threshold on the system 
+			confidence before selecting a particular action). -->
+		<rule>
+			<case>
+				<effect util="-4.5">
+					<set var="a_m" value="GiveClue" />
+				</effect>
+				<effect util="-0.3">
+					<set var="a_m" value="Confirm(*)" />
+				</effect>
+				<effect util="-0.03">
+					<set var="a_m" value="AskRepeat" />
+				</effect>
+			</case>
+		</rule>
+		
+		
+		<!-- Records the next-to-last system action -->
+		<rule>
+			<case>
+				<effect>
+					<set var="a_m-prev" value="{a_m}" />
+				</effect>
+			</case>
+		</rule>
+
+	</model>
+
+	<model trigger="a_m">
+		<!-- Transition model that specifies how the selection of a particular 
+			system action affects the current dialogue state, in particular the current 
+			step in the dialogue. -->
+
+		<rule>
+			<case>
+				<condition>
+					<if var="a_m" value="GiveClue" />
+				</condition>
+				<effect prob="1">
+					<set var="current_step" value="Prompt" />
+				</effect>
+			</case>
+			<case>
+				<condition>
+					<if var="a_m" value="Confirm(State,*)" />
+				</condition>
+				<effect prob="1">
+					<set var="current_step" value="Guess" />
+				</effect>
+			</case>
+		</rule>
+	</model>
+	
+	<model trigger="a_m,current_step">
+		<!-- Specifies the prior distributions for the destinations, departures and
+		responses to yes/no questions -->
+	
+		<rule>
+			<case>
+				<condition>
+					<if var="current_step" value="Prompt" />
+				</condition>
+				<effect prob="0.25">
+					<set var="State^p" value="California" />
+				</effect>
+				<effect prob="0.75">
+					<set var="State^p" value="Florida" />
+				</effect>
+			</case>
+			<case>
+				<condition>
+					<if var="current_step" value="Guess" />
+				</condition>
+				<effect prob="0.25">
+					<set var="State^p" value="California" />
+				</effect>
+				<effect prob="0.75">
+					<set var="State^p" value="Florida" />
+				</effect>
+			</case>
+		</rule>
+		
+	</model>
+
+</domain>

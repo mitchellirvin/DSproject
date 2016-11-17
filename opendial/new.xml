@@ -1,0 +1,220 @@
+<domain>
+
+<initialstate>
+    
+    <variable id="u_m">
+	    <value prob="1">Would you like to play a guessing game? I'll give you a fun fact about
+	    one of the states in the USA and you can guess which state it is!</value>
+    </variable>
+
+    <variable id="current_step">
+		<value>begin</value>
+    </variable>
+    
+</initialstate>
+
+    <!-- BEGIN U_U -->
+    
+    <!-- Receive input from user -->
+    <!-- This model takes a user utterance and decides the corresponding user act --> 
+    <model trigger="u_u">
+    	
+        <rule>        
+            <!-- if the user is asking for their first hint -->
+    	    <case>
+    		    <condition>
+    			    <if var="hint" relation="in" value="[hint,help,clue]"/>
+    			    <if var="u_u" relation="contains" value="{hint}"/>
+    			    <if var="current_step" relation="=" value="firsth"/>
+        		</condition>
+        		<!-- set user act to be asking for a hint, increment step to next hint -->
+        		<effect prob="1">
+        			<set var="a_u" value="ask({hint})"/>
+        			<set var="current_step" value="secondh"/>
+        		</effect>
+        	</case>
+        	
+            <!-- if the user is confirming the request to start the game --> 
+        	<case>
+        		<condition>
+        			<if var="join" relation="in" value="[Yes,Yeah,Yea,Sure,Okay,No,Nope,yes,yeah,yea,sure,okay,no,nope]"/>
+        			<if var="u_u" relation="contains" value="{join}"/>
+        			<if var="current_step" relation="=" value="begin"/>
+        		</condition>
+        		<!-- set the user act to be agree (to start the game whether they agreed or not, lol) --> 
+        		<!-- and passes the "join" variable in that act --> 
+        		<effect prob="1">
+        			<set var="a_u" value="agree({join})"/>
+        		</effect>
+        	</case>
+            
+            
+        	<case>
+        		<condition>
+        		    <!-- If the current step is first hint AND their utterance contains a state --> 
+        			<if var="current_step" relation="=" value="firsth"/>
+        			<if var="X" relation="in" value="[Alabama, Alaska, Arizona, Arkansas, California, Colorado, Connecticut, Delaware, Florida, Georgia, Hawaii, Idaho, Illinois, Indiana, Iowa, Kansas, Kentucky, Louisiana, Maine, Maryland, Massachusetts, Michigan, Minnesota, Mississippi, Missouri, Montana, Nebraska, Nevada, New Hampshire, New Jersey, New Mexico, New York, North Carolina, North Dakota, Ohio, Oklahoma, Oregon, Pennsylvania, Rhode Island, South Carolina, South Dakota, Tennessee, Texas, Utah, Vermont, Virginia, Washington, West Virginia, Wisconsin, Wyoming]"/>
+        			<if var="u_u" relation="contains" value="{X}"/>
+        		</condition>
+        		<!-- Set the user act to Guess and pass the state that they guessed --> 
+        		<effect prob="1">
+        			<set var="a_u" value="Guess({X})"/>
+        		</effect>
+        	</case>
+    	</rule>
+    
+    </model>    <!-- END U_U MODEL --> 
+    
+    
+    <!-- Code what user says-->
+    <!-- model to take the user's act and determine the machine's act accordingly --> 
+    <!-- based on the a_u and current step --> 
+    <model trigger="a_u">
+        
+        <!-- rule for current step begin -->
+    	<rule>
+    		<case>
+    		    <!-- if the user act was to agree to begin the game -->
+    			<condition>
+    				<if var="current_step" relation="=" value="begin"/>
+    				<if var="a_u" relation="=" value="agree({join})"/>
+    			</condition>
+    			<!-- set machine act to confirm that they're agreeing -->
+    			<effect util="1">
+    				<set var="a_m" value="CheckAgree({join})"/>
+    			</effect>
+    		</case>
+    	</rule>
+    
+        <!-- rule for current step first hint -->
+    	<rule>
+    		<case>
+    		    <!-- if the user guessed something -->
+    			<condition>
+    				<if var="current_step" relation="=" value="firsth"/>
+    				<if var="a_u" relation="=" value="Guess({X})"/>
+    			</condition>
+    			<!-- set the machine act to be check guess and pass the variable that they guessed -->
+    			<effect util="1">
+    				<set var="a_m" value="CheckGuess({X})"/>
+    			</effect>
+    		</case>
+    	</rule>
+    
+        <!-- rule for current step second hint -->
+    	<rule>
+    		<case>
+    		    <!-- if they asked for a hint -->
+    			<condition>
+    				<if var="current_step" relation="=" value="secondh"/>
+    				<if var="a_u" relation="=" value="ask({hint})"/>
+    			</condition>
+    			<!-- set machine act to check  -->
+    			<effect util="1">
+    				<set var="a_m" value="CheckAsk({hint})"/>
+    			</effect>
+    		</case>
+    	</rule> 
+    
+    </model> <!-- END MODEL TRIGGERED BY A_U THAT DECIDES A_M -->
+
+
+
+    <!-- Code what computer acts. Write the algorithm-->
+    <!-- model to take the machine act and determine the machine's utterance based on --> 
+    <!-- a_m and current step --> 
+    <model trigger="a_m">
+    	
+    	<!-- rule for current step begin-->
+    	<rule>
+    	    <!-- if the "join" variable was a positive confirmation --> 
+    		<case>
+    			<condition>
+    				<if var="current_step" relation="=" value="begin"/>
+    				<if var="a_m" relation="=" value="CheckAgree({join})"/>
+    				<if var="join" relation="in" value="[Yes,Yeah,Yea,Sure,Okay,yes,yeah,yea,sure,okay]"/>
+    			</condition>
+    			<!-- set the machine utterance and change the current step to be first hint -->
+    			<effect util="1">
+    				<set var="u_m" value="{join}, Lets play the game! I will give you some hints and expect you to know the state. This state has 55 electoral college votes."/>
+    				<set var="current_step" value="firsth"/>
+    			</effect>
+    		</case>
+    
+            <!-- if "join" was negative confirmation -->
+    		<case>
+    			<condition>
+    				<if var="current_step" relation="=" value="begin"/>
+    				<if var="a_m" relation="=" value="CheckAgree({join})"/>
+    				<if var="join" relation="in" value="[No,Nope,no,nope]"/>
+    			</condition>
+    			<!-- troll the user accordingly -->
+    			<!-- set the machine utterance and current step to first hint -->
+    			<effect util="1">
+    				<set var="u_m" value="{join}, but I don't care. I will give you some hints and expect you to know the state. This state has 55 electoral college votes."/>
+    				<set var="current_step" value="firsth"/>
+    			</effect>
+    		</case>
+    
+            <!-- if "join" didn't contain a positive or negative confirmation -->
+    		<case>
+    			<condition>
+    				<if var="current_step" relation="=" value="begin"/>
+    				<if var="a_m" relation="=" value="CheckAgree({join})"/>
+    			</condition>
+    			<!-- set machine utterance to prompt for confirmation again -->
+    			<effect util="1">
+    				<set var="u_m" value="I'm sorry, your confirmation wasn't recognized. Would you like to play a game?"/>
+    			</effect>
+    		</case>
+    	</rule> <!-- END RULE FOR CURRENT STEP BEGIN -->
+    
+        <!-- rule for current step first hint -->
+    	<rule>
+    	    <!-- if the machine act is to check a user's guess and they've guessed correctly -->
+    		<case>
+    			<condition>
+    				<if var="current_step" relation="=" value="firsth"/>
+    				<if var="a_m" relation="=" value="CheckGuess({X})"/>
+    				<if var="X" relation="=" value="California"/>
+    			</condition>
+    			<!-- tell them they've won and set the current step to done -->
+    			<effect util="1">
+    				<set var="u_m" value="{X} is correct! The game is over!"/>
+    				<set var="current_step" value="done"/>
+    			</effect>
+    		</case>
+    		
+    		<!-- if the machine act is to check a user's guess and they've guessed incorrectly -->
+    		<case>
+    			<condition>
+    				<if var="current_step" relation="=" value="firsth"/>
+    				<if var="a_m" relation="=" value="CheckGuess({X})"/>
+    			</condition>
+    			<!-- set machine utterance to tell them they've guessed incorrectly and provide them with -->
+    			<!-- their options for continuing the game -->
+    			<effect util="1">
+    				<set var="u_m" value="{X} is incorrect! Ask for a hint or make another guess"/>
+    			</effect>
+    		</case>
+    	</rule> <!-- END RULE FOR CURRENT STEP FIRST HINT -->
+    	
+    	<!-- rule for current step second hint --> 
+    	<rule>
+    	    <case>
+    	        <!-- if the machine act is to check they've asked for a hint -->
+    			<condition>
+    				<if var="current_step" relation="=" value="secondh"/>
+    				<if var="a_m" relation="=" value="CheckAsk({hint})"/>
+    			</condition>
+    			<!-- set machine utterance to provide another hint -->
+    			<effect util="1">
+    				<set var="u_m" value="Ok, here is another hint! Los Angeles is in this state"/>
+    				<if var="current_step" relation="=" value="firsth"/>
+    			</effect>
+    		</case>
+    	</rule> <!-- END RULE FOR CURRENT STEP SECOND HINT -->
+    
+    </model>
+    
+</domain>
