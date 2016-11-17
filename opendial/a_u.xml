@@ -24,7 +24,7 @@
     		<case>
     		    <!-- if the user guessed something -->
     			<condition>
-    				<if var="current_step" relation="=" value="firsth"/>
+    				<if var="current_step" relation="=" value="firsth|secondh|thirdh|finalh"/>
     				<if var="a_u" relation="=" value="Guess({X})"/>
     			</condition>
     			<!-- set the machine act to be check guess and pass the variable that they guessed -->
@@ -34,12 +34,12 @@
     		</case>
     	</rule>
     
-        <!-- rule for current step second hint -->
+    	<!-- rule for if they asked for a hint -->
     	<rule>
     		<case>
     		    <!-- if they asked for a hint -->
     			<condition>
-    				<if var="current_step" relation="=" value="secondh"/>
+    				<if var="current_step" relation="=" value="firsth|secondh|thirdh|finalh"/>
     				<if var="a_u" relation="=" value="ask({hint})"/>
     			</condition>
     			<!-- set machine act to check  -->
@@ -48,7 +48,7 @@
     			</effect>
     		</case>
     	</rule> 
-    
-    </model> <!-- END MODEL TRIGGERED BY A_U THAT DECIDES A_M -->
+    	
+</model> <!-- END MODEL TRIGGERED BY A_U THAT DECIDES A_M -->
     	
 </domain>

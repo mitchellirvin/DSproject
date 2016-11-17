@@ -1,33 +1,3 @@
 <domain>
-    
-    <model trigger="current_state">
-    		<rule>
-    	    		<!-- if we're giving our first hint for the first state -->
-    			<case>
-    				<condition>
-    					<if var="current_step" relation="=" value="firsth"/>
-    					<if var="a_m" relation="=" value="CheckAgree({join})"/>
-    					<if var="state" relation="=" value="1"/>
-    				</condition>
-    				<!-- tell them they've won and set the current step to done -->
-    				<effect util="1">
-    					<set var="u_m" value="This state has {state} electoral college votes."/>
-    				</effect>
-    			</case>
-    		
-    			<!-- if we're giving our first hint for the second state -->
-    			<case>
-    				<condition>
-    					<if var="current_step" relation="=" value="firsth"/>
-    					<if var="a_m" relation="=" value="CheckAgree({join})"/>
-    					<if var="state" relation="=" value="2"/>
-    				</condition>
-    				<!-- tell them they've won and set the current step to done -->
-    				<effect util="1">
-    					<set var="u_m" value="This state has {state} electoral college votes."/>
-    				</effect>
-    			</case>
-    		</rule>
-    	</model>
     	
 </domain>
