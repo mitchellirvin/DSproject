@@ -95,7 +95,7 @@
     				<if var="current_step" relation="=" value="firsth|secondh|thirdh|finalh"/>
     				<if var="a_m" relation="=" value="CheckGuess({X})"/>
     				<if var="state" relation="=" value="1"/>
-    				<if var="X" relation="=" value="California"/>
+    				<if var="X" relation="=" value="California|california|CA|ca"/>
     			</condition>
     			<!-- tell them they've won and set the current step to done -->
     			<effect util="1">
@@ -110,7 +110,7 @@
     				<if var="current_step" relation="=" value="firsth|secondh|thirdh|finalh"/>
     				<if var="a_m" relation="=" value="CheckGuess({X})"/>
     				<if var="state" relation="=" value="2"/>
-    				<if var="X" relation="=" value="Florida"/>
+    				<if var="X" relation="=" value="Florida|florida|FL|fl"/>
     			</condition>
     			<!-- tell them they've won and set the current step to done -->
     			<effect util="1">
