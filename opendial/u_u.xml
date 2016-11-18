@@ -10,7 +10,7 @@
         	<case>
         		<condition>
         			<if var="join" relation="in" value="[Yes,Yeah,Yea,Sure,Okay,No,Nope,yes,yeah,yea,sure,okay,no,nope]"/>
-        			<if var="u_u" relation="contains" value="Yes|Yeah|Yea|Sure|Okay|No|Nope|yes|yeah|yea|sure|okay|no|nope"/>
+        			<if var="u_u" relation="contains" value="{join}"/>
         			<if var="current_step" relation="=" value="begin"/>
         		</condition>
         		<!-- set the user act to be agree (to start the game whether they agreed or not, lol) --> 
@@ -19,12 +19,24 @@
         			<set var="a_u" value="agree({join})"/>
         		</effect>
         	</case>
+        	
+        	<!-- if the user's confirmation wasn't recognized --> 
+        	<case>
+        		<condition>
+        			<if var="current_step" relation="=" value="begin"/>
+        		</condition>
+        		<!-- set the user act to be agree (to start the game whether they agreed or not, lol) --> 
+        		<!-- and passes the "join" variable in that act --> 
+        		<effect prob="1">
+        			<set var="u_m" value="I'm sorry, your response wasn't recognized as a confirmation or rejection. Please utter a valid response."/>
+        		</effect>
+        	</case>
             
         	<!-- if the user is asking for their second hint -->
     	    <case>
     		    <condition>
-    			    <if var="hint" relation="in" value="[Hint,Another,Clue,Help,hint,help,clue]"/>
-    			    <if var="u_u" relation="contains" value="Hint|Another|One|One more|another|please|Clue|Help|hint|help|clue"/>
+    			    <if var="hint" relation="in" value="[Hint,Another,Clue,Help,Could,May,Please,I,hint,help,clue]"/>
+    			    <if var="u_u" relation="contains" value="{hint}"/>
     			    <if var="current_step" relation="=" value="firsth"/>
         		</condition>
         		<!-- set user act to be asking for a hint, increment step to next hint -->
@@ -37,8 +49,8 @@
         	<!-- if the user is asking for their third hint -->
     	    <case>
     		    <condition>
-    			    <if var="hint" relation="in" value="[Hint,Another,Clue,Help,hint,help,clue]"/>
-    			    <if var="u_u" relation="contains" value="Hint|Another|One|One more|another|please|Clue|Help|hint|help|clue"/>
+    			    <if var="hint" relation="in" value="[Hint,Another,Clue,Help,Could,May,Please,I,hint,help,clue]"/>
+    			    <if var="u_u" relation="contains" value="{hint}"/>
     			    <if var="current_step" relation="=" value="secondh"/>
         		</condition>
         		<!-- set user act to be asking for a hint, increment step to next hint -->
@@ -52,8 +64,8 @@
         	<!-- if the user is asking for their final hint -->
     	    <case>
     		    <condition>
-    			    <if var="hint" relation="in" value="[Hint,Another,Clue,Help,hint,help,clue]"/>
-    			    <if var="u_u" relation="contains" value="Hint|Another|One|One more|another|please|Clue|Help|hint|help|clue"/>
+    			    <if var="hint" relation="in" value="[Hint,Another,Clue,Help,Could,May,Please,I,hint,help,clue]"/>
+    			    <if var="u_u" relation="contains" value="{hint}"/>
     			    <if var="current_step" relation="=" value="thirdh"/>
         		</condition>
         		<!-- set user act to be asking for a hint, increment step to next hint -->
