@@ -23,6 +23,20 @@
     				<set var="answer" value="California"/>
     			</effect>
     		</case>
+    		
+    		<!-- if the "join" variable was a positive confirmation on first iteration --> 
+    		<case>
+    			<condition>
+    				<if var="current_step" relation="=" value="begin"/>
+    				<if var="a_m" relation="=" value="CheckAgree({join})"/>
+    				<if var="join" relation="in" value="[More,details,more information,how,you play,I play,it work,tell me,Tell me,Could,information,Information,don't,understand]"/>
+    				<if var="state" relation="=" value="0"/>
+    			</condition>
+    			<!-- set the machine utterance and change the current step to be first hint -->
+    			<effect util="1">
+    				<set var="u_m" value="I'll give you four total hints for each state. You'll be graded on an A-F scale depending on how many hints it takes you to guess correctly. Would you like to begin?"/>
+    			</effect>
+    		</case>
     
             <!-- if "join" was negative confirmation on first iteration -->
     		<case>
@@ -368,6 +382,46 @@
     	<!-- rule for current step hint -->
     	<!-- this will check the user's guess and confirm or reject. if confirm, give them their score for this iteration -->
     	<rule>
+    		<!-- if the user is unsure of answer --> 
+    		<case>
+    			<condition>
+    				<if var="current_step" relation="=" value="firsth|secondh|thirdh"/>
+    				<if var="a_m" relation="=" value="CheckGuess({X})"/>
+    				<if var="X" relation="in" value="[Don't know,do not know,Not sure,Unsure,Uncertain,Confused,don't know,don't,not sure,unsure,uncertain,confused,know]"/>
+    			</condition>
+    			<!-- set the machine utterance to prompt user to ask for a hint-->
+    			<effect util="1">
+    				<set var="u_m" value="If you're not sure you can ask for another hint! "/>
+    			</effect>
+    		</case>
+    		
+    		<!-- if the user is unsure of answer on final hint--> 
+    		<case>
+    			<condition>
+    				<if var="current_step" relation="=" value="finalh"/>
+    				<if var="a_m" relation="=" value="CheckGuess({X})"/>
+    				<if var="X" relation="in" value="[Don't know,do not know,Not sure,Unsure,Uncertain,Confused,don't know,don't,not sure,unsure,uncertain,confused,know]"/>
+    			</condition>
+    			<!-- set the machine utterance to prompt user to ask for a hint-->
+    			<effect util="1">
+    				<set var="u_m" value="Because this is your last hint, you can guess one last time or ask for the answer if you don't know."/>
+    			</effect>
+    		</case>
+    		
+    		<!-- if the user is unsure of answer on final hint--> 
+    		<case>
+    			<condition>
+    				<if var="current_step" relation="=" value="finalh"/>
+    				<if var="a_m" relation="=" value="CheckGuess({X})"/>
+    				<if var="X" relation="in" value="[am weak,weakness,concede,Concede,admit,defeat,lose,defeated,lost,answer,tell me,give,please,Answer,Tell,Give up,give up,forfeit,Forfeit,quit,Quit]"/>
+    			</condition>
+    			<!-- set the machine utterance to prompt user to ask for a hint-->
+    			<effect util="1">
+    				<set var="u_m" value="Quitter. The correct answer was {answer}. Want to play again?"/>
+    				<set var="current_state" value="begin"/>
+    			</effect>
+    		</case>
+    		
     		<!-- BEGIN CORRECT RESPONSE HANDLING --> 
     	    <!-- STATE 1 -->
     	    	<case>
@@ -1306,7 +1360,7 @@
     			</condition>
     			<!-- set machine utterance to provide another hint -->
     			<effect util="1">
-    				<set var="u_m" value="This state is home to Sequoia National Park, which contains the largest living tree. Its trunk is 102 feet in circumference. "/>
+    				<set var="u_m" value="Last Hint! This state is home to Sequoia National Park, which contains the largest living tree. Its trunk is 102 feet in circumference. "/>
     				
     			</effect>
     		</case>
@@ -1321,7 +1375,7 @@
     			</condition>
     			<!-- set machine utterance to provide another hint -->
     			<effect util="1">
-    				<set var="u_m" value="This state is the flattest state in the US with a mean elevation of just 100ft above sea level."/>
+    				<set var="u_m" value="Last Hint! This state is the flattest state in the US with a mean elevation of just 100ft above sea level."/>
     				
     			</effect>
     		</case>
@@ -1336,7 +1390,7 @@
     			</condition>
     			<!-- set machine utterance to provide another hint -->
     			<effect util="1">
-    				<set var="u_m" value="A nickname for this state is the 'Lone Star State.'"/>
+    				<set var="u_m" value="Last Hint! A nickname for this state is the 'Lone Star State.'"/>
     			</effect>
     		</case>
     		
@@ -1350,7 +1404,7 @@
     			</condition>
     			<!-- set machine utterance to provide another hint -->
     			<effect util="1">
-    				<set var="u_m" value="A nickname for this state is the 'Empire State'."/>
+    				<set var="u_m" value="Last Hint! A nickname for this state is the 'Empire State'."/>
     			</effect>
     		</case>
     		
@@ -1364,7 +1418,7 @@
     			</condition>
     			<!-- set machine utterance to provide another hint -->
     			<effect util="1">
-    				<set var="u_m" value="The largest city in this state is Chicago."/>
+    				<set var="u_m" value="Last Hint! The largest city in this state is Chicago."/>
     			</effect>
     		</case>
     		
@@ -1378,7 +1432,7 @@
     			</condition>
     			<!-- set machine utterance to provide another hint -->
     			<effect util="1">
-    				<set var="u_m" value="The only part of the United States that falls within the Arctic Circle is in this state."/>
+    				<set var="u_m" value="Last Hint! The only part of the United States that falls within the Arctic Circle is in this state."/>
     			</effect>
     		</case>
     		
@@ -1392,7 +1446,7 @@
     			</condition>
     			<!-- set machine utterance to provide another hint -->
     			<effect util="1">
-    				<set var="u_m" value="The capital of this state is Honolulu."/>
+    				<set var="u_m" value="Last Hint! The capital of this state is Honolulu."/>
     			</effect>
     		</case>
     		
@@ -1406,7 +1460,7 @@
     			</condition>
     			<!-- set machine utterance to provide another hint -->
     			<effect util="1">
-    				<set var="u_m" value="The largest city in this state is Boston, which is also its capital."/>
+    				<set var="u_m" value="Last Hint! The largest city in this state is Boston, which is also its capital."/>
     			</effect>
     		</case>
     		
@@ -1420,7 +1474,7 @@
     			</condition>
     			<!-- set machine utterance to provide another hint -->
     			<effect util="1">
-    				<set var="u_m" value="Visitors to this state often come to see the Grand Canyon."/>
+    				<set var="u_m" value="Last Hint! Visitors to this state often come to see the Grand Canyon."/>
     			</effect>
     		</case>
     		
@@ -1434,7 +1488,7 @@
     			</condition>
     			<!-- set machine utterance to provide another hint -->
     			<effect util="1">
-    				<set var="u_m" value="This state was named for King George II of England."/>
+    				<set var="u_m" value="Last Hint! This state was named for King George II of England."/>
     			</effect>
     		</case>
     	</rule> <!-- END RULE FOR CURRENT STEP FINAL HINT -->

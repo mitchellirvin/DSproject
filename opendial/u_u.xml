@@ -18,7 +18,7 @@
         	<!-- if the user is confirming the request to start the game --> 
         	<case>
         		<condition>
-        			<if var="join" relation="in" value="[Yes,Yeah,Yea,Sure,Okay,No,Nope,I guess,guess so,Maybe,maybe,yes,yeah,yea,sure,okay,no,nope]"/>
+        			<if var="join" relation="in" value="[Yes,Yeah,Yea,Sure,Okay,No,Nope,I guess,guess so,Maybe,maybe,yes,yeah,yea,sure,okay,no,nope,don't know,don't,confused,do not,More,details,more information,how,you play,I play,it work,tell me,Tell me,Could,information,Information,understand]"/>
         			<if var="u_u" relation="contains" value=" * {join} * "/>
         			<if var="current_step" relation="=" value="begin"/>
         		</condition>
@@ -84,6 +84,19 @@
         		</effect>
         	</case>
         	
+        	<!-- if the user is asking for too many hints-->
+    	    <case>
+    		    <condition>
+    			    <if var="hint" relation="in" value="[Hint,Another,Clue,Help,Could,More,more,another,hint,help,clue]"/>
+    			    <if var="u_u" relation="contains" value="* {hint} *"/>
+    			    <if var="current_step" relation="=" value="finalh"/>
+        		</condition>
+        		<!-- set user act to be asking for a hint, increment step to next hint -->
+        		<effect prob="1">
+        			<set var="u_m" value="You can't ask for another hint! Please guess again or admit weakness and concede defeat."/>
+        		</effect>
+        	</case>
+        	
             
          <!-- if the current step is a hint, set a_u to guess and pass their guess as a parameter -->
         	<case>
@@ -106,14 +119,45 @@
         		    <!-- If the current step is first hint AND their utterance contains a state --> 
         			<if var="current_step" relation="=" value="firsth|secondh|thirdh|finalh"/>
         			<!-- takes uppercase, lower case, and abbreviated versions of states as inputs -->
-        			<if var="X" relation="in" value="[don't know,don't,confused,do not]"/>
-        			<if var="u_u" relation="contains" value=" * {X} * "/>
+        			<if var="X" relation="in" value="[Montgomery,Juneau,Phoenix,Little Rock,Sacramento,Denver,Hartford,Dover,Tallahassee,Atlanta,Honolulu,Boise,Springfield,Indianapolis,Des Moines,Topeka,Frankfort,Baton Rouge,Augusta,Annapolis,Boston,Lansing,Saint Paul,Jackson,Jefferson City,Helena,Lincoln,Carson City,Concord,Trenton,Santa Fe,Albany,Raleigh,Bismarck,Columbus,Oklahoma City,Salem,Harrisburg,Providence,Columbia,Pierre,Nashville,Austin,Salt Lake City,Montpelier,Richmond,Olympia,Charleston,Madison,Cheyenne,montgomery,juneau,phoenix,little rock,sacramento,denver,hartford,dover,tallahassee,atlanta,honolulu,boise,springfield,indianapolis,des moines,topeka,frankfort,baton rouge,augusta,annapolis,boston,lansing,saint paul,jackson,jefferson city,helena,lincoln,carson city,concord,trenton,santa fe,albany,raleigh,bismarck,columbus,oklahoma city,salem,harrisburg,providence,columbia,pierre,nashville,austin,salt lake city,montpelier,richmond,olympia,charleston,madison,cheyenne]"/>
+        			<if var="u_u" relation="contains" value="{X}"/>
         		</condition>
         		<!-- Set the user act to Guess and pass the state that they guessed --> 
         		<effect prob="1">
-        			<set var="u_m" value="If you're not sure, you can ask for another hint!"/>
+        			<set var="u_m" value="{X} isn't a state, maybe I should go over the rules again... Please guess a state or ask for a hint!"/>
         		</effect>
         	</case>
+        	
+        	<!-- if the current step is a hint, set a_u to guess and pass their guess as a parameter -->
+        	<case>
+        		<condition>
+        		    <!-- If the current step is first hint AND their utterance DOES NOT contain a state--> 
+        			<if var="current_step" relation="=" value="firsth|secondh|thirdh|finalh"/>
+        			<if var="confused" relation="in" value="[don't know,don't,not sure,unsure,uncertain,confused,know]"/>
+        			<if var="u_u" relation="contains" value="{confused}"/>
+        		</condition>
+        		<!-- Set the user act to Guess and pass the state that they guessed --> 
+        		<effect prob="1">
+        			<set var="a_u" value="Guess({confused})"/>
+        		</effect>
+        	</case>
+        	
+        	<!-- if the user forfeits at the last hint instead of guessing a state-->
+        	<case>
+        		<condition>
+        		    <!-- If the current step is first hint AND their utterance DOES NOT contain a state--> 
+        			<if var="current_step" relation="=" value="finalh"/>
+        			<if var="quit" relation="in" value="[am weak,weakness,concede,Concede,admit,defeat,lose,defeated,lost,answer,tell me,give,please,Answer,Tell,Give up,give up,forfeit,Forfeit,quit,Quit]"/>
+        			<if var="u_u" relation="contains" value="{quit}"/>
+        		</condition>
+        		<!-- Set the user act to Guess and pass the state that they guessed --> 
+        		<effect prob="1">
+        			<set var="a_u" value="Guess({quit})"/>
+        		</effect>
+        	</case>
+        	
+        
+
         	
      	<!-- if the current step is a hint, set a_u to guess and pass their guess as a parameter -->
         	<case>
