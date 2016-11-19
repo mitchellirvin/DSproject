@@ -1,9 +1,10 @@
 <domain>
 	
-	<model trigger="a_m">
-	
+	<model trigger="current_state">
+
+
 
     		
-</model>
+	</model>
     		
 </domain>

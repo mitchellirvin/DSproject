@@ -6,6 +6,15 @@
     <model trigger="u_u">
         <rule>
         	
+        	<case>
+        		<condition>
+        			<if var="state" relation="=" value="-1"/>
+        		</condition>
+        		<effect prob="1">
+        			<set var="" value=""/>
+        		</effect>
+        	</case>
+        	
         	<!-- if the user is confirming the request to start the game --> 
         	<case>
         		<condition>
@@ -88,6 +97,21 @@
         		<!-- Set the user act to Guess and pass the state that they guessed --> 
         		<effect prob="1">
         			<set var="a_u" value="Guess({X})"/>
+        		</effect>
+        	</case>
+        	
+        	<!-- if the current step is a hint, set a_u to guess and pass their guess as a parameter -->
+        	<case>
+        		<condition>
+        		    <!-- If the current step is first hint AND their utterance contains a state --> 
+        			<if var="current_step" relation="=" value="firsth|secondh|thirdh|finalh"/>
+        			<!-- takes uppercase, lower case, and abbreviated versions of states as inputs -->
+        			<if var="X" relation="in" value="[don't know,don't,confused,do not]"/>
+        			<if var="u_u" relation="contains" value=" * {X} * "/>
+        		</condition>
+        		<!-- Set the user act to Guess and pass the state that they guessed --> 
+        		<effect prob="1">
+        			<set var="u_m" value="If you're not sure, you can ask for another hint!"/>
         		</effect>
         	</case>
         	

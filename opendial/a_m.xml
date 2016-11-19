@@ -70,10 +70,9 @@
     			<!-- troll the user accordingly -->
     			<!-- set the machine utterance and current step to first hint -->
     			<effect util="1">
-    				<set var="u_m" value="You said {join}, but I don't care. Let's get started! This state is home to Saint Augustine, the oldest European settlement in North America."/>
-    				<set var="current_step" value="firsth"/>
-    				<set var="state" value="2"/>
-    				<set var="answer" value="Florida"/>
+    				<set var="u_m" value="Okay, thanks for playing!"/>
+    				<set var="current_state" value="done"/>
+				<set var="state" value="-1"/>
     			</effect>
     		</case>
     		
@@ -105,10 +104,9 @@
     			<!-- troll the user accordingly -->
     			<!-- set the machine utterance and current step to first hint -->
     			<effect util="1">
-    				<set var="u_m" value="You said {join}, but I don't care. Let's get started! When American astronauts communicate with 'ground control', the people who answer them work in this state."/>
-    				<set var="current_step" value="firsth"/>
-    				<set var="state" value="3"/>
-    				<set var="answer" value="Texas"/>
+    				<set var="u_m" value="Okay, thanks for playing!"/>
+    				<set var="current_state" value="done"/>
+				<set var="state" value="-1"/>
     			</effect>
     		</case>
     		
@@ -140,10 +138,9 @@
     			<!-- troll the user accordingly -->
     			<!-- set the machine utterance and current step to first hint -->
     			<effect util="1">
-    				<set var="u_m" value="You said {join}, but I don't care. Let's get started! This state borders on two Great Lakes as well as Niagara Falls."/>
-    				<set var="current_step" value="firsth"/>
-    				<set var="state" value="4"/>
-    				<set var="answer" value="New York"/>
+    				<set var="u_m" value="Okay, thanks for playing!"/>
+    				<set var="current_state" value="done"/>
+				<set var="state" value="-1"/>
     			</effect>
     		</case>
     		
@@ -160,7 +157,7 @@
     				<set var="u_m" value="Alright, lets play the game! Abraham Lincoln was elected President of the United States while living in this state."/>
     				<set var="current_step" value="firsth"/>
     				<set var="state" value="5"/>
- 				<set var="answer" value="Illinois"/>
+    				<set var="answer" value="Illinois"/>
     			</effect>
     		</case>
     
@@ -175,10 +172,9 @@
     			<!-- troll the user accordingly -->
     			<!-- set the machine utterance and current step to first hint -->
     			<effect util="1">
-    				<set var="u_m" value="You said {join}, but I don't care. Let's get started! Abraham Lincoln was elected President of the United States while living in this state."/>
-    				<set var="current_step" value="firsth"/>
-    				<set var="state" value="5"/>
-    				<set var="answer" value="Illinois"/>
+    				<set var="u_m" value="Okay, thanks for playing!"/>
+    				<set var="current_state" value="done"/>
+				<set var="state" value="-1"/>
     			</effect>
     		</case>
     		
@@ -210,13 +206,149 @@
     			<!-- troll the user accordingly -->
     			<!-- set the machine utterance and current step to first hint -->
     			<effect util="1">
-    				<set var="u_m" value="You said {join}, but I don't care. Let's get started! Denali, the tallest mountain in North America, is located in this state."/>
+    				<set var="u_m" value="Okay, thanks for playing!"/>
+    				<set var="current_state" value="done"/>
+				<set var="state" value="-1"/>
+    			</effect>
+    		</case>
+    		
+    		<!-- if the "join" variable was a positive confirmation on first iteration --> 
+    		<case>
+    			<condition>
+    				<if var="current_step" relation="=" value="begin"/>
+    				<if var="a_m" relation="=" value="CheckAgree({join})"/>
+    				<if var="join" relation="in" value="[yes,yeah,yea,sure,okay,Yes,Yeah,Yea,Sure,Okay,I guess,guess so,Maybe,maybe]"/>
+    				<if var="state" relation="=" value="6"/>
+    			</condition>
+    			<!-- set the machine utterance and change the current step to be first hint -->
+    			<effect util="1">
+    				<set var="u_m" value="Alright, lets play the game! This state has the most endangered species of any U.S. state."/>
     				<set var="current_step" value="firsth"/>
-    				<set var="state" value="6"/>
-    				<set var="answer" value="Alaska"/>
+    				<set var="state" value="7"/>
+ 				<set var="answer" value="Hawaii"/>
     			</effect>
     		</case>
     
+            <!-- if "join" was negative confirmation on first iteration -->
+    		<case>
+    			<condition>
+    				<if var="current_step" relation="=" value="begin"/>
+    				<if var="a_m" relation="=" value="CheckAgree({join})"/>
+    				<if var="join" relation="in" value="[No,Nope,no,nope]"/>
+    				<if var="state" relation="=" value="6"/>
+    			</condition>
+    			<!-- troll the user accordingly -->
+    			<!-- set the machine utterance and current step to first hint -->
+    			<effect util="1">
+    				<set var="u_m" value="Okay, thanks for playing!"/>
+    				<set var="current_state" value="done"/>
+				<set var="state" value="-1"/>
+    			</effect>
+    		</case>
+    		
+    		<!-- if the "join" variable was a positive confirmation on first iteration --> 
+    		<case>
+    			<condition>
+    				<if var="current_step" relation="=" value="begin"/>
+    				<if var="a_m" relation="=" value="CheckAgree({join})"/>
+    				<if var="join" relation="in" value="[yes,yeah,yea,sure,okay,Yes,Yeah,Yea,Sure,Okay,I guess,guess so,Maybe,maybe]"/>
+    				<if var="state" relation="=" value="7"/>
+    			</condition>
+    			<!-- set the machine utterance and change the current step to be first hint -->
+    			<effect util="1">
+    				<set var="u_m" value="Alright, lets play the game! This state was home to the first Thanksgiving."/>
+    				<set var="current_step" value="firsth"/>
+    				<set var="state" value="8"/>
+ 				<set var="answer" value="Massachusetts"/>
+    			</effect>
+    		</case>
+    
+            <!-- if "join" was negative confirmation on first iteration -->
+    		<case>
+    			<condition>
+    				<if var="current_step" relation="=" value="begin"/>
+    				<if var="a_m" relation="=" value="CheckAgree({join})"/>
+    				<if var="join" relation="in" value="[No,Nope,no,nope]"/>
+    				<if var="state" relation="=" value="7"/>
+    			</condition>
+    			<!-- troll the user accordingly -->
+    			<!-- set the machine utterance and current step to first hint -->
+    			<effect util="1">
+    				<set var="u_m" value="Okay, thanks for playing!"/>
+    				<set var="current_state" value="done"/>
+				<set var="state" value="-1"/>
+    			</effect>
+    		</case>
+    		
+    		<!-- if the "join" variable was a positive confirmation on first iteration --> 
+    		<case>
+    			<condition>
+    				<if var="current_step" relation="=" value="begin"/>
+    				<if var="a_m" relation="=" value="CheckAgree({join})"/>
+    				<if var="join" relation="in" value="[yes,yeah,yea,sure,okay,Yes,Yeah,Yea,Sure,Okay,I guess,guess so,Maybe,maybe]"/>
+    				<if var="state" relation="=" value="8"/>
+    			</condition>
+    			<!-- set the machine utterance and change the current step to be first hint -->
+    			<effect util="1">
+    				<set var="u_m" value="Alright, lets play the game! In 1926, the Southern Pacific Railroad connected this state with the eastern states."/>
+    				<set var="current_step" value="firsth"/>
+    				<set var="state" value="9"/>
+ 				<set var="answer" value="Arizona"/>
+    			</effect>
+    		</case>
+    
+            <!-- if "join" was negative confirmation on first iteration -->
+    		<case>
+    			<condition>
+    				<if var="current_step" relation="=" value="begin"/>
+    				<if var="a_m" relation="=" value="CheckAgree({join})"/>
+    				<if var="join" relation="in" value="[No,Nope,no,nope]"/>
+    				<if var="state" relation="=" value="8"/>
+    			</condition>
+    			<!-- troll the user accordingly -->
+    			<!-- set the machine utterance and current step to first hint -->
+    			<effect util="1">
+    				<set var="u_m" value="Okay, thanks for playing!"/>
+    				<set var="current_state" value="done"/>
+				<set var="state" value="-1"/>
+    			</effect>
+    		</case>
+    		
+    		
+    		<!-- if the "join" variable was a positive confirmation on first iteration --> 
+    		<case>
+    			<condition>
+    				<if var="current_step" relation="=" value="begin"/>
+    				<if var="a_m" relation="=" value="CheckAgree({join})"/>
+    				<if var="join" relation="in" value="[yes,yeah,yea,sure,okay,Yes,Yeah,Yea,Sure,Okay,I guess,guess so,Maybe,maybe]"/>
+    				<if var="state" relation="=" value="9"/>
+    			</condition>
+    			<!-- set the machine utterance and change the current step to be first hint -->
+    			<effect util="1">
+    				<set var="u_m" value="Alright, lets play the game! The figures of Stonewall Jackson, Jefferson Davis, and Robert E. Lee make up the world's largest sculpture. It is located on the face of Stone Mountain in this state. "/>
+    				<set var="current_step" value="firsth"/>
+    				<set var="state" value="10"/>
+ 				<set var="answer" value="Georgia"/>
+    			</effect>
+    		</case>
+    
+            <!-- if "join" was negative confirmation on first iteration -->
+    		<case>
+    			<condition>
+    				<if var="current_step" relation="=" value="begin"/>
+    				<if var="a_m" relation="=" value="CheckAgree({join})"/>
+    				<if var="join" relation="in" value="[No,Nope,no,nope]"/>
+    				<if var="state" relation="=" value="9"/>
+    			</condition>
+    			<!-- troll the user accordingly -->
+    			<!-- set the machine utterance and current step to first hint -->
+    			<effect util="1">
+    				<set var="u_m" value="Okay, thanks for playing!"/>
+    				<set var="current_state" value="done"/>
+				<set var="state" value="-1"/>
+    			</effect>
+    		</case>
+    	
             <!-- if "join" didn't contain a positive or negative confirmation -->
     		<case>
     			<condition>
@@ -588,6 +720,243 @@
     		</case>
     		
     		
+    		<!-- if the machine act is to check a user's guess and they've guessed correctly -->
+    		<!-- SEVENTH STATE HANDLING CORRECT GUESS --> 
+    		<case>
+    			<condition>
+    				<if var="current_step" relation="=" value="firsth"/>
+    				<if var="a_m" relation="=" value="CheckGuess({X})"/>
+    				<if var="state" relation="=" value="7"/>
+    				<if var="X" relation="=" value="Hawaii|hawaii|HI|hi"/>
+    			</condition>
+    			<!-- tell them they've won and set the current step to done -->
+    			<effect util="1">
+    				<set var="u_m" value="{X} is correct! You've earned an A for guessing on the first hint! Would you like to play again?"/>
+    				<set var="current_step" value="begin"/>
+    			</effect>
+    		</case>
+    	    	
+    		<case>
+    			<condition>
+    				<if var="current_step" relation="=" value="secondh"/>
+    				<if var="a_m" relation="=" value="CheckGuess({X})"/>
+    				<if var="state" relation="=" value="7"/>
+    				<if var="X" relation="=" value="Hawaii|hawaii|HI|hi"/>
+    			</condition>
+    			<!-- tell them they've won and set the current step to done -->
+    			<effect util="1">
+    				<set var="u_m" value="{X} is correct! You've earned a B for guessing on the second hint! Would you like to play again?"/>
+    				<set var="current_step" value="begin"/>
+    			</effect>
+    		</case>
+    		
+    		<case>
+    			<condition>
+    				<if var="current_step" relation="=" value="thirdh"/>
+    				<if var="a_m" relation="=" value="CheckGuess({X})"/>
+    				<if var="state" relation="=" value="7"/>
+    				<if var="X" relation="=" value="Hawaii|hawaii|HI|hi"/>
+    			</condition>
+    			<!-- tell them they've won and set the current step to done -->
+    			<effect util="1">
+    				<set var="u_m" value="{X} is correct! You've earned a C for guessing on the third hint. Would you like to play again?"/>
+    				<set var="current_step" value="begin"/>
+    			</effect>
+    		</case>
+    		
+    		<case>
+    			<condition>
+    				<if var="current_step" relation="=" value="finalh"/>
+    				<if var="a_m" relation="=" value="CheckGuess({X})"/>
+    				<if var="state" relation="=" value="7"/>
+    				<if var="X" relation="=" value="Hawaii|hawaii|HI|hi"/>
+    			</condition>
+    			<!-- tell them they've won and set the current step to done -->
+    			<effect util="1">
+    				<set var="u_m" value="{X} is correct! You've earned a D for guessing on the final hint. Would you like to play again?"/>
+    				<set var="current_step" value="begin"/>
+    			</effect>
+    		</case>
+    		
+    		
+    		<!-- if the machine act is to check a user's guess and they've guessed correctly -->
+    		<!-- EIGHTH STATE HANDLING CORRECT GUESS --> 
+    		<case>
+    			<condition>
+    				<if var="current_step" relation="=" value="firsth"/>
+    				<if var="a_m" relation="=" value="CheckGuess({X})"/>
+    				<if var="state" relation="=" value="8"/>
+    				<if var="X" relation="=" value="MA|Massachusetts|ma|massachusetts"/>
+    			</condition>
+    			<!-- tell them they've won and set the current step to done -->
+    			<effect util="1">
+    				<set var="u_m" value="{X} is correct! You've earned an A for guessing on the first hint! Would you like to play again?"/>
+    				<set var="current_step" value="begin"/>
+    			</effect>
+    		</case>
+    	    	
+    		<case>
+    			<condition>
+    				<if var="current_step" relation="=" value="secondh"/>
+    				<if var="a_m" relation="=" value="CheckGuess({X})"/>
+    				<if var="state" relation="=" value="8"/>
+    				<if var="X" relation="=" value="MA|Massachusetts|ma|massachusetts"/>
+    			</condition>
+    			<!-- tell them they've won and set the current step to done -->
+    			<effect util="1">
+    				<set var="u_m" value="{X} is correct! You've earned a B for guessing on the second hint! Would you like to play again?"/>
+    				<set var="current_step" value="begin"/>
+    			</effect>
+    		</case>
+    		
+    		<case>
+    			<condition>
+    				<if var="current_step" relation="=" value="thirdh"/>
+    				<if var="a_m" relation="=" value="CheckGuess({X})"/>
+    				<if var="state" relation="=" value="8"/>
+    				<if var="X" relation="=" value="MA|Massachusetts|ma|massachusetts"/>
+    			</condition>
+    			<!-- tell them they've won and set the current step to done -->
+    			<effect util="1">
+    				<set var="u_m" value="{X} is correct! You've earned a C for guessing on the third hint. Would you like to play again?"/>
+    				<set var="current_step" value="begin"/>
+    			</effect>
+    		</case>
+    		
+    		<case>
+    			<condition>
+    				<if var="current_step" relation="=" value="finalh"/>
+    				<if var="a_m" relation="=" value="CheckGuess({X})"/>
+    				<if var="state" relation="=" value="8"/>
+    				<if var="X" relation="=" value="MA|Massachusetts|ma|massachusetts"/>
+    			</condition>
+    			<!-- tell them they've won and set the current step to done -->
+    			<effect util="1">
+    				<set var="u_m" value="{X} is correct! You've earned a D for guessing on the final hint. Would you like to play again?"/>
+    				<set var="current_step" value="begin"/>
+    			</effect>
+    		</case>
+    		
+    		<!-- if the machine act is to check a user's guess and they've guessed correctly -->
+    		<!-- NINTH STATE HANDLING CORRECT GUESS --> 
+    		<case>
+    			<condition>
+    				<if var="current_step" relation="=" value="firsth"/>
+    				<if var="a_m" relation="=" value="CheckGuess({X})"/>
+    				<if var="state" relation="=" value="9"/>
+    				<if var="X" relation="=" value="Arizona|arizona|AZ|az"/>
+    			</condition>
+    			<!-- tell them they've won and set the current step to done -->
+    			<effect util="1">
+    				<set var="u_m" value="{X} is correct! You've earned an A for guessing on the first hint! Would you like to play again?"/>
+    				<set var="current_step" value="begin"/>
+    			</effect>
+    		</case>
+    	    	
+    		<case>
+    			<condition>
+    				<if var="current_step" relation="=" value="secondh"/>
+    				<if var="a_m" relation="=" value="CheckGuess({X})"/>
+    				<if var="state" relation="=" value="9"/>
+    				<if var="X" relation="=" value="Arizona|arizona|AZ|az"/>
+    			</condition>
+    			<!-- tell them they've won and set the current step to done -->
+    			<effect util="1">
+    				<set var="u_m" value="{X} is correct! You've earned a B for guessing on the second hint! Would you like to play again?"/>
+    				<set var="current_step" value="begin"/>
+    			</effect>
+    		</case>
+    		
+    		<case>
+    			<condition>
+    				<if var="current_step" relation="=" value="thirdh"/>
+    				<if var="a_m" relation="=" value="CheckGuess({X})"/>
+    				<if var="state" relation="=" value="9"/>
+    				<if var="X" relation="=" value="Arizona|arizona|AZ|az"/>
+    			</condition>
+    			<!-- tell them they've won and set the current step to done -->
+    			<effect util="1">
+    				<set var="u_m" value="{X} is correct! You've earned a C for guessing on the third hint. Would you like to play again?"/>
+    				<set var="current_step" value="begin"/>
+    			</effect>
+    		</case>
+    		
+    		<case>
+    			<condition>
+    				<if var="current_step" relation="=" value="finalh"/>
+    				<if var="a_m" relation="=" value="CheckGuess({X})"/>
+    				<if var="state" relation="=" value="9"/>
+    				<if var="X" relation="=" value="Arizona|arizona|AZ|az"/>
+    			</condition>
+    			<!-- tell them they've won and set the current step to done -->
+    			<effect util="1">
+    				<set var="u_m" value="{X} is correct! You've earned a D for guessing on the final hint. Would you like to play again?"/>
+    				<set var="current_step" value="begin"/>
+    			</effect>
+    		</case>
+    		
+    		<!-- if the machine act is to check a user's guess and they've guessed correctly -->
+    		<!-- TENTH STATE HANDLING CORRECT GUESS --> 
+    		<case>
+    			<condition>
+    				<if var="current_step" relation="=" value="firsth"/>
+    				<if var="a_m" relation="=" value="CheckGuess({X})"/>
+    				<if var="state" relation="=" value="10"/>
+    				<if var="X" relation="=" value="Georgia|georgia|GA|ga"/>
+    			</condition>
+    			<!-- tell them they've won and set the current step to done -->
+    			<effect util="1">
+    				<set var="u_m" value="{X} is correct! You've earned an A for guessing on the first hint! Would you like to play again?"/>
+    				<set var="current_step" value="begin"/>
+    				<set var="state" value="0"/>
+    			</effect>
+    		</case>
+    	    	
+    		<case>
+    			<condition>
+    				<if var="current_step" relation="=" value="secondh"/>
+    				<if var="a_m" relation="=" value="CheckGuess({X})"/>
+    				<if var="state" relation="=" value="10"/>
+    				<if var="X" relation="=" value="Georgia|georgia|GA|ga"/>
+    			</condition>
+    			<!-- tell them they've won and set the current step to done -->
+    			<effect util="1">
+    				<set var="u_m" value="{X} is correct! You've earned a B for guessing on the second hint! Would you like to play again?"/>
+    				<set var="current_step" value="begin"/>
+    				<set var="state" value="0"/>
+    			</effect>
+    		</case>
+    		
+    		<case>
+    			<condition>
+    				<if var="current_step" relation="=" value="thirdh"/>
+    				<if var="a_m" relation="=" value="CheckGuess({X})"/>
+    				<if var="state" relation="=" value="10"/>
+    				<if var="X" relation="=" value="Georgia|georgia|GA|ga"/>
+    			</condition>
+    			<!-- tell them they've won and set the current step to done -->
+    			<effect util="1">
+    				<set var="u_m" value="{X} is correct! You've earned a C for guessing on the third hint. Would you like to play again?"/>
+    				<set var="current_step" value="begin"/>
+    				<set var="state" value="0"/>
+    			</effect>
+    		</case>
+    		
+    		<case>
+    			<condition>
+    				<if var="current_step" relation="=" value="finalh"/>
+    				<if var="a_m" relation="=" value="CheckGuess({X})"/>
+    				<if var="state" relation="=" value="10"/>
+    				<if var="X" relation="=" value="Georgia|georgia|GA|ga"/>
+    			</condition>
+    			<!-- tell them they've won and set the current step to done -->
+    			<effect util="1">
+    				<set var="u_m" value="{X} is correct! You've earned a D for guessing on the final hint. Would you like to play again?"/>
+    				<set var="current_step" value="begin"/>
+    				<set var="state" value="0"/>
+    			</effect>
+    		</case>
+    		
     		<!-- BEGIN INCORRECT RESPONSE HANDLING --> 
     		<!-- if the machine act is to check a user's guess and they've guessed incorrectly -->
     		<case>
@@ -719,6 +1088,62 @@
     				<set var="u_m" value="When ancient humans first began to move from Asia to North America, they arrived in what is now this state."/>
     			</effect>
     		</case>
+    		
+    		<!-- Second hint for HI (state 7) -->
+    		<case>
+    	        <!-- if the machine act is to check they've asked for a hint -->
+    			<condition>
+    				<if var="current_step" relation="=" value="secondh"/>
+    				<if var="a_m" relation="=" value="CheckAsk({hint})"/>
+    				<if var="state" relation="=" value="7"/>
+    			</condition>
+    			<!-- set machine utterance to provide another hint -->
+    			<effect util="1">
+    				<set var="u_m" value="Until the middle of the 19th century, this state was an independent kingdom."/>
+    			</effect>
+    		</case>
+    		
+    		<!-- Second hint for MA (state 8) -->
+    		<case>
+    	        <!-- if the machine act is to check they've asked for a hint -->
+    			<condition>
+    				<if var="current_step" relation="=" value="secondh"/>
+    				<if var="a_m" relation="=" value="CheckAsk({hint})"/>
+    				<if var="state" relation="=" value="8"/>
+    			</condition>
+    			<!-- set machine utterance to provide another hint -->
+    			<effect util="1">
+    				<set var="u_m" value="The Salem Witch Trials took place in this state."/>
+    			</effect>
+    		</case>
+    		
+    		<!-- Second hint for AZ (state 9) -->
+    		<case>
+    	        <!-- if the machine act is to check they've asked for a hint -->
+    			<condition>
+    				<if var="current_step" relation="=" value="secondh"/>
+    				<if var="a_m" relation="=" value="CheckAsk({hint})"/>
+    				<if var="state" relation="=" value="9"/>
+    			</condition>
+    			<!-- set machine utterance to provide another hint -->
+    			<effect util="1">
+    				<set var="u_m" value="The saguaro cactus blossom is the official state flower of this state. "/>
+    			</effect>
+    		</case>
+    		
+    		<!-- Second hint for GA (state 10) -->
+    		<case>
+    	        <!-- if the machine act is to check they've asked for a hint -->
+    			<condition>
+    				<if var="current_step" relation="=" value="secondh"/>
+    				<if var="a_m" relation="=" value="CheckAsk({hint})"/>
+    				<if var="state" relation="=" value="10"/>
+    			</condition>
+    			<!-- set machine utterance to provide another hint -->
+    			<effect util="1">
+    				<set var="u_m" value="Savannah was the landing site for General James Edward Oglethorpe, founder of this state. "/>
+    			</effect>
+    		</case>
     	</rule> <!-- END RULE FOR CURRENT STEP SECOND HINT -->
     		
     		
@@ -807,6 +1232,62 @@
     			<!-- set machine utterance to provide another hint -->
     			<effect util="1">
     				<set var="u_m" value="This state's largest city is Anchorage."/>
+    			</effect>
+    		</case>
+    		
+    		<!-- Third hint for HI (state 7) -->
+    		<case>
+    	        <!-- if the machine act is to check they've asked for a hint -->
+    			<condition>
+    				<if var="current_step" relation="=" value="thirdh"/>
+    				<if var="a_m" relation="=" value="CheckAsk({hint})"/>
+    				<if var="state" relation="=" value="7"/>
+    			</condition>
+    			<!-- set machine utterance to provide another hint -->
+    			<effect util="1">
+    				<set var="u_m" value="This state was the most recent state to join the United States."/>
+    			</effect>
+    		</case>
+    		
+    		<!-- Third hint for MA (state 8) -->
+    		<case>
+    	        <!-- if the machine act is to check they've asked for a hint -->
+    			<condition>
+    				<if var="current_step" relation="=" value="thirdh"/>
+    				<if var="a_m" relation="=" value="CheckAsk({hint})"/>
+    				<if var="state" relation="=" value="8"/>
+    			</condition>
+    			<!-- set machine utterance to provide another hint -->
+    			<effect util="1">
+    				<set var="u_m" value="This state is one of only four U.S. states to consider itself a commonwealth."/>
+    			</effect>
+    		</case>
+    		
+    		<!-- Third hint for AZ (state 9) -->
+    		<case>
+    	        <!-- if the machine act is to check they've asked for a hint -->
+    			<condition>
+    				<if var="current_step" relation="=" value="thirdh"/>
+    				<if var="a_m" relation="=" value="CheckAsk({hint})"/>
+    				<if var="state" relation="=" value="9"/>
+    			</condition>
+    			<!-- set machine utterance to provide another hint -->
+    			<effect util="1">
+    				<set var="u_m" value="This state is one of the four states whose borders meet at the 'Four Corners'."/>
+    			</effect>
+    		</case>
+    		
+    		<!-- Third hint for GA (state 10) -->
+    		<case>
+    	        <!-- if the machine act is to check they've asked for a hint -->
+    			<condition>
+    				<if var="current_step" relation="=" value="thirdh"/>
+    				<if var="a_m" relation="=" value="CheckAsk({hint})"/>
+    				<if var="state" relation="=" value="10"/>
+    			</condition>
+    			<!-- set machine utterance to provide another hint -->
+    			<effect util="1">
+    				<set var="u_m" value="This state is the nation's number one producer of the three Ps--peanuts, pecans, and peaches."/>
     			</effect>
     		</case>
     	</rule> <!-- END RULE FOR CURRENT STEP THIRD HINT -->
@@ -898,6 +1379,62 @@
     			<!-- set machine utterance to provide another hint -->
     			<effect util="1">
     				<set var="u_m" value="The only part of the United States that falls within the Arctic Circle is in this state."/>
+    			</effect>
+    		</case>
+    		
+    		<!-- Final hint for HI (state 7) -->
+    		<case>
+    	        <!-- if the machine act is to check they've asked for a hint -->
+    			<condition>
+    				<if var="current_step" relation="=" value="finalh"/>
+    				<if var="a_m" relation="=" value="CheckAsk({hint})"/>
+    				<if var="state" relation="=" value="7"/>
+    			</condition>
+    			<!-- set machine utterance to provide another hint -->
+    			<effect util="1">
+    				<set var="u_m" value="The capital of this state is Honolulu."/>
+    			</effect>
+    		</case>
+    		
+    		<!-- Final hint for MA (state 8) -->
+    		<case>
+    	        <!-- if the machine act is to check they've asked for a hint -->
+    			<condition>
+    				<if var="current_step" relation="=" value="finalh"/>
+    				<if var="a_m" relation="=" value="CheckAsk({hint})"/>
+    				<if var="state" relation="=" value="8"/>
+    			</condition>
+    			<!-- set machine utterance to provide another hint -->
+    			<effect util="1">
+    				<set var="u_m" value="The largest city in this state is Boston, which is also its capital."/>
+    			</effect>
+    		</case>
+    		
+    		<!-- Final hint for AZ (state 9) -->
+    		<case>
+    	        <!-- if the machine act is to check they've asked for a hint -->
+    			<condition>
+    				<if var="current_step" relation="=" value="finalh"/>
+    				<if var="a_m" relation="=" value="CheckAsk({hint})"/>
+    				<if var="state" relation="=" value="9"/>
+    			</condition>
+    			<!-- set machine utterance to provide another hint -->
+    			<effect util="1">
+    				<set var="u_m" value="Visitors to this state often come to see the Grand Canyon."/>
+    			</effect>
+    		</case>
+    		
+    		<!-- Final hint for GA (state 10) -->
+    		<case>
+    	        <!-- if the machine act is to check they've asked for a hint -->
+    			<condition>
+    				<if var="current_step" relation="=" value="finalh"/>
+    				<if var="a_m" relation="=" value="CheckAsk({hint})"/>
+    				<if var="state" relation="=" value="10"/>
+    			</condition>
+    			<!-- set machine utterance to provide another hint -->
+    			<effect util="1">
+    				<set var="u_m" value="This state was named for King George II of England."/>
     			</effect>
     		</case>
     	</rule> <!-- END RULE FOR CURRENT STEP FINAL HINT -->
