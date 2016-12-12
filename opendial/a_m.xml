@@ -84,7 +84,7 @@
     			<!-- troll the user accordingly -->
     			<!-- set the machine utterance and current step to first hint -->
     			<effect util="1">
-    				<set var="u_m" value="Okay, thanks for playing!"/>
+    				<set var="u_m" value="Okay, thanks for playing! Failed to recognize user: {recogErrorCount} times out of {u_uCount} utterances. "/>
     				<set var="current_state" value="done"/>
 				<set var="state" value="-1"/>
     			</effect>
@@ -118,7 +118,7 @@
     			<!-- troll the user accordingly -->
     			<!-- set the machine utterance and current step to first hint -->
     			<effect util="1">
-    				<set var="u_m" value="Okay, thanks for playing!"/>
+    				<set var="u_m" value="Okay, thanks for playing! Failed to recognize user: {recogErrorCount} times out of {u_uCount} utterances."/>
     				<set var="current_state" value="done"/>
 				<set var="state" value="-1"/>
     			</effect>
@@ -152,7 +152,7 @@
     			<!-- troll the user accordingly -->
     			<!-- set the machine utterance and current step to first hint -->
     			<effect util="1">
-    				<set var="u_m" value="Okay, thanks for playing!"/>
+    				<set var="u_m" value="Okay, thanks for playing! Failed to recognize user: {recogErrorCount} times out of {u_uCount} utterances."/>
     				<set var="current_state" value="done"/>
 				<set var="state" value="-1"/>
     			</effect>
@@ -186,7 +186,7 @@
     			<!-- troll the user accordingly -->
     			<!-- set the machine utterance and current step to first hint -->
     			<effect util="1">
-    				<set var="u_m" value="Okay, thanks for playing!"/>
+    				<set var="u_m" value="Okay, thanks for playing! Failed to recognize user: {recogErrorCount} times out of {u_uCount} utterances."/>
     				<set var="current_state" value="done"/>
 				<set var="state" value="-1"/>
     			</effect>
@@ -220,7 +220,7 @@
     			<!-- troll the user accordingly -->
     			<!-- set the machine utterance and current step to first hint -->
     			<effect util="1">
-    				<set var="u_m" value="Okay, thanks for playing!"/>
+    				<set var="u_m" value="Okay, thanks for playing! Failed to recognize user: {recogErrorCount} times out of {u_uCount} utterances."/>
     				<set var="current_state" value="done"/>
 				<set var="state" value="-1"/>
     			</effect>
@@ -254,7 +254,7 @@
     			<!-- troll the user accordingly -->
     			<!-- set the machine utterance and current step to first hint -->
     			<effect util="1">
-    				<set var="u_m" value="Okay, thanks for playing!"/>
+    				<set var="u_m" value="Okay, thanks for playing! Failed to recognize user: {recogErrorCount} times out of {u_uCount} utterances."/>
     				<set var="current_state" value="done"/>
 				<set var="state" value="-1"/>
     			</effect>
@@ -288,7 +288,7 @@
     			<!-- troll the user accordingly -->
     			<!-- set the machine utterance and current step to first hint -->
     			<effect util="1">
-    				<set var="u_m" value="Okay, thanks for playing!"/>
+    				<set var="u_m" value="Okay, thanks for playing! Failed to recognize user: {recogErrorCount} times out of {u_uCount} utterances."/>
     				<set var="current_state" value="done"/>
 				<set var="state" value="-1"/>
     			</effect>
@@ -322,7 +322,7 @@
     			<!-- troll the user accordingly -->
     			<!-- set the machine utterance and current step to first hint -->
     			<effect util="1">
-    				<set var="u_m" value="Okay, thanks for playing!"/>
+    				<set var="u_m" value="Okay, thanks for playing! Failed to recognize user: {recogErrorCount} times out of {u_uCount} utterances."/>
     				<set var="current_state" value="done"/>
 				<set var="state" value="-1"/>
     			</effect>
@@ -357,21 +357,204 @@
     			<!-- troll the user accordingly -->
     			<!-- set the machine utterance and current step to first hint -->
     			<effect util="1">
-    				<set var="u_m" value="Okay, thanks for playing!"/>
+    				<set var="u_m" value="Okay, thanks for playing! Failed to recognize user: {recogErrorCount} times out of {u_uCount} utterances."/>
     				<set var="current_state" value="done"/>
 				<set var="state" value="-1"/>
     			</effect>
     		</case>
     	
-            <!-- if "join" didn't contain a positive or negative confirmation -->
+         <!-- if "join" didn't contain a positive or negative confirmation -->
+         <!-- recognition of user input error is logged here --> 
     		<case>
     			<condition>
     				<if var="current_step" relation="=" value="begin"/>
+    				<if var="recogErrorCount" relation="=" value="0"/>
     				<if var="a_m" relation="=" value="CheckAgree({join})"/>
     			</condition>
     			<!-- set machine utterance to prompt for confirmation again -->
     			<effect util="1">
     				<set var="u_m" value="I'm sorry, your response wasn't recognized. Would you like to play the game?"/>
+    				<set var="recogErrorCount" value="1"/>
+    			</effect>
+    		</case>
+    		<case>
+    			<condition>
+    				<if var="current_step" relation="=" value="begin"/>
+    				<if var="recogErrorCount" relation="=" value="1"/>
+    				<if var="a_m" relation="=" value="CheckAgree({join})"/>
+    			</condition>
+    			<!-- set machine utterance to prompt for confirmation again -->
+    			<effect util="1">
+    				<set var="u_m" value="I'm sorry, your response wasn't recognized. Would you like to play the game?"/>
+    				<set var="recogErrorCount" value="2"/>
+    			</effect>
+    		</case>
+    		<case>
+    			<condition>
+    				<if var="current_step" relation="=" value="begin"/>
+    				<if var="recogErrorCount" relation="=" value="2"/>
+    				<if var="a_m" relation="=" value="CheckAgree({join})"/>
+    			</condition>
+    			<!-- set machine utterance to prompt for confirmation again -->
+    			<effect util="1">
+    				<set var="u_m" value="I'm sorry, your response wasn't recognized. Would you like to play the game?"/>
+    				<set var="recogErrorCount" value="3"/>
+    			</effect>
+    		</case>
+    		<case>
+    			<condition>
+    				<if var="current_step" relation="=" value="begin"/>
+    				<if var="recogErrorCount" relation="=" value="3"/>
+    				<if var="a_m" relation="=" value="CheckAgree({join})"/>
+    			</condition>
+    			<!-- set machine utterance to prompt for confirmation again -->
+    			<effect util="1">
+    				<set var="u_m" value="I'm sorry, your response wasn't recognized. Would you like to play the game?"/>
+    				<set var="recogErrorCount" value="4"/>
+    			</effect>
+    		</case>
+    		<case>
+    			<condition>
+    				<if var="current_step" relation="=" value="begin"/>
+    				<if var="recogErrorCount" relation="=" value="4"/>
+    				<if var="a_m" relation="=" value="CheckAgree({join})"/>
+    			</condition>
+    			<!-- set machine utterance to prompt for confirmation again -->
+    			<effect util="1">
+    				<set var="u_m" value="I'm sorry, your response wasn't recognized. Would you like to play the game?"/>
+    				<set var="recogErrorCount" value="5"/>
+    			</effect>
+    		</case>
+    		<case>
+    			<condition>
+    				<if var="current_step" relation="=" value="begin"/>
+    				<if var="recogErrorCount" relation="=" value="5"/>
+    				<if var="a_m" relation="=" value="CheckAgree({join})"/>
+    			</condition>
+    			<!-- set machine utterance to prompt for confirmation again -->
+    			<effect util="1">
+    				<set var="u_m" value="I'm sorry, your response wasn't recognized. Would you like to play the game?"/>
+    				<set var="recogErrorCount" value="6"/>
+    			</effect>
+    		</case>
+    		<case>
+    			<condition>
+    				<if var="current_step" relation="=" value="begin"/>
+    				<if var="recogErrorCount" relation="=" value="6"/>
+    				<if var="a_m" relation="=" value="CheckAgree({join})"/>
+    			</condition>
+    			<!-- set machine utterance to prompt for confirmation again -->
+    			<effect util="1">
+    				<set var="u_m" value="I'm sorry, your response wasn't recognized. Would you like to play the game?"/>
+    				<set var="recogErrorCount" value="7"/>
+    			</effect>
+    		</case>
+    		<case>
+    			<condition>
+    				<if var="current_step" relation="=" value="begin"/>
+    				<if var="recogErrorCount" relation="=" value="7"/>
+    				<if var="a_m" relation="=" value="CheckAgree({join})"/>
+    			</condition>
+    			<!-- set machine utterance to prompt for confirmation again -->
+    			<effect util="1">
+    				<set var="u_m" value="I'm sorry, your response wasn't recognized. Would you like to play the game?"/>
+    				<set var="recogErrorCount" value="8"/>
+    			</effect>
+    		</case>
+    		<case>
+    			<condition>
+    				<if var="current_step" relation="=" value="begin"/>
+    				<if var="recogErrorCount" relation="=" value="8"/>
+    				<if var="a_m" relation="=" value="CheckAgree({join})"/>
+    			</condition>
+    			<!-- set machine utterance to prompt for confirmation again -->
+    			<effect util="1">
+    				<set var="u_m" value="I'm sorry, your response wasn't recognized. Would you like to play the game?"/>
+    				<set var="recogErrorCount" value="9"/>
+    			</effect>
+    		</case>
+    		<case>
+    			<condition>
+    				<if var="current_step" relation="=" value="begin"/>
+    				<if var="recogErrorCount" relation="=" value="9"/>
+    				<if var="a_m" relation="=" value="CheckAgree({join})"/>
+    			</condition>
+    			<!-- set machine utterance to prompt for confirmation again -->
+    			<effect util="1">
+    				<set var="u_m" value="I'm sorry, your response wasn't recognized. Would you like to play the game?"/>
+    				<set var="recogErrorCount" value="10"/>
+    			</effect>
+    		</case>
+    		<case>
+    			<condition>
+    				<if var="current_step" relation="=" value="begin"/>
+    				<if var="recogErrorCount" relation="=" value="10"/>
+    				<if var="a_m" relation="=" value="CheckAgree({join})"/>
+    			</condition>
+    			<!-- set machine utterance to prompt for confirmation again -->
+    			<effect util="1">
+    				<set var="u_m" value="I'm sorry, your response wasn't recognized. Would you like to play the game?"/>
+    				<set var="recogErrorCount" value="11"/>
+    			</effect>
+    		</case>
+    		<case>
+    			<condition>
+    				<if var="current_step" relation="=" value="begin"/>
+    				<if var="recogErrorCount" relation="=" value="11"/>
+    				<if var="a_m" relation="=" value="CheckAgree({join})"/>
+    			</condition>
+    			<!-- set machine utterance to prompt for confirmation again -->
+    			<effect util="1">
+    				<set var="u_m" value="I'm sorry, your response wasn't recognized. Would you like to play the game?"/>
+    				<set var="recogErrorCount" value="12"/>
+    			</effect>
+    		</case>
+    		<case>
+    			<condition>
+    				<if var="current_step" relation="=" value="begin"/>
+    				<if var="recogErrorCount" relation="=" value="12"/>
+    				<if var="a_m" relation="=" value="CheckAgree({join})"/>
+    			</condition>
+    			<!-- set machine utterance to prompt for confirmation again -->
+    			<effect util="1">
+    				<set var="u_m" value="I'm sorry, your response wasn't recognized. Would you like to play the game?"/>
+    				<set var="recogErrorCount" value="13"/>
+    			</effect>
+    		</case>
+    		<case>
+    			<condition>
+    				<if var="current_step" relation="=" value="begin"/>
+    				<if var="recogErrorCount" relation="=" value="13"/>
+    				<if var="a_m" relation="=" value="CheckAgree({join})"/>
+    			</condition>
+    			<!-- set machine utterance to prompt for confirmation again -->
+    			<effect util="1">
+    				<set var="u_m" value="I'm sorry, your response wasn't recognized. Would you like to play the game?"/>
+    				<set var="recogErrorCount" value="14"/>
+    			</effect>
+    		</case>
+    		<case>
+    			<condition>
+    				<if var="current_step" relation="=" value="begin"/>
+    				<if var="recogErrorCount" relation="=" value="14"/>
+    				<if var="a_m" relation="=" value="CheckAgree({join})"/>
+    			</condition>
+    			<!-- set machine utterance to prompt for confirmation again -->
+    			<effect util="1">
+    				<set var="u_m" value="I'm sorry, your response wasn't recognized. Would you like to play the game?"/>
+    				<set var="recogErrorCount" value="15"/>
+    			</effect>
+    		</case>
+    		<case>
+    			<condition>
+    				<if var="current_step" relation="=" value="begin"/>
+    				<if var="recogErrorCount" relation="=" value="15"/>
+    				<if var="a_m" relation="=" value="CheckAgree({join})"/>
+    			</condition>
+    			<!-- set machine utterance to prompt for confirmation again -->
+    			<effect util="1">
+    				<set var="u_m" value="I'm sorry, your response wasn't recognized. Would you like to play the game?"/>
+    				<set var="recogErrorCount" value="16"/>
     			</effect>
     		</case>
     	</rule> <!-- END RULE FOR CURRENT STEP BEGIN -->
@@ -408,7 +591,7 @@
     			</effect>
     		</case>
     		
-    		<!-- if the user is unsure of answer on final hint--> 
+    		<!-- if the user concedes on final hint--> 
     		<case>
     			<condition>
     				<if var="current_step" relation="=" value="finalh"/>
@@ -1228,7 +1411,7 @@
     			</condition>
     			<!-- set machine utterance to provide another hint -->
     			<effect util="1">
-    				<set var="u_m" value="This state has the longest coastline in the continental United States at 1,350 miles."/>
+    				<set var="u_m" value="This is the flattest state in the USA with an average elevation of 100ft above sea level."/>
     				
     			</effect>
     		</case>

@@ -30,16 +30,189 @@
         	</case>
         	
         	<!-- if the user's confirmation wasn't recognized --> 
+        	<!-- error logging happens when user input isn't recognized as valid-->
         	<case>
         		<condition>
         			<if var="current_step" relation="=" value="begin"/>
+        			<if var="recogErrorCount" relation="=" value="0"/>
         		</condition>
         		<!-- set the user act to be agree (to start the game whether they agreed or not, lol) --> 
         		<!-- and passes the "join" variable in that act --> 
         		<effect prob="1">
-        			<set var="u_m" value="I'm sorry, your response wasn't recognized as a confirmation or rejection. Please utter a valid response."/>
+        			<set var="u_m" value="I'm sorry, your response wasn't recognized as a confirmation or rejection. Please tell me if you'd like to play or not?"/>
+        			<set var="recogErrorCount" value="1"/>
         		</effect>
         	</case>
+        	<case>
+        		<condition>
+        			<if var="current_step" relation="=" value="begin"/>
+        			<if var="recogErrorCount" relation="=" value="1"/>
+        		</condition>
+        		<!-- set the user act to be agree (to start the game whether they agreed or not, lol) --> 
+        		<!-- and passes the "join" variable in that act --> 
+        		<effect prob="1">
+        			<set var="u_m" value="I'm sorry, your response wasn't recognized as a confirmation or rejection. Please tell me if you'd like to play or not?"/>
+        			<set var="recogErrorCount" value="2"/>
+        		</effect>
+        	</case>
+        	<case>
+        		<condition>
+        			<if var="current_step" relation="=" value="begin"/>
+        			<if var="recogErrorCount" relation="=" value="1"/>
+        		</condition>
+        		<!-- set the user act to be agree (to start the game whether they agreed or not, lol) --> 
+        		<!-- and passes the "join" variable in that act --> 
+        		<effect prob="1">
+        			<set var="u_m" value="I'm sorry, your response wasn't recognized as a confirmation or rejection. Please tell me if you'd like to play or not?"/>
+        			<set var="recogErrorCount" value="2"/>
+        		</effect>
+        	</case>
+        	<case>
+        		<condition>
+        			<if var="current_step" relation="=" value="begin"/>
+        			<if var="recogErrorCount" relation="=" value="2"/>
+        		</condition>
+        		<!-- set the user act to be agree (to start the game whether they agreed or not, lol) --> 
+        		<!-- and passes the "join" variable in that act --> 
+        		<effect prob="1">
+        			<set var="u_m" value="I'm sorry, your response wasn't recognized as a confirmation or rejection. Please tell me if you'd like to play or not?"/>
+        			<set var="recogErrorCount" value="3"/>
+        		</effect>
+        	</case>
+        	<case>
+        		<condition>
+        			<if var="current_step" relation="=" value="begin"/>
+        			<if var="recogErrorCount" relation="=" value="3"/>
+        		</condition>
+        		<!-- set the user act to be agree (to start the game whether they agreed or not, lol) --> 
+        		<!-- and passes the "join" variable in that act --> 
+        		<effect prob="1">
+        			<set var="u_m" value="I'm sorry, your response wasn't recognized as a confirmation or rejection. Please tell me if you'd like to play or not?"/>
+        			<set var="recogErrorCount" value="4"/>
+        		</effect>
+        	</case>
+        	<case>
+        		<condition>
+        			<if var="current_step" relation="=" value="begin"/>
+        			<if var="recogErrorCount" relation="=" value="4"/>
+        		</condition>
+        		<!-- set the user act to be agree (to start the game whether they agreed or not, lol) --> 
+        		<!-- and passes the "join" variable in that act --> 
+        		<effect prob="1">
+        			<set var="u_m" value="I'm sorry, your response wasn't recognized as a confirmation or rejection. Please tell me if you'd like to play or not?"/>
+        			<set var="recogErrorCount" value="5"/>
+        		</effect>
+        	</case>
+        	<case>
+        		<condition>
+        			<if var="current_step" relation="=" value="begin"/>
+        			<if var="recogErrorCount" relation="=" value="5"/>
+        		</condition>
+        		<!-- set the user act to be agree (to start the game whether they agreed or not, lol) --> 
+        		<!-- and passes the "join" variable in that act --> 
+        		<effect prob="1">
+        			<set var="u_m" value="I'm sorry, your response wasn't recognized as a confirmation or rejection. Please tell me if you'd like to play or not?"/>
+        			<set var="recogErrorCount" value="6"/>
+        		</effect>
+        	</case>
+        	<case>
+        		<condition>
+        			<if var="current_step" relation="=" value="begin"/>
+        			<if var="recogErrorCount" relation="=" value="6"/>
+        		</condition>
+        		<!-- set the user act to be agree (to start the game whether they agreed or not, lol) --> 
+        		<!-- and passes the "join" variable in that act --> 
+        		<effect prob="1">
+        			<set var="u_m" value="I'm sorry, your response wasn't recognized as a confirmation or rejection. Please tell me if you'd like to play or not?"/>
+        			<set var="recogErrorCount" value="7"/>
+        		</effect>
+        	</case>
+        	<case>
+        		<condition>
+        			<if var="current_step" relation="=" value="begin"/>
+        			<if var="recogErrorCount" relation="=" value="7"/>
+        		</condition>
+        		<!-- set the user act to be agree (to start the game whether they agreed or not, lol) --> 
+        		<!-- and passes the "join" variable in that act --> 
+        		<effect prob="1">
+        			<set var="u_m" value="I'm sorry, your response wasn't recognized as a confirmation or rejection. Please tell me if you'd like to play or not?"/>
+        			<set var="recogErrorCount" value="8"/>
+        		</effect>
+        	</case>
+        	<case>
+        		<condition>
+        			<if var="current_step" relation="=" value="begin"/>
+        			<if var="recogErrorCount" relation="=" value="8"/>
+        		</condition>
+        		<!-- set the user act to be agree (to start the game whether they agreed or not, lol) --> 
+        		<!-- and passes the "join" variable in that act --> 
+        		<effect prob="1">
+        			<set var="u_m" value="I'm sorry, your response wasn't recognized as a confirmation or rejection. Please tell me if you'd like to play or not?"/>
+        			<set var="recogErrorCount" value="9"/>
+        		</effect>
+        	</case>
+        	<case>
+        		<condition>
+        			<if var="current_step" relation="=" value="begin"/>
+        			<if var="recogErrorCount" relation="=" value="9"/>
+        		</condition>
+        		<!-- set the user act to be agree (to start the game whether they agreed or not, lol) --> 
+        		<!-- and passes the "join" variable in that act --> 
+        		<effect prob="1">
+        			<set var="u_m" value="I'm sorry, your response wasn't recognized as a confirmation or rejection. Please tell me if you'd like to play or not?"/>
+        			<set var="recogErrorCount" value="10"/>
+        		</effect>
+        	</case>
+        	<case>
+        		<condition>
+        			<if var="current_step" relation="=" value="begin"/>
+        			<if var="recogErrorCount" relation="=" value="11"/>
+        		</condition>
+        		<!-- set the user act to be agree (to start the game whether they agreed or not, lol) --> 
+        		<!-- and passes the "join" variable in that act --> 
+        		<effect prob="1">
+        			<set var="u_m" value="I'm sorry, your response wasn't recognized as a confirmation or rejection. Please tell me if you'd like to play or not?"/>
+        			<set var="recogErrorCount" value="12"/>
+        		</effect>
+        	</case>
+        	<case>
+        		<condition>
+        			<if var="current_step" relation="=" value="begin"/>
+        			<if var="recogErrorCount" relation="=" value="12"/>
+        		</condition>
+        		<!-- set the user act to be agree (to start the game whether they agreed or not, lol) --> 
+        		<!-- and passes the "join" variable in that act --> 
+        		<effect prob="1">
+        			<set var="u_m" value="I'm sorry, your response wasn't recognized as a confirmation or rejection. Please tell me if you'd like to play or not?"/>
+        			<set var="recogErrorCount" value="13"/>
+        		</effect>
+        	</case>
+        	<case>
+        		<condition>
+        			<if var="current_step" relation="=" value="begin"/>
+        			<if var="recogErrorCount" relation="=" value="13"/>
+        		</condition>
+        		<!-- set the user act to be agree (to start the game whether they agreed or not, lol) --> 
+        		<!-- and passes the "join" variable in that act --> 
+        		<effect prob="1">
+        			<set var="u_m" value="I'm sorry, your response wasn't recognized as a confirmation or rejection. Please tell me if you'd like to play or not?"/>
+        			<set var="recogErrorCount" value="14"/>
+        		</effect>
+        	</case>
+        	<case>
+        		<condition>
+        			<if var="current_step" relation="=" value="begin"/>
+        			<if var="recogErrorCount" relation="=" value="14"/>
+        		</condition>
+        		<!-- set the user act to be agree (to start the game whether they agreed or not, lol) --> 
+        		<!-- and passes the "join" variable in that act --> 
+        		<effect prob="1">
+        			<set var="u_m" value="I'm sorry, your response wasn't recognized as a confirmation or rejection. Please tell me if you'd like to play or not?"/>
+        			<set var="recogErrorCount" value="15"/>
+        		</effect>
+        	</case>
+        	<!-- end of recog error logging -->
+        	
             
         	<!-- if the user is asking for their second hint -->
     	    <case>
@@ -160,19 +333,597 @@
 
         	
      	<!-- if the current step is a hint, set a_u to guess and pass their guess as a parameter -->
+     	<!-- logs recognition errors here --> 
         	<case>
         		<condition>
         		    <!-- If the current step is first hint AND their utterance DOES NOT contain a state--> 
         			<if var="current_step" relation="=" value="firsth|secondh|thirdh|finalh"/>
+        			<if var="recogErrorCount" relation="=" value="0"/>
         		</condition>
         		<!-- Set the user act to Guess and pass the state that they guessed --> 
         		<effect prob="1">
         			<set var="u_m" value="I have no idea what you said. Please get your crap together and guess an actual state you plebeian."/>
+        			<set var="recogErrorCount" value="1"/>
+        		</effect>
+        	</case>
+        	<case>
+        		<condition>
+        		    <!-- If the current step is first hint AND their utterance DOES NOT contain a state--> 
+        			<if var="current_step" relation="=" value="firsth|secondh|thirdh|finalh"/>
+        			<if var="recogErrorCount" relation="=" value="1"/>
+        		</condition>
+        		<!-- Set the user act to Guess and pass the state that they guessed --> 
+        		<effect prob="1">
+        			<set var="u_m" value="I have no idea what you said. Please get your crap together and guess an actual state you plebeian."/>
+        			<set var="recogErrorCount" value="2"/>
+        		</effect>
+        	</case>
+        	<case>
+        		<condition>
+        		    <!-- If the current step is first hint AND their utterance DOES NOT contain a state--> 
+        			<if var="current_step" relation="=" value="firsth|secondh|thirdh|finalh"/>
+        			<if var="recogErrorCount" relation="=" value="2"/>
+        		</condition>
+        		<!-- Set the user act to Guess and pass the state that they guessed --> 
+        		<effect prob="1">
+        			<set var="u_m" value="I have no idea what you said. Please get your crap together and guess an actual state you plebeian."/>
+        			<set var="recogErrorCount" value="3"/>
+        		</effect>
+        	</case>
+        	<case>
+        		<condition>
+        		    <!-- If the current step is first hint AND their utterance DOES NOT contain a state--> 
+        			<if var="current_step" relation="=" value="firsth|secondh|thirdh|finalh"/>
+        			<if var="recogErrorCount" relation="=" value="3"/>
+        		</condition>
+        		<!-- Set the user act to Guess and pass the state that they guessed --> 
+        		<effect prob="1">
+        			<set var="u_m" value="I have no idea what you said. Please get your crap together and guess an actual state you plebeian."/>
+        			<set var="recogErrorCount" value="4"/>
+        		</effect>
+        	</case>
+        	<case>
+        		<condition>
+        		    <!-- If the current step is first hint AND their utterance DOES NOT contain a state--> 
+        			<if var="current_step" relation="=" value="firsth|secondh|thirdh|finalh"/>
+        			<if var="recogErrorCount" relation="=" value="4"/>
+        		</condition>
+        		<!-- Set the user act to Guess and pass the state that they guessed --> 
+        		<effect prob="1">
+        			<set var="u_m" value="I have no idea what you said. Please get your crap together and guess an actual state you plebeian."/>
+        			<set var="recogErrorCount" value="5"/>
+        		</effect>
+        	</case>
+        	<case>
+        		<condition>
+        		    <!-- If the current step is first hint AND their utterance DOES NOT contain a state--> 
+        			<if var="current_step" relation="=" value="firsth|secondh|thirdh|finalh"/>
+        			<if var="recogErrorCount" relation="=" value="5"/>
+        		</condition>
+        		<!-- Set the user act to Guess and pass the state that they guessed --> 
+        		<effect prob="1">
+        			<set var="u_m" value="I have no idea what you said. Please get your crap together and guess an actual state you plebeian."/>
+        			<set var="recogErrorCount" value="6"/>
+        		</effect>
+        	</case>
+        	<case>
+        		<condition>
+        		    <!-- If the current step is first hint AND their utterance DOES NOT contain a state--> 
+        			<if var="current_step" relation="=" value="firsth|secondh|thirdh|finalh"/>
+        			<if var="recogErrorCount" relation="=" value="6"/>
+        		</condition>
+        		<!-- Set the user act to Guess and pass the state that they guessed --> 
+        		<effect prob="1">
+        			<set var="u_m" value="I have no idea what you said. Please get your crap together and guess an actual state you plebeian."/>
+        			<set var="recogErrorCount" value="7"/>
+        		</effect>
+        	</case>
+        	<case>
+        		<condition>
+        		    <!-- If the current step is first hint AND their utterance DOES NOT contain a state--> 
+        			<if var="current_step" relation="=" value="firsth|secondh|thirdh|finalh"/>
+        			<if var="recogErrorCount" relation="=" value="7"/>
+        		</condition>
+        		<!-- Set the user act to Guess and pass the state that they guessed --> 
+        		<effect prob="1">
+        			<set var="u_m" value="I have no idea what you said. Please get your crap together and guess an actual state you plebeian."/>
+        			<set var="recogErrorCount" value="8"/>
+        		</effect>
+        	</case>
+        	<case>
+        		<condition>
+        		    <!-- If the current step is first hint AND their utterance DOES NOT contain a state--> 
+        			<if var="current_step" relation="=" value="firsth|secondh|thirdh|finalh"/>
+        			<if var="recogErrorCount" relation="=" value="8"/>
+        		</condition>
+        		<!-- Set the user act to Guess and pass the state that they guessed --> 
+        		<effect prob="1">
+        			<set var="u_m" value="I have no idea what you said. Please get your crap together and guess an actual state you plebeian."/>
+        			<set var="recogErrorCount" value="9"/>
+        		</effect>
+        	</case>
+        	<case>
+        		<condition>
+        		    <!-- If the current step is first hint AND their utterance DOES NOT contain a state--> 
+        			<if var="current_step" relation="=" value="firsth|secondh|thirdh|finalh"/>
+        			<if var="recogErrorCount" relation="=" value="9"/>
+        		</condition>
+        		<!-- Set the user act to Guess and pass the state that they guessed --> 
+        		<effect prob="1">
+        			<set var="u_m" value="I have no idea what you said. Please get your crap together and guess an actual state you plebeian."/>
+        			<set var="recogErrorCount" value="10"/>
+        		</effect>
+        	</case>
+        	<case>
+        		<condition>
+        		    <!-- If the current step is first hint AND their utterance DOES NOT contain a state--> 
+        			<if var="current_step" relation="=" value="firsth|secondh|thirdh|finalh"/>
+        			<if var="recogErrorCount" relation="=" value="10"/>
+        		</condition>
+        		<!-- Set the user act to Guess and pass the state that they guessed --> 
+        		<effect prob="1">
+        			<set var="u_m" value="I have no idea what you said. Please get your crap together and guess an actual state you plebeian."/>
+        			<set var="recogErrorCount" value="11"/>
+        		</effect>
+        	</case>
+        	<case>
+        		<condition>
+        		    <!-- If the current step is first hint AND their utterance DOES NOT contain a state--> 
+        			<if var="current_step" relation="=" value="firsth|secondh|thirdh|finalh"/>
+        			<if var="recogErrorCount" relation="=" value="11"/>
+        		</condition>
+        		<!-- Set the user act to Guess and pass the state that they guessed --> 
+        		<effect prob="1">
+        			<set var="u_m" value="I have no idea what you said. Please get your crap together and guess an actual state you plebeian."/>
+        			<set var="recogErrorCount" value="12"/>
+        		</effect>
+        	</case>
+        	<case>
+        		<condition>
+        		    <!-- If the current step is first hint AND their utterance DOES NOT contain a state--> 
+        			<if var="current_step" relation="=" value="firsth|secondh|thirdh|finalh"/>
+        			<if var="recogErrorCount" relation="=" value="12"/>
+        		</condition>
+        		<!-- Set the user act to Guess and pass the state that they guessed --> 
+        		<effect prob="1">
+        			<set var="u_m" value="I have no idea what you said. Please get your crap together and guess an actual state you plebeian."/>
+        			<set var="recogErrorCount" value="13"/>
+        		</effect>
+        	</case>
+        	<case>
+        		<condition>
+        		    <!-- If the current step is first hint AND their utterance DOES NOT contain a state--> 
+        			<if var="current_step" relation="=" value="firsth|secondh|thirdh|finalh"/>
+        			<if var="recogErrorCount" relation="=" value="13"/>
+        		</condition>
+        		<!-- Set the user act to Guess and pass the state that they guessed --> 
+        		<effect prob="1">
+        			<set var="u_m" value="I have no idea what you said. Please get your crap together and guess an actual state you plebeian."/>
+        			<set var="recogErrorCount" value="14"/>
+        		</effect>
+        	</case>
+        	<case>
+        		<condition>
+        		    <!-- If the current step is first hint AND their utterance DOES NOT contain a state--> 
+        			<if var="current_step" relation="=" value="firsth|secondh|thirdh|finalh"/>
+        			<if var="recogErrorCount" relation="=" value="14"/>
+        		</condition>
+        		<!-- Set the user act to Guess and pass the state that they guessed --> 
+        		<effect prob="1">
+        			<set var="u_m" value="I have no idea what you said. Please get your crap together and guess an actual state you plebeian."/>
+        			<set var="recogErrorCount" value="15"/>
         		</effect>
         	</case>
         	
     	</rule>
     
     </model>    <!-- END U_U MODEL --> 
+    	
+    	<!-- separate model to count number of user utterances --> 
+    <model trigger="u_u">
+    		<rule>
+    			<!-- increment user utterance count every time new u_u is input --> 
+    			<case>
+    				<condition>
+    					<if var="u_uCount" relation="=" value="0"/>
+    				</condition>
+    				<effect prob="1">
+    					<set var="u_uCount" value="1"/>
+    				</effect>
+    			</case>
+    			<case>
+    				<condition>
+    					<if var="u_uCount" relation="=" value="1"/>
+    				</condition>
+    				<effect prob="1">
+    					<set var="u_uCount" value="2"/>
+    				</effect>
+    			</case>
+    			<case>
+    				<condition>
+    					<if var="u_uCount" relation="=" value="2"/>
+    				</condition>
+    				<effect prob="1">
+    					<set var="u_uCount" value="3"/>
+    				</effect>
+    			</case>
+    			<case>
+    				<condition>
+    					<if var="u_uCount" relation="=" value="3"/>
+    				</condition>
+    				<effect prob="1">
+    					<set var="u_uCount" value="4"/>
+    				</effect>
+    			</case>
+    			<case>
+    				<condition>
+    					<if var="u_uCount" relation="=" value="4"/>
+    				</condition>
+    				<effect prob="1">
+    					<set var="u_uCount" value="5"/>
+    				</effect>
+    			</case>
+    			<case>
+    				<condition>
+    					<if var="u_uCount" relation="=" value="5"/>
+    				</condition>
+    				<effect prob="1">
+    					<set var="u_uCount" value="6"/>
+    				</effect>
+    			</case>
+    			<case>
+    				<condition>
+    					<if var="u_uCount" relation="=" value="6"/>
+    				</condition>
+    				<effect prob="1">
+    					<set var="u_uCount" value="7"/>
+    				</effect>
+    			</case>
+    			<case>
+    				<condition>
+    					<if var="u_uCount" relation="=" value="7"/>
+    				</condition>
+    				<effect prob="1">
+    					<set var="u_uCount" value="8"/>
+    				</effect>
+    			</case>
+    			<case>
+    				<condition>
+    					<if var="u_uCount" relation="=" value="8"/>
+    				</condition>
+    				<effect prob="1">
+    					<set var="u_uCount" value="9"/>
+    				</effect>
+    			</case>
+    			<case>
+    				<condition>
+    					<if var="u_uCount" relation="=" value="9"/>
+    				</condition>
+    				<effect prob="1">
+    					<set var="u_uCount" value="10"/>
+    				</effect>
+    			</case>
+    			<case>
+    				<condition>
+    					<if var="u_uCount" relation="=" value="10"/>
+    				</condition>
+    				<effect prob="1">
+    					<set var="u_uCount" value="11"/>
+    				</effect>
+    			</case>
+    			<case>
+    				<condition>
+    					<if var="u_uCount" relation="=" value="11"/>
+    				</condition>
+    				<effect prob="1">
+    					<set var="u_uCount" value="12"/>
+    				</effect>
+    			</case>
+    			<case>
+    				<condition>
+    					<if var="u_uCount" relation="=" value="12"/>
+    				</condition>
+    				<effect prob="1">
+    					<set var="u_uCount" value="13"/>
+    				</effect>
+    			</case>
+    			<case>
+    				<condition>
+    					<if var="u_uCount" relation="=" value="13"/>
+    				</condition>
+    				<effect prob="1">
+    					<set var="u_uCount" value="14"/>
+    				</effect>
+    			</case>
+    			<case>
+    				<condition>
+    					<if var="u_uCount" relation="=" value="14"/>
+    				</condition>
+    				<effect prob="1">
+    					<set var="u_uCount" value="15"/>
+    				</effect>
+    			</case>
+    			<case>
+    				<condition>
+    					<if var="u_uCount" relation="=" value="15"/>
+    				</condition>
+    				<effect prob="1">
+    					<set var="u_uCount" value="16"/>
+    				</effect>
+    			</case>
+    			<case>
+    				<condition>
+    					<if var="u_uCount" relation="=" value="16"/>
+    				</condition>
+    				<effect prob="1">
+    					<set var="u_uCount" value="17"/>
+    				</effect>
+    			</case>
+    			<case>
+    				<condition>
+    					<if var="u_uCount" relation="=" value="17"/>
+    				</condition>
+    				<effect prob="1">
+    					<set var="u_uCount" value="18"/>
+    				</effect>
+    			</case>
+    			<case>
+    				<condition>
+    					<if var="u_uCount" relation="=" value="18"/>
+    				</condition>
+    				<effect prob="1">
+    					<set var="u_uCount" value="19"/>
+    				</effect>
+    			</case>
+    			<case>
+    				<condition>
+    					<if var="u_uCount" relation="=" value="19"/>
+    				</condition>
+    				<effect prob="1">
+    					<set var="u_uCount" value="20"/>
+    				</effect>
+    			</case>
+    			<case>
+    				<condition>
+    					<if var="u_uCount" relation="=" value="20"/>
+    				</condition>
+    				<effect prob="1">
+    					<set var="u_uCount" value="21"/>
+    				</effect>
+    			</case>
+    			<case>
+    				<condition>
+    					<if var="u_uCount" relation="=" value="21"/>
+    				</condition>
+    				<effect prob="1">
+    					<set var="u_uCount" value="22"/>
+    				</effect>
+    			</case>
+    			<case>
+    				<condition>
+    					<if var="u_uCount" relation="=" value="22"/>
+    				</condition>
+    				<effect prob="1">
+    					<set var="u_uCount" value="23"/>
+    				</effect>
+    			</case>
+    			<case>
+    				<condition>
+    					<if var="u_uCount" relation="=" value="23"/>
+    				</condition>
+    				<effect prob="1">
+    					<set var="u_uCount" value="24"/>
+    				</effect>
+    			</case>
+    			<case>
+    				<condition>
+    					<if var="u_uCount" relation="=" value="24"/>
+    				</condition>
+    				<effect prob="1">
+    					<set var="u_uCount" value="25"/>
+    				</effect>
+    			</case>
+    			<case>
+    				<condition>
+    					<if var="u_uCount" relation="=" value="25"/>
+    				</condition>
+    				<effect prob="1">
+    					<set var="u_uCount" value="26"/>
+    				</effect>
+    			</case>
+    			<case>
+    				<condition>
+    					<if var="u_uCount" relation="=" value="26"/>
+    				</condition>
+    				<effect prob="1">
+    					<set var="u_uCount" value="27"/>
+    				</effect>
+    			</case>
+    			<case>
+    				<condition>
+    					<if var="u_uCount" relation="=" value="27"/>
+    				</condition>
+    				<effect prob="1">
+    					<set var="u_uCount" value="28"/>
+    				</effect>
+    			</case>
+    			<case>
+    				<condition>
+    					<if var="u_uCount" relation="=" value="28"/>
+    				</condition>
+    				<effect prob="1">
+    					<set var="u_uCount" value="29"/>
+    				</effect>
+    			</case>
+    			<case>
+    				<condition>
+    					<if var="u_uCount" relation="=" value="29"/>
+    				</condition>
+    				<effect prob="1">
+    					<set var="u_uCount" value="30"/>
+    				</effect>
+    			</case>
+    			<case>
+    				<condition>
+    					<if var="u_uCount" relation="=" value="30"/>
+    				</condition>
+    				<effect prob="1">
+    					<set var="u_uCount" value="31"/>
+    				</effect>
+    			</case>
+    			<case>
+    				<condition>
+    					<if var="u_uCount" relation="=" value="31"/>
+    				</condition>
+    				<effect prob="1">
+    					<set var="u_uCount" value="32"/>
+    				</effect>
+    			</case>
+    			<case>
+    				<condition>
+    					<if var="u_uCount" relation="=" value="32"/>
+    				</condition>
+    				<effect prob="1">
+    					<set var="u_uCount" value="33"/>
+    				</effect>
+    			</case>
+    			<case>
+    				<condition>
+    					<if var="u_uCount" relation="=" value="33"/>
+    				</condition>
+    				<effect prob="1">
+    					<set var="u_uCount" value="34"/>
+    				</effect>
+    			</case>
+    			<case>
+    				<condition>
+    					<if var="u_uCount" relation="=" value="34"/>
+    				</condition>
+    				<effect prob="1">
+    					<set var="u_uCount" value="35"/>
+    				</effect>
+    			</case>
+    			<case>
+    				<condition>
+    					<if var="u_uCount" relation="=" value="35"/>
+    				</condition>
+    				<effect prob="1">
+    					<set var="u_uCount" value="36"/>
+    				</effect>
+    			</case>
+    			<case>
+    				<condition>
+    					<if var="u_uCount" relation="=" value="36"/>
+    				</condition>
+    				<effect prob="1">
+    					<set var="u_uCount" value="37"/>
+    				</effect>
+    			</case>
+    			<case>
+    				<condition>
+    					<if var="u_uCount" relation="=" value="37"/>
+    				</condition>
+    				<effect prob="1">
+    					<set var="u_uCount" value="38"/>
+    				</effect>
+    			</case>
+    			<case>
+    				<condition>
+    					<if var="u_uCount" relation="=" value="38"/>
+    				</condition>
+    				<effect prob="1">
+    					<set var="u_uCount" value="39"/>
+    				</effect>
+    			</case>
+    			<case>
+    				<condition>
+    					<if var="u_uCount" relation="=" value="39"/>
+    				</condition>
+    				<effect prob="1">
+    					<set var="u_uCount" value="40"/>
+    				</effect>
+    			</case>
+    			<case>
+    				<condition>
+    					<if var="u_uCount" relation="=" value="40"/>
+    				</condition>
+    				<effect prob="1">
+    					<set var="u_uCount" value="41"/>
+    				</effect>
+    			</case>
+    			<case>
+    				<condition>
+    					<if var="u_uCount" relation="=" value="41"/>
+    				</condition>
+    				<effect prob="1">
+    					<set var="u_uCount" value="42"/>
+    				</effect>
+    			</case>
+    			<case>
+    				<condition>
+    					<if var="u_uCount" relation="=" value="42"/>
+    				</condition>
+    				<effect prob="1">
+    					<set var="u_uCount" value="43"/>
+    				</effect>
+    			</case>
+    			<case>
+    				<condition>
+    					<if var="u_uCount" relation="=" value="43"/>
+    				</condition>
+    				<effect prob="1">
+    					<set var="u_uCount" value="44"/>
+    				</effect>
+    			</case>
+    			<case>
+    				<condition>
+    					<if var="u_uCount" relation="=" value="44"/>
+    				</condition>
+    				<effect prob="1">
+    					<set var="u_uCount" value="45"/>
+    				</effect>
+    			</case>
+    			<case>
+    				<condition>
+    					<if var="u_uCount" relation="=" value="45"/>
+    				</condition>
+    				<effect prob="1">
+    					<set var="u_uCount" value="46"/>
+    				</effect>
+    			</case>
+    			<case>
+    				<condition>
+    					<if var="u_uCount" relation="=" value="46"/>
+    				</condition>
+    				<effect prob="1">
+    					<set var="u_uCount" value="47"/>
+    				</effect>
+    			</case>
+    			<case>
+    				<condition>
+    					<if var="u_uCount" relation="=" value="47"/>
+    				</condition>
+    				<effect prob="1">
+    					<set var="u_uCount" value="48"/>
+    				</effect>
+    			</case>
+    			<case>
+    				<condition>
+    					<if var="u_uCount" relation="=" value="48"/>
+    				</condition>
+    				<effect prob="1">
+    					<set var="u_uCount" value="49"/>
+    				</effect>
+    			</case>
+    			<case>
+    				<condition>
+    					<if var="u_uCount" relation="=" value="49"/>
+    				</condition>
+    				<effect prob="1">
+    					<set var="u_uCount" value="50"/>
+    				</effect>
+    			</case>
+    		</rule>
+    	</model>
 	
 </domain>

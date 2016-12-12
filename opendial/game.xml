@@ -11,6 +11,14 @@
     <variable id="state">
 	    <value prob="1">0</value>
     </variable>
+    
+    <!-- variables to track recognition error rate --> 
+    <variable id="recogErrorCount">
+	    <value prob="1">0</value>
+    </variable>
+    <variable id="u_uCount">
+	    <value prob="1">0</value>
+    </variable>
 
     <variable id="current_step">
 		<value>begin</value>
