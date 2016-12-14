@@ -351,7 +351,7 @@
     			</condition>
     			<!-- set the machine utterance and change the current step to be first hint -->
     			<effect util="1">
-    				<set var="u_m" value="Alright, lets play the game! Located in Sacramento, this state's Railroad Museum is the largest museum of its kind in North America. "/>
+    				<set var="u_m" value="Alright, lets play the game! This state's Railroad Museum is in Sacramento and is the largest museum of its kind in North America. "/>
     				<set var="current_step" value="firsth"/>
     				<set var="state" value="1"/>
     				<set var="answer" value="California"/>
@@ -383,7 +383,7 @@
     			<!-- troll the user accordingly -->
     			<!-- set the machine utterance and current step to first hint -->
     			<effect util="1">
-    				<set var="u_m" value="You said {join}, but I don't care. Let's get started! Located in Sacramento, this state's Railroad Museum is the largest museum of its kind in North America. " />
+    				<set var="u_m" value="You said {join}, but I don't care. Let's get started! This state's Railroad Museum is in Sacramento and is the largest museum of its kind in North America. " />
     				<set var="current_step" value="firsth"/>
     				<set var="state" value="1"/>
     				<set var="answer" value="California"/>
@@ -400,7 +400,7 @@
     			</condition>
     			<!-- set the machine utterance and change the current step to be first hint -->
     			<effect util="1">
-    				<set var="u_m" value="Alright, lets play the game! This state is home to Saint Augustine, the oldest European settlement in North America."/>
+    				<set var="u_m" value="Alright, lets play the game! This state is home to Saint Augustine which is the oldest European settlement in North America."/>
     				<set var="current_step" value="firsth"/>
     				<set var="state" value="2"/>
     				<set var="answer" value="Florida"/>
@@ -1586,7 +1586,7 @@
     			</condition>
     			<!-- set machine utterance to provide another hint -->
     			<effect util="1">
-    				<set var="u_m" value="This state is home to Death Valley. It is recognized as the hottest, driest place in the United States. It isn't uncommon for the summer temperatures to reach more than 115 degrees."/>
+    				<set var="u_m" value="Okay. This state is home to Death Valley. It is recognized as the hottest, driest place in the United States. It isn't uncommon for the summer temperatures to reach more than 115 degrees."/>
     			</effect>
     		</case>
     		
@@ -1600,7 +1600,7 @@
     			</condition>
     			<!-- set machine utterance to provide another hint -->
     			<effect util="1">
-    				<set var="u_m" value="This state has the longest coastline in the contiguous United States at 1,350 miles."/>
+    				<set var="u_m" value="Okay. This state has the longest coastline in the contiguous United States at 1,350 miles."/>
     			</effect>
     		</case>
     		
@@ -1614,7 +1614,7 @@
     			</condition>
     			<!-- set machine utterance to provide another hint -->
     			<effect util="1">
-    				<set var="u_m" value="Six different nations have claimed this state since its original Native American inhabitants."/>
+    				<set var="u_m" value="Okay. Six different nations have claimed this state since its original Native American inhabitants."/>
     			</effect>
     		</case>
     		
@@ -1628,7 +1628,7 @@
     			</condition>
     			<!-- set machine utterance to provide another hint -->
     			<effect util="1">
-    				<set var="u_m" value="Adirondack State Park, located in this state, is the largest state park in the US."/>
+    				<set var="u_m" value="Okay. Adirondack State Park, located in this state, is the largest state park in the US."/>
     			</effect>
     		</case>
     		
@@ -1642,7 +1642,7 @@
     			</condition>
     			<!-- set machine utterance to provide another hint -->
     			<effect util="1">
-    				<set var="u_m" value="This state is not Michigan, but it is bordered by Lake Michigan."/>
+    				<set var="u_m" value="Okay. This state is not Michigan, but it is bordered by Lake Michigan."/>
     			</effect>
     		</case>
     		
@@ -1656,7 +1656,7 @@
     			</condition>
     			<!-- set machine utterance to provide another hint -->
     			<effect util="1">
-    				<set var="u_m" value="When ancient humans first began to move from Asia to North America, they arrived in what is now this state."/>
+    				<set var="u_m" value="Okay. When ancient humans first began to move from Asia to North America, they arrived in what is now this state."/>
     			</effect>
     		</case>
     		
@@ -1670,7 +1670,7 @@
     			</condition>
     			<!-- set machine utterance to provide another hint -->
     			<effect util="1">
-    				<set var="u_m" value="Until the middle of the 19th century, this state was an independent kingdom."/>
+    				<set var="u_m" value="Okay. Until the middle of the 19th century, this state was an independent kingdom."/>
     			</effect>
     		</case>
     		
@@ -1684,7 +1684,7 @@
     			</condition>
     			<!-- set machine utterance to provide another hint -->
     			<effect util="1">
-    				<set var="u_m" value="The Salem Witch Trials took place in this state."/>
+    				<set var="u_m" value="Okay. The Salem Witch Trials took place in this state."/>
     			</effect>
     		</case>
     		
@@ -1698,7 +1698,7 @@
     			</condition>
     			<!-- set machine utterance to provide another hint -->
     			<effect util="1">
-    				<set var="u_m" value="The saguaro cactus blossom is the official state flower of this state. "/>
+    				<set var="u_m" value="Okay. The saguaro cactus blossom is the official state flower of this state. "/>
     			</effect>
     		</case>
     		
@@ -1712,7 +1712,7 @@
     			</condition>
     			<!-- set machine utterance to provide another hint -->
     			<effect util="1">
-    				<set var="u_m" value="Savannah was the landing site for General James Edward Oglethorpe, founder of this state. "/>
+    				<set var="u_m" value="Okay. Savannah was the landing site for General James Edward Oglethorpe, founder of this state. "/>
     			</effect>
     		</case>
     	</rule> <!-- END RULE FOR CURRENT STEP SECOND HINT -->
@@ -1730,7 +1730,7 @@
     			</condition>
     			<!-- set machine utterance to provide another hint -->
     			<effect util="1">
-    				<set var="u_m" value="This state is home to the highest and lowest points in the continental United States, and they are within 100 miles of one another. Mount Whitney measures 14,495 feet and Bad Water in Death Valley is 282 feet below sea level. "/>
+    				<set var="u_m" value="Okay. This state is home to the highest and lowest points in the continental United States, and they are within 100 miles of one another. Mount Whitney measures 14,495 feet and Bad Water in Death Valley is 282 feet below sea level. "/>
     				
     			</effect>
     		</case>
@@ -1745,7 +1745,7 @@
     			</condition>
     			<!-- set machine utterance to provide another hint -->
     			<effect util="1">
-    				<set var="u_m" value="This is the flattest state in the USA with an average elevation of 100ft above sea level."/>
+    				<set var="u_m" value="Okay. This is the flattest state in the USA with an average elevation of 100ft above sea level."/>
     				
     			</effect>
     		</case>
@@ -1760,7 +1760,7 @@
     			</condition>
     			<!-- set machine utterance to provide another hint -->
     			<effect util="1">
-    				<set var="u_m" value="This state is the second-largest in area and population in the United States."/>
+    				<set var="u_m" value="Okay. This state is the second-largest in area and population in the United States."/>
     			</effect>
     		</case>
     		
@@ -1774,7 +1774,7 @@
     			</condition>
     			<!-- set machine utterance to provide another hint -->
     			<effect util="1">
-    				<set var="u_m" value="Henry Hudson was one of the first Europeans to explore this state."/>
+    				<set var="u_m" value="Okay. Henry Hudson was one of the first Europeans to explore this state."/>
     			</effect>
     		</case>
     		
@@ -1788,7 +1788,7 @@
     			</condition>
     			<!-- set machine utterance to provide another hint -->
     			<effect util="1">
-    				<set var="u_m" value="After a losing streak that lasted more than 100 years, a baseball team from this state won the 2016 World Series. FLY THE W BABY!!!"/>
+    				<set var="u_m" value="Okay. After a losing streak that lasted more than 100 years, a baseball team from this state won the 2016 World Series. FLY THE W BABY!!!"/>
     			</effect>
     		</case>
     		
@@ -1802,7 +1802,7 @@
     			</condition>
     			<!-- set machine utterance to provide another hint -->
     			<effect util="1">
-    				<set var="u_m" value="This state's largest city is Anchorage."/>
+    				<set var="u_m" value="Okay. This state's largest city is Anchorage."/>
     			</effect>
     		</case>
     		
@@ -1816,7 +1816,7 @@
     			</condition>
     			<!-- set machine utterance to provide another hint -->
     			<effect util="1">
-    				<set var="u_m" value="This state was the most recent state to join the United States."/>
+    				<set var="u_m" value="Okay. This state was the most recent state to join the United States."/>
     			</effect>
     		</case>
     		
@@ -1830,7 +1830,7 @@
     			</condition>
     			<!-- set machine utterance to provide another hint -->
     			<effect util="1">
-    				<set var="u_m" value="This state is one of only four U.S. states to consider itself a commonwealth."/>
+    				<set var="u_m" value="Okay. This state is one of only four U.S. states to consider itself a commonwealth."/>
     			</effect>
     		</case>
     		
@@ -1844,7 +1844,7 @@
     			</condition>
     			<!-- set machine utterance to provide another hint -->
     			<effect util="1">
-    				<set var="u_m" value="This state is one of the four states whose borders meet at the 'Four Corners'."/>
+    				<set var="u_m" value="Okay. This state is one of the four states whose borders meet at the 'Four Corners'."/>
     			</effect>
     		</case>
     		
@@ -1858,7 +1858,7 @@
     			</condition>
     			<!-- set machine utterance to provide another hint -->
     			<effect util="1">
-    				<set var="u_m" value="This state is the nation's number one producer of the three Ps--peanuts, pecans, and peaches."/>
+    				<set var="u_m" value="Okay. This state is the nation's number one producer of the three Ps--peanuts, pecans, and peaches."/>
     			</effect>
     		</case>
     	</rule> <!-- END RULE FOR CURRENT STEP THIRD HINT -->
@@ -1877,7 +1877,7 @@
     			</condition>
     			<!-- set machine utterance to provide another hint -->
     			<effect util="1">
-    				<set var="u_m" value="Last Hint! This state is home to Sequoia National Park, which contains the largest living tree. Its trunk is 102 feet in circumference. "/>
+    				<set var="u_m" value="Okay. Last Hint! This state is home to Sequoia National Park, which contains the largest living tree. Its trunk is 102 feet in circumference. "/>
     				
     			</effect>
     		</case>
@@ -1892,7 +1892,7 @@
     			</condition>
     			<!-- set machine utterance to provide another hint -->
     			<effect util="1">
-    				<set var="u_m" value="Last Hint! This state is the flattest state in the US with a mean elevation of just 100ft above sea level."/>
+    				<set var="u_m" value="Okay. Last Hint! This state is the flattest state in the US with a mean elevation of just 100ft above sea level."/>
     				
     			</effect>
     		</case>
@@ -1907,7 +1907,7 @@
     			</condition>
     			<!-- set machine utterance to provide another hint -->
     			<effect util="1">
-    				<set var="u_m" value="Last Hint! A nickname for this state is the 'Lone Star State.'"/>
+    				<set var="u_m" value="Okay. Last Hint! A nickname for this state is the 'Lone Star State.'"/>
     			</effect>
     		</case>
     		
@@ -1921,7 +1921,7 @@
     			</condition>
     			<!-- set machine utterance to provide another hint -->
     			<effect util="1">
-    				<set var="u_m" value="Last Hint! A nickname for this state is the 'Empire State'."/>
+    				<set var="u_m" value="Okay. Last Hint! A nickname for this state is the 'Empire State'."/>
     			</effect>
     		</case>
     		
@@ -1935,7 +1935,7 @@
     			</condition>
     			<!-- set machine utterance to provide another hint -->
     			<effect util="1">
-    				<set var="u_m" value="Last Hint! The largest city in this state is Chicago."/>
+    				<set var="u_m" value="Okay. Last Hint! The largest city in this state is Chicago."/>
     			</effect>
     		</case>
     		
@@ -1949,7 +1949,7 @@
     			</condition>
     			<!-- set machine utterance to provide another hint -->
     			<effect util="1">
-    				<set var="u_m" value="Last Hint! The only part of the United States that falls within the Arctic Circle is in this state."/>
+    				<set var="u_m" value="Okay. Last Hint! The only part of the United States that falls within the Arctic Circle is in this state."/>
     			</effect>
     		</case>
     		
@@ -1963,7 +1963,7 @@
     			</condition>
     			<!-- set machine utterance to provide another hint -->
     			<effect util="1">
-    				<set var="u_m" value="Last Hint! The capital of this state is Honolulu."/>
+    				<set var="u_m" value="Okay. Last Hint! The capital of this state is Honolulu."/>
     			</effect>
     		</case>
     		
@@ -1977,7 +1977,7 @@
     			</condition>
     			<!-- set machine utterance to provide another hint -->
     			<effect util="1">
-    				<set var="u_m" value="Last Hint! The largest city in this state is Boston, which is also its capital."/>
+    				<set var="u_m" value="Okay. Last Hint! The largest city in this state is Boston, which is also its capital."/>
     			</effect>
     		</case>
     		
@@ -1991,7 +1991,7 @@
     			</condition>
     			<!-- set machine utterance to provide another hint -->
     			<effect util="1">
-    				<set var="u_m" value="Last Hint! Visitors to this state often come to see the Grand Canyon."/>
+    				<set var="u_m" value="Okay. Last Hint! Visitors to this state often come to see the Grand Canyon."/>
     			</effect>
     		</case>
     		
@@ -2005,7 +2005,7 @@
     			</condition>
     			<!-- set machine utterance to provide another hint -->
     			<effect util="1">
-    				<set var="u_m" value="Last Hint! This state was named for King George II of England."/>
+    				<set var="u_m" value="Okay. Last Hint! This state was named for King George II of England."/>
     			</effect>
     		</case>
     	</rule> <!-- END RULE FOR CURRENT STEP FINAL HINT -->
