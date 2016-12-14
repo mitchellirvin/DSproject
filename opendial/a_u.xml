@@ -49,6 +49,34 @@
     		</case>
     	</rule> 
     	
+    	<!-- rule for catching unrecognized utterance on step begin-->
+    	<rule>
+    		<case>
+    			<condition>
+    				<if var="current_step" relation="=" value="begin"/>
+    				<if var="a_u" relation="=" value="catchall"/>
+    			</condition>
+    			<!-- set machine act to check  -->
+    			<effect util="1">
+    				<set var="a_m" value="repeatbegin"/>
+    			</effect>
+    		</case>
+    	</rule> 
+    	
+    	<!-- rule for catching unrecognized utterance on step begin-->
+    	<rule>
+    		<case>
+    			<condition>
+    				<if var="current_step" relation="=" value="firsth|secondh|thirdh|finalh"/>
+    				<if var="a_u" relation="=" value="catchhint"/>
+    			</condition>
+    			<!-- set machine act to check  -->
+    			<effect util="1">
+    				<set var="a_m" value="repeathint"/>
+    			</effect>
+    		</case>
+    	</rule> 
+    	
 </model> <!-- END MODEL TRIGGERED BY A_U THAT DECIDES A_M -->
     	
 </domain>

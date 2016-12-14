@@ -7,6 +7,340 @@
     	
     	<!-- rule for current step begin -->
     	<rule>
+    		<!-- case to handle unrecognized user utterance for step begin --> 
+    		<case>
+    			<condition>
+    				<if var="current_step" relation="=" value="begin"/>
+    				<if var="a_m" relation="=" value="repeatbegin"/>
+    				<if var="recogErrorCount" relation="=" value="0"/>
+    			</condition>
+    			<effect util="1">
+    				<set var="u_m" value="I'm sorry, your response wasn't recognized. Would you like to play?"/>
+    				<set var="recogErrorCount" value="1"/>
+    			</effect>
+    		</case>
+    		<case>
+    			<condition>
+    				<if var="current_step" relation="=" value="begin"/>
+    				<if var="a_m" relation="=" value="repeatbegin"/>
+    				<if var="recogErrorCount" relation="=" value="1"/>
+    			</condition>
+    			<effect util="1">
+    				<set var="u_m" value="I'm sorry, your response wasn't recognized. Would you like to play?"/>
+    				<set var="recogErrorCount" value="2"/>
+    			</effect>
+    		</case>
+    		<case>
+    			<condition>
+    				<if var="current_step" relation="=" value="begin"/>
+    				<if var="a_m" relation="=" value="repeatbegin"/>
+    				<if var="recogErrorCount" relation="=" value="2"/>
+    			</condition>
+    			<effect util="1">
+    				<set var="u_m" value="I'm sorry, your response wasn't recognized. Would you like to play?"/>
+    				<set var="recogErrorCount" value="3"/>
+    			</effect>
+    		</case>
+    		<case>
+    			<condition>
+    				<if var="current_step" relation="=" value="begin"/>
+    				<if var="a_m" relation="=" value="repeatbegin"/>
+    				<if var="recogErrorCount" relation="=" value="3"/>
+    			</condition>
+    			<effect util="1">
+    				<set var="u_m" value="I'm sorry, your response wasn't recognized. Would you like to play?"/>
+    				<set var="recogErrorCount" value="4"/>
+    			</effect>
+    		</case>
+    		<case>
+    			<condition>
+    				<if var="current_step" relation="=" value="begin"/>
+    				<if var="a_m" relation="=" value="repeatbegin"/>
+    				<if var="recogErrorCount" relation="=" value="4"/>
+    			</condition>
+    			<effect util="1">
+    				<set var="u_m" value="I'm sorry, your response wasn't recognized. Would you like to play?"/>
+    				<set var="recogErrorCount" value="5"/>
+    			</effect>
+    		</case>
+    		<case>
+    			<condition>
+    				<if var="current_step" relation="=" value="begin"/>
+    				<if var="a_m" relation="=" value="repeatbegin"/>
+    				<if var="recogErrorCount" relation="=" value="5"/>
+    			</condition>
+    			<effect util="1">
+    				<set var="u_m" value="I'm sorry, your response wasn't recognized. Would you like to play?"/>
+    				<set var="recogErrorCount" value="6"/>
+    			</effect>
+    		</case>
+    		<case>
+    			<condition>
+    				<if var="current_step" relation="=" value="begin"/>
+    				<if var="a_m" relation="=" value="repeatbegin"/>
+    				<if var="recogErrorCount" relation="=" value="6"/>
+    			</condition>
+    			<effect util="1">
+    				<set var="u_m" value="I'm sorry, your response wasn't recognized. Would you like to play?"/>
+    				<set var="recogErrorCount" value="7"/>
+    			</effect>
+    		</case>
+    		<case>
+    			<condition>
+    				<if var="current_step" relation="=" value="begin"/>
+    				<if var="a_m" relation="=" value="repeatbegin"/>
+    				<if var="recogErrorCount" relation="=" value="7"/>
+    			</condition>
+    			<effect util="1">
+    				<set var="u_m" value="I'm sorry, your response wasn't recognized. Would you like to play?"/>
+    				<set var="recogErrorCount" value="8"/>
+    			</effect>
+    		</case>
+    		<case>
+    			<condition>
+    				<if var="current_step" relation="=" value="begin"/>
+    				<if var="a_m" relation="=" value="repeatbegin"/>
+    				<if var="recogErrorCount" relation="=" value="8"/>
+    			</condition>
+    			<effect util="1">
+    				<set var="u_m" value="I'm sorry, your response wasn't recognized. Would you like to play?"/>
+    				<set var="recogErrorCount" value="9"/>
+    			</effect>
+    		</case>
+    		<case>
+    			<condition>
+    				<if var="current_step" relation="=" value="begin"/>
+    				<if var="a_m" relation="=" value="repeatbegin"/>
+    				<if var="recogErrorCount" relation="=" value="9"/>
+    			</condition>
+    			<effect util="1">
+    				<set var="u_m" value="I'm sorry, your response wasn't recognized. Would you like to play?"/>
+    				<set var="recogErrorCount" value="10"/>
+    			</effect>
+    		</case>
+    		<case>
+    			<condition>
+    				<if var="current_step" relation="=" value="begin"/>
+    				<if var="a_m" relation="=" value="repeatbegin"/>
+    				<if var="recogErrorCount" relation="=" value="10"/>
+    			</condition>
+    			<effect util="1">
+    				<set var="u_m" value="I'm sorry, your response wasn't recognized. Would you like to play?"/>
+    				<set var="recogErrorCount" value="11"/>
+    			</effect>
+    		</case>
+    		<case>
+    			<condition>
+    				<if var="current_step" relation="=" value="begin"/>
+    				<if var="a_m" relation="=" value="repeatbegin"/>
+    				<if var="recogErrorCount" relation="=" value="11"/>
+    			</condition>
+    			<effect util="1">
+    				<set var="u_m" value="I'm sorry, your response wasn't recognized. Would you like to play?"/>
+    				<set var="recogErrorCount" value="12"/>
+    			</effect>
+    		</case>
+    		<case>
+    			<condition>
+    				<if var="current_step" relation="=" value="begin"/>
+    				<if var="a_m" relation="=" value="repeatbegin"/>
+    				<if var="recogErrorCount" relation="=" value="12"/>
+    			</condition>
+    			<effect util="1">
+    				<set var="u_m" value="I'm sorry, your response wasn't recognized. Would you like to play?"/>
+    				<set var="recogErrorCount" value="13"/>
+    			</effect>
+    		</case>
+    		<case>
+    			<condition>
+    				<if var="current_step" relation="=" value="begin"/>
+    				<if var="a_m" relation="=" value="repeatbegin"/>
+    				<if var="recogErrorCount" relation="=" value="13"/>
+    			</condition>
+    			<effect util="1">
+    				<set var="u_m" value="I'm sorry, your response wasn't recognized. Would you like to play?"/>
+    				<set var="recogErrorCount" value="14"/>
+    			</effect>
+    		</case>
+    		<case>
+    			<condition>
+    				<if var="current_step" relation="=" value="begin"/>
+    				<if var="a_m" relation="=" value="repeatbegin"/>
+    				<if var="recogErrorCount" relation="=" value="14"/>
+    			</condition>
+    			<effect util="1">
+    				<set var="u_m" value="I'm sorry, your response wasn't recognized. Would you like to play?"/>
+    				<set var="recogErrorCount" value="15"/>
+    			</effect>
+    		</case>
+    		
+    		<!-- case to handle unrecognized user utterance for step hints --> 
+    		<case>
+    			<condition>
+    				<if var="current_step" relation="=" value="firsth|secondh|thirdh|finalh"/>
+    				<if var="a_m" relation="=" value="repeathint"/>
+    				<if var="recogErrorCount" relation="=" value="0"/>
+    			</condition>
+    			<effect util="1">
+    				<set var="u_m" value="Your response wasn't recognized, please guess a state!"/>
+    				<set var="recogErrorCount" value="1"/>
+    			</effect>
+    		</case>
+    		<case>
+    			<condition>
+    				<if var="current_step" relation="=" value="firsth|secondh|thirdh|finalh"/>
+    				<if var="a_m" relation="=" value="repeathint"/>
+    				<if var="recogErrorCount" relation="=" value="1"/>
+    			</condition>
+    			<effect util="1">
+    				<set var="u_m" value="Your response wasn't recognized, please guess a state!"/>
+    				<set var="recogErrorCount" value="2"/>
+    			</effect>
+    		</case>
+    		<case>
+    			<condition>
+    				<if var="current_step" relation="=" value="firsth|secondh|thirdh|finalh"/>
+    				<if var="a_m" relation="=" value="repeathint"/>
+    				<if var="recogErrorCount" relation="=" value="2"/>
+    			</condition>
+    			<effect util="1">
+    				<set var="u_m" value="Your response wasn't recognized, please guess a state!"/>
+    				<set var="recogErrorCount" value="3"/>
+    			</effect>
+    		</case>
+    		<case>
+    			<condition>
+    				<if var="current_step" relation="=" value="firsth|secondh|thirdh|finalh"/>
+    				<if var="a_m" relation="=" value="repeathint"/>
+    				<if var="recogErrorCount" relation="=" value="3"/>
+    			</condition>
+    			<effect util="1">
+    				<set var="u_m" value="Your response wasn't recognized, please guess a state!"/>
+    				<set var="recogErrorCount" value="4"/>
+    			</effect>
+    		</case>
+    		<case>
+    			<condition>
+    				<if var="current_step" relation="=" value="firsth|secondh|thirdh|finalh"/>
+    				<if var="a_m" relation="=" value="repeathint"/>
+    				<if var="recogErrorCount" relation="=" value="4"/>
+    			</condition>
+    			<effect util="1">
+    				<set var="u_m" value="Your response wasn't recognized, please guess a state!"/>
+    				<set var="recogErrorCount" value="5"/>
+    			</effect>
+    		</case>
+    		<case>
+    			<condition>
+    				<if var="current_step" relation="=" value="firsth|secondh|thirdh|finalh"/>
+    				<if var="a_m" relation="=" value="repeathint"/>
+    				<if var="recogErrorCount" relation="=" value="5"/>
+    			</condition>
+    			<effect util="1">
+    				<set var="u_m" value="Your response wasn't recognized, please guess a state!"/>
+    				<set var="recogErrorCount" value="6"/>
+    			</effect>
+    		</case>
+    		<case>
+    			<condition>
+    				<if var="current_step" relation="=" value="firsth|secondh|thirdh|finalh"/>
+    				<if var="a_m" relation="=" value="repeathint"/>
+    				<if var="recogErrorCount" relation="=" value="6"/>
+    			</condition>
+    			<effect util="1">
+    				<set var="u_m" value="Your response wasn't recognized, please guess a state!"/>
+    				<set var="recogErrorCount" value="7"/>
+    			</effect>
+    		</case>
+    		<case>
+    			<condition>
+    				<if var="current_step" relation="=" value="firsth|secondh|thirdh|finalh"/>
+    				<if var="a_m" relation="=" value="repeathint"/>
+    				<if var="recogErrorCount" relation="=" value="7"/>
+    			</condition>
+    			<effect util="1">
+    				<set var="u_m" value="Your response wasn't recognized, please guess a state!"/>
+    				<set var="recogErrorCount" value="8"/>
+    			</effect>
+    		</case>
+    		<case>
+    			<condition>
+    				<if var="current_step" relation="=" value="firsth|secondh|thirdh|finalh"/>
+    				<if var="a_m" relation="=" value="repeathint"/>
+    				<if var="recogErrorCount" relation="=" value="8"/>
+    			</condition>
+    			<effect util="1">
+    				<set var="u_m" value="Your response wasn't recognized, please guess a state!"/>
+    				<set var="recogErrorCount" value="9"/>
+    			</effect>
+    		</case>
+    		<case>
+    			<condition>
+    				<if var="current_step" relation="=" value="firsth|secondh|thirdh|finalh"/>
+    				<if var="a_m" relation="=" value="repeathint"/>
+    				<if var="recogErrorCount" relation="=" value="9"/>
+    			</condition>
+    			<effect util="1">
+    				<set var="u_m" value="Your response wasn't recognized, please guess a state!"/>
+    				<set var="recogErrorCount" value="10"/>
+    			</effect>
+    		</case>
+    		<case>
+    			<condition>
+    				<if var="current_step" relation="=" value="firsth|secondh|thirdh|finalh"/>
+    				<if var="a_m" relation="=" value="repeathint"/>
+    				<if var="recogErrorCount" relation="=" value="10"/>
+    			</condition>
+    			<effect util="1">
+    				<set var="u_m" value="Your response wasn't recognized, please guess a state!"/>
+    				<set var="recogErrorCount" value="11"/>
+    			</effect>
+    		</case>
+    		<case>
+    			<condition>
+    				<if var="current_step" relation="=" value="firsth|secondh|thirdh|finalh"/>
+    				<if var="a_m" relation="=" value="repeathint"/>
+    				<if var="recogErrorCount" relation="=" value="11"/>
+    			</condition>
+    			<effect util="1">
+    				<set var="u_m" value="Your response wasn't recognized, please guess a state!"/>
+    				<set var="recogErrorCount" value="12"/>
+    			</effect>
+    		</case>
+    		<case>
+    			<condition>
+    				<if var="current_step" relation="=" value="firsth|secondh|thirdh|finalh"/>
+    				<if var="a_m" relation="=" value="repeathint"/>
+    				<if var="recogErrorCount" relation="=" value="12"/>
+    			</condition>
+    			<effect util="1">
+    				<set var="u_m" value="Your response wasn't recognized, please guess a state!"/>
+    				<set var="recogErrorCount" value="13"/>
+    			</effect>
+    		</case>
+    		<case>
+    			<condition>
+    				<if var="current_step" relation="=" value="firsth|secondh|thirdh|finalh"/>
+    				<if var="a_m" relation="=" value="repeathint"/>
+    				<if var="recogErrorCount" relation="=" value="13"/>
+    			</condition>
+    			<effect util="1">
+    				<set var="u_m" value="Your response wasn't recognized, please guess a state!"/>
+    				<set var="recogErrorCount" value="14"/>
+    			</effect>
+    		</case>
+    		<case>
+    			<condition>
+    				<if var="current_step" relation="=" value="firsth|secondh|thirdh|finalh"/>
+    				<if var="a_m" relation="=" value="repeathint"/>
+    				<if var="recogErrorCount" relation="=" value="14"/>
+    			</condition>
+    			<effect util="1">
+    				<set var="u_m" value="Your response wasn't recognized, please guess a state!"/>
+    				<set var="recogErrorCount" value="15"/>
+    			</effect>
+    		</case>
+    		
     	    <!-- if the "join" variable was a positive confirmation on first iteration --> 
     		<case>
     			<condition>
