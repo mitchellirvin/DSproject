@@ -1,2 +1,2 @@
 # DSproject
-Repository for Dialogue Systems and Natural Language Interfaces final project. This will contain all code for our US based geographical adventure game.
+This guessing game can be interfaced with via audio or textual input, and can be run in OpenDial. Available [here](http://www.opendial-toolkit.net/).
